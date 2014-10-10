@@ -9,8 +9,8 @@ It will eventually include:
 - Upcoming events
 - News from the Daily
 - Current sports scores
-
-and potentially a campus map and links to common services like Trunk, SIS, LaundryView, and the Room Scheduler.
+- A useful campus map
+- Links to common services like Trunk, SIS, LaundryView, and the Room Scheduler
 
 ## Tufts MAKE
 
