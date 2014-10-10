@@ -1,0 +1,37 @@
+CACHE MANIFEST
+ 
+# Version: 1.00
+
+CACHE:
+# index.html
+# style.css
+
+# frontend.js
+# backend.js
+# joeyschedule.js
+
+assets/ico-help.png
+assets/ico-gear.png
+assets/ico-arrow.png
+
+assets/isis.png
+assets/laundryview.png
+assets/trunk.png
+
+assets/bg-academic.jpg
+assets/bg-bray.jpg
+assets/bg-dewick.jpg
+assets/bg-jumbo.jpg
+assets/bg-quad.jpg
+assets/bg-sky.jpg
+assets/bg-water.jpg
+
+fonts/SourceSansPro-ExtraLight.ttf
+fonts/SourceSansPro-Light.ttf
+fonts/SourceSansPro-Regular.ttf
+
+NETWORK:
+http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400
+http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGC-IiwWNzQT_LXAtr-Ee9Pw.woff
+http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGMVNtom4QlEDNJaqqqzqdSs.woff
+http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff

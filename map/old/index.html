@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>DoubleMap</title>
+<link href="http://tufts.doublemap.com/map/doublemap.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> 
+<link rel="stylesheet" href="leaflet.css" />
+<script src="leaflet.js"></script>
+<script src="underscore.js"></script>
+<script src="doublemap.js"></script>
+<script>
+
+$(window).resize(function () {
+    $("#map").height($(window).height())
+});
+
+setTimeout(function () { window.location.reload(); }, 600000);
+
+$(function(){
+    $(window).resize()
+    var chooseRoute = function(id) {
+        DM.setAllRoutes(false)
+        DM.setRoute(id, true);
+        //window.location.hash = id;
+        $("#route-selector").hide();
+    }
+    var unchooseRoute = function() {
+        if(window.location.hash === "") {
+            DM.setAllRoutes(false)
+            $("#route-selector").show();
+        }
+    }
+    window.onhashchange = unchooseRoute;
+    // ugh awful hack to make routes screen cover up stuff
+    var DMlocal =  {
+        addRoute: function(route, callback) {
+            var get_data = "davis".toLowerCase();
+            if(get_data == "" || route.name.toLowerCase().indexOf(get_data) !== -1){
+                route.visible = true;
+            }else{
+                route.visible = false;
+            }
+        },
+        timeOut: function(callback) {
+            var dialog = $("#timeout")
+            var button = $("#timeout-resume")
+            button.click(function() {
+                if(callback) {
+                    callback()
+                }
+                dialog.hide()
+            })
+            dialog.show()
+        },
+        show_eta: true,
+        showControls: true,
+        passive: true,
+        embed: true,
+        customCenter: false    }
+    var DM = new DoubleMap(
+        $("#map").get(0),
+        DMlocal,
+        42.403305,-71.118496,15    )
+    DM.setTick(1200)
+    $(window).resize()
+})
+</script>
+</head>
+<body class="ifon" style="padding:0;margin:0;">
+<div id="map" style="height: 376px; width: 100%;">
+    DoubleMap live map placeholder
+</div>
+</body>
+</html>
