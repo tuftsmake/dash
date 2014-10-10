@@ -24,9 +24,9 @@ Tufts MAKE has no plans to monetize Dash - it will always and forever be open so
 
 The original makers of Tufts Dash are:
 
-Chris Shinn
-Charlie Meyer
-Andy Braren
-Allison Kuperman
+- Chris Shinn
+- Charlie Meyer
+- Andy Braren
+- Allison Kuperman
 
 If you're interested in contributing to the project, contact [officers@tuftsmake.com](mailto:officers@tuftsmake.com?subject=Joining Tufts Dash) or visit [http://tuftsmake.com](http://tuftsmake.com).
