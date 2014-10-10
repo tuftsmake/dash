@@ -38,7 +38,7 @@ function expandJoey(){
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');
-
+	setMap();
 
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
@@ -269,33 +269,36 @@ function parseDay(day){
 }
 
 function setMap(day, time) {
+	var joeyday = new Date();
+	var day = joeyday.getDay();
+	var time = joeyday.getHours();
+
 	var map = document.getElementById(doublemapiframe);
 
-		switch (day) {
-	    case 6:
-	        if()
-	        break; 
-	    case 0:
-	        text = "Today is Sunday";
-	        break; 
-	    default: 
-	        text = "Looking forward to the Weekend";
+	switch (day) {
+    case 6:
+        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3';
+        break; 
+    case 0:
+        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4';
+        break; 
+    case 4:
+    case 5:
+    	if(time >= 18) {
+    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7';
+    	} else{
+    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1';
+    	}
+    	break;
+    default: 
+        if(time >= 18) {
+        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6';
+        } else {
+        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1';
+        }
 	}
 }
 
-// DOUBLEMAP IFRAME SRC SWITCHER
-// The src url of our iframe needs to change based on the current day and the time of day
-// Ideally we would use this OpenStreetMap-powered map which is a constant URL: http://tufts.doublemap.com/map/
-// But the mobile version of the site is broken: http://tufts.doublemap.com/map/mobile
-// So we have to use the following set of 7 URLs and adjust according to time and day
-
-// Mon-Fri from 7:10am to 5:50pm: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1
-// Unknown: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__2
-// Saturday from 10am to 1:50am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3
-// Sunday from 10am-12:20am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4
-// Unknown: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__5
-// Mon-Wed from 6pm to 12:20am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6
-// Thurs-Fri from 6pm to 1:50am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7
 
 // Here are a few potentially useful links:
 
