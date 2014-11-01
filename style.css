@@ -116,7 +116,7 @@ hr {
     border: none;
 }
 
-h1, h2, h3, h4, h5, h6, p, td {
+h1, h2, h3, h4, h5, h6, p, td, th {
     /*font-weight: 300;*/
     margin: 0;
     padding-right: 10px;
@@ -164,11 +164,6 @@ h2 {
     padding: 5px 5px 5px 5px;
     /* background-color: rgba(255, 255, 255, 0.15); */
     /* border-bottom: rgb(177, 177, 177) 1px solid */
-}
-
-.time {
-    height: 1.4rem;
-    padding-top: .4rem;
 }
 
 h4 {
@@ -274,8 +269,30 @@ BUBBLE-SPECIFIC
 
 /* EVENTS */
 .events {
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.time, .place {
+	font-size: .9rem;
+}
+
+.time {
+	padding-right: 5px;
+	text-align: right;
+}
+
+.place {
+	
+}
+
+
+th {
+	font-weight: normal;
+	font-size: 1.1rem;
+	float: left;
+	overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* DININGG */
@@ -442,6 +459,7 @@ IOS STATUS BARS
       margin-top: 75px !important;
     }	
 }
+
 
 
 
