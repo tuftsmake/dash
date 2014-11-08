@@ -45,12 +45,12 @@ function fillRoutes(){
 function createMarker(bus){
 	shadow = new google.maps.Marker({
 		map: map,
-		position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003),
+		/* position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003), */
 		icon: "shadow.png"
 	});
 	marker = new google.maps.Marker({
 		map: map,
-		position:new google.maps.LatLng(bus.lat,bus.lon),
+		/* position:new google.maps.LatLng(bus.lat,bus.lon), */
 		icon: "colorize.png",
 	});
 }
