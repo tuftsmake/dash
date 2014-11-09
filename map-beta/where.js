@@ -23,8 +23,8 @@ jQuery(document).ready(function($) {
 	});
 	//drawMap(bus);
 });
-function drawMap(bus)
-{
+
+function drawMap(bus) {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	fillRoutes();
 	createMarker(bus);
@@ -32,7 +32,7 @@ function drawMap(bus)
 		bus = data;
 		shadow.setPosition(new google.maps.LatLng(bus.lat-0.00003,bus.lon+0.0003));
 		marker.setPosition(new google.maps.LatLng(bus.lat,bus.lon));
-	});},1000);
+	});},3000);
 	//getMe();
 }
 
@@ -42,15 +42,16 @@ function fillRoutes(){
 	}
 	drawLine();
 }
+
 function createMarker(bus){
 	shadow = new google.maps.Marker({
 		map: map,
-		/* position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003), */
+		/*position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003),*/
 		icon: "shadow.png"
 	});
 	marker = new google.maps.Marker({
 		map: map,
-		/* position:new google.maps.LatLng(bus.lat,bus.lon), */
+		/*position:new google.maps.LatLng(bus.lat,bus.lon),*/
 		icon: "colorize.png",
 	});
 }
