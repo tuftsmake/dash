@@ -261,6 +261,8 @@ BUBBLE-SPECIFIC
 /* JOEY */
 #map_canvas {
 	height: 230px;
+	margin: 0 20px;
+	border-radius: 5px;
 }
 .joey td {
     width: 33%;
