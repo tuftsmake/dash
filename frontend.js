@@ -51,14 +51,8 @@ function expandJoey(){
 	document.getElementById("background").style.backgroundImage = 'url(assets/bg-quad.jpg)';
 	// add location to the url
 	window.location.hash = 'joey';
-	// reveal the full bubble
-	document.getElementById("joeyfull").style.display = 'block';
-	document.getElementById("joeyfull").style.visibility = 'visible';
-	document.getElementById("joeyfull").style.opacity = '100%';
-	
 
-	// Andy - reveals the Joey DoubleMap tracker
-	document.getElementById("doublemap").style.display = "block";
+	
 	joey.setAttribute('onclick', null);
 	
 	// Andy - reveals the new map
@@ -136,9 +130,6 @@ function revert(id){
 	// add location to the url
 	//window.location.hash = '';
 	window.history.replaceState('Object', 'Title', '/dash/');
-
-	// Andy - hide the Joey DoubleMap tracker
-	document.getElementById("doublemap").style.display = "none";
 
 	document.getElementsByClassName(id)[0].getElementsByTagName('h2')[0].innerHTML = id.toUpperCase();
 	document.getElementsByClassName(id)[0].setAttribute('onclick', 'expand'+toTitleCase(id)+'()');
