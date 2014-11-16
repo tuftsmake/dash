@@ -4,13 +4,15 @@ function populate(){
 	$("#campustime").innerHTML = parseTime(times[0]);
 	$("#davistime").innerHTML = parseTime(times[1]);
 	$("#olintime").innerHTML = parseTime(times[2]);
-
-	//getstuff
+	if(localStorage.getItem("hazIntro") === "true"){
+		$('.intro').hide();
+	}
+	/* TODO: get stuff from the internet about the other bubbles */
 }
 
 function help(){
  	console.log('help');
- 	//help function
+ 	$('.intro').show();
 }
 
 function expandJoey(){
@@ -36,8 +38,18 @@ function expandJoey(){
 	
 }
 
+function killIntro(){
+	$('.intro').hide();
+	localStorage.setItem("hazIntro", "true");
+	
+
+	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
+	// add location to the url
+	window.location.hash = 'places';
+}
+
 function expandEvents(){
-	isolate('#events');
+	isolate('.events');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-jumbo.jpg)');
 	// add location to the url
@@ -45,7 +57,7 @@ function expandEvents(){
 }
 
 function expandDining(){
-	isolate('#dining');
+	isolate('.dining');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-dewick.jpg)');
 	// add location to the url
@@ -53,7 +65,7 @@ function expandDining(){
 }
 
 function expandNews(){
-	isolate('#news');
+	isolate('.news');
 	// Andy - the following two lines change the background
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-fall.jpg)');
@@ -62,7 +74,7 @@ function expandNews(){
 }
 
 function expandPlaces(){
-	isolate('#places');
+	isolate('.places');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
 	// add location to the url
@@ -70,7 +82,7 @@ function expandPlaces(){
 }
 
 function expandSports(){
-	isolate("#sports")
+	isolate(".sports")
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-water.jpg)');
 	// add location to the url
@@ -79,8 +91,6 @@ function expandSports(){
 
 function isolate(id){
 	$(".bubble").not(id).hide();
-
-
 
 	// var elements = document.getElementsByClassName('bubble');
 	// var toExpand = document.getElementsByClassName(id);
@@ -91,7 +101,7 @@ function isolate(id){
 	// 	}
 	// }
 
-	$("#buttonLeft").src = 'assets/ico-arrow.png';
+	$("#buttonLeft").attr('src', 'assets/ico-arrow.png');
 	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
 	$("#title").innerHTML = toTitleCase(id);
 }
@@ -108,7 +118,7 @@ function revert(id){
 
 
 	// The following two lines previously made the help icon extra small on iPhones after returning to the home screen
-	$("#buttonLeft").src = 'assets/ico-help.png';
+	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").innerHTML = 'Tufts Dash';
 	$('#temporary').remove();
@@ -186,14 +196,16 @@ function postSchedule(day){
     	for(j=0;j<3;j++){
     		var td = document.createElement('td');
     		var place;
-    		if(j==0){
-    			place = 'CAMPUS';
-    		}
-    		else if(j==1){
-    			place = 'DAVIS';
-    		}
-    		else if(j==2){
-    			place = 'OLIN';
+    		switch (j){
+    			case 0:
+    				place = 'CAMPUS';
+    				break;
+				case 1:
+					place = 'DAVIS';
+					break;
+				case 2:
+					place = 'OLIN';
+					break;
     		}
     		td.appendChild(document.createTextNode(place));
 	   		tr.appendChild(td);

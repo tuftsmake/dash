@@ -54,7 +54,7 @@
         <link href="assets/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
 
 	</head>
-	<body onload="populate(); drawMap();">
+	<body>
 		<div id="background"></div>
 		<div id="header">
 			<img src="assets/ico-help.png" class="fltlft icon" id="buttonLeft" onclick="help()">
@@ -62,6 +62,11 @@
 			<h1 id="title" class="animated fadein">Tufts Dash</h1>
 		</div>
 		<div id="content">
+
+			<div class="intro bubble animated fadeinright" onclick="killIntro()">
+				<h3>click bubbles to expand them. click this to make it go away</h3>
+			</div>
+
 			<div class="joey bubble animated fadeinright" onclick="expandJoey()">
 				<div id="titlebar"><h2>JOEY</h2></div>
 				<table>
@@ -79,7 +84,7 @@
 				<div id="map_canvas"></div>
 			</div>
 
-			<div class="events bubble animated fadeinright" onclick="expandEvents()">
+			<div id="events" class="bubble animated fadeinright" onclick="expandEvents()">
 				<div id="titlebar"><h2>EVENTS</h2></div>
 				<table>
 					<tbody>
@@ -102,7 +107,7 @@
 				<p>A Night of Comedy featuring Keenan Thompson</p>
 				<h4 class="iteminfo">Cohen Auditorium</h4>
 			</div>
-			<div class="dining bubble animated fadeinright" onclick="expandDining()">
+			<div id="dining" class="bubble animated fadeinright" onclick="expandDining()">
 				<h4 class="fltrt extrainfo">Dewick</h4>
 				<div id="titlebar"><h2>DINING</h2></div>
 				
@@ -110,24 +115,24 @@
 				<p>Mandarin Turkey Stir Fry</p>
 				<p>Baked Lasagna</p>
 			</div>
-			<div class="news bubble animated fadeinright" onclick="expandNews()">
+			<div id="news" class="bubble animated fadeinright" onclick="expandNews()">
 				<h4 class="fltrt extrainfo">Features</h4>
 				<div id="titlebar"><h2>NEWS</h2></div>
 				<p>Meet the members of the class of 2014 and blah blah blah.</p>
 				<p>Students see Valentine's Day as a giant scheme to support the fascist party.</p>
 				<p>Political science class makes return with giant hot air balloon over Boston.</p>
 			</div>
-			<div class="places bubble animated fadeinright" onclick="expandPlaces()">
+			<div id="places" class="bubble animated fadeinright" onclick="expandPlaces()">
 				<div id="titlebar"><h2>PLACES</h2></div>
 				<p>Not sure what timely info</p>
 				<p>would be placed here.</p>
 			</div>
-			<div class="sports bubble animated fadeinright" onclick="expandSports()">
+			<div id="sports" class="bubble animated fadeinright" onclick="expandSports()">
 				<div id="titlebar"><h2>SPORTS</h2></div>
 				<p>Sports scores placed here</p>
 				<p>Maybe as a grid?</p>
 			</div>
-			<div class="links bubble animated fadeinright">
+			<div id="links" class="bubble animated fadeinright">
 				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
 				<a href="http://isis.tufts.edu/"> <img src="assets/isis.png"> </a>
 				<a href="http://m.laundryview.com/lvs.php?s=17"> <img src="assets/laundryview.png"> </a>
