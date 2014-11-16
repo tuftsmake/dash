@@ -1,8 +1,8 @@
 var myOptions = {
 			zoom: 15,
-			// draggable: false,
+			draggable: false,
 			disableDefaultUI: true,
-			// scrollwheel: false,
+			scrollwheel: false,
 			center: new google.maps.LatLng(42.4029363,-71.1224503),
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 		};
