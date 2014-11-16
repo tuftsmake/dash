@@ -49,8 +49,6 @@ function expandJoey(){
 
 	// change the background image
 	document.getElementById("background").style.backgroundImage = 'url(assets/bg-quad.jpg)';
-	// add location to the url
-	window.location.hash = 'joey';
 
 	
 	joey.setAttribute('onclick', null);
@@ -127,9 +125,6 @@ function revert(id){
 
 	// change the background image
 	document.getElementById("background").style.backgroundImage = 'url(assets/bg-academic.jpg)';
-	// add location to the url
-	//window.location.hash = '';
-	window.history.replaceState('Object', 'Title', '/dash/');
 
 	document.getElementsByClassName(id)[0].getElementsByTagName('h2')[0].innerHTML = id.toUpperCase();
 	document.getElementsByClassName(id)[0].setAttribute('onclick', 'expand'+toTitleCase(id)+'()');
