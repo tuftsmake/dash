@@ -135,7 +135,7 @@ p {
     margin-bottom: 5px;
 }
 
-.dining p {
+#dining p {
     margin-bottom: 0px;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -225,23 +225,6 @@ text-align: center;
   -webkit-transition: background-image 0.3s ease;
 }
 
-
-
-
-
-
-
-
-
-/* hides the full joey bubble at start */
-.joeyfull {
-	display: none;
-	transition: opacity 5s ease;
-  -webkit-transition: opacity 5s ease;
-}
-
-
-
 table {
     width: 100%;
     padding-top: 2%;
@@ -250,11 +233,9 @@ table {
     margin-right: auto;
 }
 
-
-
 /*
 ====================
-BUBBLE-SPECIFIC
+| BUBBLE-SPECIFIC  |
 ====================
 */
 
@@ -264,13 +245,13 @@ BUBBLE-SPECIFIC
 	margin: 0 .5rem;
 	border-radius: 5px;
 }
-.joey td {
+#joey td {
     width: 33%;
     text-align: center;
 }
 
 /* EVENTS */
-.events {
+#events {
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
 }
@@ -297,38 +278,38 @@ th {
   text-overflow: ellipsis;
 }
 
-.intro {
+#intro {
     padding: 15px;
     text-align: center;
 }
 
 
 /* DININGG */
-.dining {
+#dining {
     -webkit-animation-delay: .2s;
     animation-delay: .2s;
 }
 
 /* NEWS */
-.news {
+#news {
     -webkit-animation-delay: .3s;
     animation-delay: .3s;
 }
 
 /* PLACES */
-.places {
+#places {
     -webkit-animation-delay: .4s;
     animation-delay: .4s;
 }
 
 /* SPORTS */
-.sports {
+#sports {
     -webkit-animation-delay: .5s;
     animation-delay: .5s;
 }
 
 /* LINKS */
-.links {
+#links {
     -webkit-animation-delay: .6s;
     animation-delay: .6s;
 }
@@ -467,10 +448,3 @@ IOS STATUS BARS
       margin-top: 75px !important;
     }	
 }
-
-
-
-
-
-
-

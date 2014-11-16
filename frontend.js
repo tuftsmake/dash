@@ -39,11 +39,8 @@ function expandJoey(){
 }
 
 function killIntro(){
-	$('.intro').hide();
+	$('#intro').hide();
 	localStorage.setItem("hazIntro", "true");
-	
-
-	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
 	// add location to the url
 	window.location.hash = 'places';
 }
