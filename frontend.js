@@ -46,7 +46,7 @@ function killIntro(){
 }
 
 function expandEvents(){
-	isolate('.events');
+	isolate('#events');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-jumbo.jpg)');
 	// add location to the url
@@ -54,7 +54,7 @@ function expandEvents(){
 }
 
 function expandDining(){
-	isolate('.dining');
+	isolate('#dining');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-dewick.jpg)');
 	// add location to the url
@@ -62,7 +62,7 @@ function expandDining(){
 }
 
 function expandNews(){
-	isolate('.news');
+	isolate('#news');
 	// Andy - the following two lines change the background
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-fall.jpg)');
@@ -71,7 +71,7 @@ function expandNews(){
 }
 
 function expandPlaces(){
-	isolate('.places');
+	isolate('#places');
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
 	// add location to the url
@@ -79,7 +79,7 @@ function expandPlaces(){
 }
 
 function expandSports(){
-	isolate(".sports")
+	isolate("#sports")
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-water.jpg)');
 	// add location to the url
