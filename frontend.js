@@ -5,14 +5,14 @@ function populate(){
 	$("#davistime").innerHTML = parseTime(times[1]);
 	$("#olintime").innerHTML = parseTime(times[2]);
 	if(localStorage.getItem("hazIntro") === "true"){
-		$('.intro').hide();
+		$('#intro').hide();
 	}
 	/* TODO: get stuff from the internet about the other bubbles */
 }
 
 function help(){
  	console.log('help');
- 	$('.intro').show();
+ 	$('#intro').show();
 }
 
 function expandJoey(){
@@ -42,7 +42,7 @@ function killIntro(){
 	$('#intro').hide();
 	localStorage.setItem("hazIntro", "true");
 	// add location to the url
-	window.location.hash = 'places';
+	// window.location.hash = 'places';
 }
 
 function expandEvents(){
@@ -50,7 +50,7 @@ function expandEvents(){
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-jumbo.jpg)');
 	// add location to the url
-	window.location.hash = 'events';
+	// window.location.hash = 'events';
 }
 
 function expandDining(){
@@ -58,7 +58,7 @@ function expandDining(){
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-dewick.jpg)');
 	// add location to the url
-	window.location.hash = 'dining';
+	// window.location.hash = 'dining';
 }
 
 function expandNews(){
@@ -67,7 +67,7 @@ function expandNews(){
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-fall.jpg)');
 	// add location to the url
-	window.location.hash = 'news';
+	// window.location.hash = 'news';
 }
 
 function expandPlaces(){
@@ -75,7 +75,7 @@ function expandPlaces(){
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
 	// add location to the url
-	window.location.hash = 'places';
+	// window.location.hash = 'places';
 }
 
 function expandSports(){
@@ -83,7 +83,7 @@ function expandSports(){
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-water.jpg)');
 	// add location to the url
-	window.location.hash = 'sports';
+	// window.location.hash = 'sports';
 }
 
 function isolate(id){

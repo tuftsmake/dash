@@ -89,7 +89,7 @@ body {
     /*font-family: 'Source Sans Pro', sans-serif;*/
     font-family: 'Lato';
     letter-spacing: 0px;
-    font-weight: bold;
+    font-weight: normal;
     margin: 0;
     padding: 0;
     z-index: 0;
@@ -117,7 +117,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6, p, td, th {
-    /*font-weight: 300;*/
+    font-weight: 300;
     margin: 0;
     padding-right: 10px;
     padding-left: 10px;
@@ -225,6 +225,7 @@ text-align: center;
   -webkit-transition: background-image 0.3s ease;
 }
 
+
 table {
     width: 100%;
     padding-top: 2%;
@@ -232,6 +233,7 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
+
 
 /*
 ====================
@@ -270,12 +272,16 @@ table {
 }
 
 
+table {
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
 th {
-	font-weight: normal;
 	font-size: 1.1rem;
 	float: left;
 	overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 #intro {
