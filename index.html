@@ -13,15 +13,6 @@
 		<script src="fastclick/lib/fastclick.js"></script>
 		<script src="joeyschedule.js"></script>
 
-		<!-- DOUBLEMAP -->
-		<!--
-		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.3/underscore-min.js"></script>
-		<script src="http://tufts.doublemap.com/map/doublemap.js"></script>
-		<script src="http://tufts.doublemap.com/lib/js/leaflet.js"></script>
-		<link rel="stylesheet" href="http://tufts.doublemap.com/lib/js/leaflet.css" />
-		-->
-
 		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 		<script src="map/where.js"></script>
 		
@@ -85,24 +76,6 @@
 						<td id="olintime">0:00</td>
 					</tr>
 				</table>
-				<div id="doublemap" style="display: none; overflow: hidden; margin: 2% 0; max-width: 100%; position: relative;">
-					<div id="scrollblocker" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></div>
-					<iframe id="doublemapiframe"
-					scrolling="no"
-					pointer-events: none;
-					style="border: 0px none; margin-left: -90px; height: 290px; margin-top: -30px; margin-bottom: -30px; width: 1085px; max-width: 215%; overflow: hidden;"
-					src="http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1">
-					<!--
-					Mon-Fri from 7:10am to 5:50pm: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1
-					?: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__2
-					Saturday from 10am to 1:50am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3
-					Sunday from 10am-12:20am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4
-					?: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__5
-					Mon-Wed from 6pm to 12:20am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6
-					Thurs-Fri from 6pm to 1:50am: http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7
-					-->
-					</iframe>
-				</div>
 			</div>
 
 			<div class="events bubble animated fadeinright" onclick="expandEvents()">
