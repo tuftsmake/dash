@@ -297,6 +297,12 @@ th {
   text-overflow: ellipsis;
 }
 
+.intro {
+    padding: 15px;
+    text-align: center;
+}
+
+
 /* DININGG */
 .dining {
     -webkit-animation-delay: .2s;
