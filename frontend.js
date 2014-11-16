@@ -5,14 +5,14 @@ function populate(){
 	$("#davistime").innerHTML = parseTime(times[1]);
 	$("#olintime").innerHTML = parseTime(times[2]);
 	if(localStorage.getItem("hazIntro") === "true"){
-		$('.intro').hide();
+		$('#intro').hide();
 	}
 	/* TODO: get stuff from the internet about the other bubbles */
 }
 
 function help(){
  	console.log('help');
- 	$('.intro').show();
+ 	$('#intro').show();
 }
 
 function expandJoey(){
