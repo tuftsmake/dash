@@ -415,7 +415,7 @@ nav ul li: hover > ul {
 RESPONSIVE COMPONENTS
 ====================
 */
-@media (min-width: 960px) {
+/*@media (min-width: 960px) {
     #content {
         width: 90%;
         margin: 60px auto 0;
@@ -432,7 +432,7 @@ RESPONSIVE COMPONENTS
         margin: 10 5.2%;
     }
 }
-
+*/
 
 /*
 ====================
