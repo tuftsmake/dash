@@ -1,5 +1,5 @@
 var myOptions = {
-			zoom: 15,
+			zoom: 14,
 			draggable: false,
 			disableDefaultUI: true,
 			scrollwheel: false,
@@ -31,8 +31,8 @@ function drawMap() {
 	createMarker();
 	setInterval(function(){$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		bus = JSON.parse(data.contents)[0];
-		shadow.setPosition(new google.maps.LatLng(bus.lat-0.00003,bus.lon+0.0003));
 		marker.setPosition(new google.maps.LatLng(bus.lat,bus.lon));
+		// shadow.setPosition(new google.maps.LatLng(bus.lat-0.00003,bus.lon+0.0003));
 	});},3000);
 	//getMe();
 }
@@ -45,16 +45,18 @@ function fillRoutes(){
 }
 
 function createMarker(){
-	shadow = new google.maps.Marker({
-		map: map,
-		position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003),
-		icon: "shadow.png"
-	});
 	marker = new google.maps.Marker({
 		map: map,
 		position:new google.maps.LatLng(bus.lat,bus.lon),
-		icon: "colorize.png",
+		icon: "map/colorize.png",
 	});
+	/*
+	shadow = new google.maps.Marker({
+		map: map,
+		position:new google.maps.LatLng(bus.lat-0.00003, bus.lon+0.0003),
+		icon: "map/shadow.png"
+	});
+	*/
 }
 	
 function drawLine(){
