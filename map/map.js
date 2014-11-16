@@ -48,7 +48,7 @@ function createMarker(){
 	marker = new google.maps.Marker({
 		map: map,
 		position:new google.maps.LatLng(bus.lat,bus.lon),
-		icon: "map/colorize.png",
+		icon: "map/bus-icon.png",
 	});
 	/*
 	shadow = new google.maps.Marker({
