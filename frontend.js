@@ -110,7 +110,8 @@ function revert(id){
 	// change the background image
 	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
 	$(id).find('h2').innerHTML = id.toUpperCase();
-	$(id).attr('onclick', 'expand'+toTitleCase(id)+'()');
+	var name = id.split('#')[1];
+	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
 	
 
 
