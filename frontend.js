@@ -13,28 +13,6 @@ function help(){
  	//help function
 }
 
-// Andy - makes background images preload to avoid white flashes, although I notice that the network indicator still spins
-// http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
-	
-
-/* --------------- to delete ------------*/
-	// var images = new Array()
-	// function preload() {
-	// 	for (i = 0; i < preload.arguments.length; i++) {
-	// 		images[i] = new Image()
-	// 		images[i].src = preload.arguments[i]
-	// 	}
-	// }
-	// preload(
-	// 	"assets/bg-academic.jpg",
-	// 	"assets/bg-bray.jpg",
-	// 	"assets/bg-dewick.jpg",
-	// 	"assets/bg-jumbo.jpg",
-	// 	"assets/bg-quad.jpg",
-	// 	"assets/bg-fall.jpg",
-	// 	"assets/bg-water.jpg"
-	// )
-
 function expandJoey(){
 	isolate('#joey');
 	joey = document.getElementsByClassName('joey')[0];
@@ -42,7 +20,7 @@ function expandJoey(){
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');
-	setMap();
+	// setMap();
 
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
@@ -53,20 +31,9 @@ function expandJoey(){
 
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
-	// add location to the url
-	window.location.hash = 'joey';
-	// reveal the full bubble
-	$("#joeyfull").show();	
 
-	// Andy - reveals the Joey DoubleMap tracker
-	$("#doublemap").show();
 	joey.setAttribute('onclick', null);
 	
-	// Andy - reveals the new map
-	// $("map").style.visibility = "visible";
-	// Revealing maps as a block is a bag of hurt
-	//$("map").style.display = "block";
-	//google.maps.event.trigger(map, 'resize');
 }
 
 function expandEvents(){
@@ -134,12 +101,7 @@ function revert(id){
 
 	// change the background image
 	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
-	// add location to the url
-	//window.location.hash = '';
-	window.history.replaceState('Object', 'Title', '/dash/');
 
-	// Andy - hide the Joey DoubleMap tracker
-	$("#doublemap").hide();
 
 	document.getElementsByClassName(id)[0].getElementsByTagName('h2')[0].innerHTML = id.toUpperCase();
 	document.getElementsByClassName(id)[0].setAttribute('onclick', 'expand'+toTitleCase(id)+'()');
@@ -268,99 +230,3 @@ function parseDay(day){
 	}
 	return today;
 }
-
-function setMap(day, time) {
-	var joeyday = new Date();
-	var day = joeyday.getDay();
-	var time = joeyday.getHours();
-
-	var map = $(doublemapiframe);
-
-	switch (day) {
-    case 6:
-        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3');
-        break; 
-    case 0:
-        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4');
-        break; 
-    case 4:
-    case 5:
-    	if(time >= 18) {
-    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7');
-    	} else{
-    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1');
-    	}
-    	break;
-    default: 
-        if(time >= 18) {
-        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6');
-        } else {
-        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1');
-        }
-	}
-}
-
-
-// Here are a few potentially useful links:
-
-// http://stackoverflow.com/questions/4358155/changing-background-based-on-time-of-day-using-javascript
-
-// http://en.kioskea.net/faq/27175-javascript-change-greeting-based-on-time-of-day
-
-// http://stackoverflow.com/questions/12223286/load-a-different-link-based-on-time-of-the-day
-
-/*
-var done = true,
-    fading_div = $('fading_div'),
-    fade_in_button = $('fade_in'),
-    fade_out_button = $('fade_out');
-
-function function_opacity(opacity_value) {
-    fading_div.style.opacity = opacity_value / 100;
-    fading_div.style.filter = 'alpha(opacity=' + opacity_value + ')';
-}
-
-function function_fade_out(opacity_value) {
-    function_opacity(opacity_value);
-    if (opacity_value == 1) {
-        fading_div.style.display = 'none';
-        done = true;
-    }
-}
-
-function function_fade_in(opacity_value) {
-    function_opacity(opacity_value);
-    if (opacity_value == 1) {
-        fading_div.style.display = 'block';
-    }
-    if (opacity_value == 100) {
-        done = true;
-    }
-}
-// fade in button
-fade_in_button.onclick = function () {
-    if (done && fading_div.style.opacity !== '1') {
-        done = false;
-        for (var i = 1; i <= 100; i++) {
-            setTimeout((function (x) {
-                return function () {
-                    function_fade_in(x)
-                };
-            })(i), i * 10);
-        }
-    }
-};
-// fade out button
-fade_out_button.onclick = function () {
-    if (done && fading_div.style.opacity !== '0') {
-        done = false;
-        for (var i = 1; i <= 100; i++) {
-            setTimeout((function (x) {
-                return function () {
-                    function_fade_out(x)
-                };
-            })(100 - i), i * 10);
-        }
-    }
-};
-*/
