@@ -200,7 +200,7 @@ function postSchedule(day){
     	th.appendChild(tr);
     t.appendChild(th);
     t.appendChild(tb);
-    $("#temporary").appendChild(t);
+    $("#temporary").append(t);
 }
 
 function parseDay(day){
