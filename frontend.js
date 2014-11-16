@@ -277,24 +277,24 @@ function setMap(day, time) {
 
 	switch (day) {
     case 6:
-        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3';
+        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__3');
         break; 
     case 0:
-        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4';
+        map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__4');
         break; 
     case 4:
     case 5:
     	if(time >= 18) {
-    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7';
+    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__7');
     	} else{
-    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1';
+    		map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1');
     	}
     	break;
     default: 
         if(time >= 18) {
-        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6';
+        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__6');
         } else {
-        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1';
+        	map.setAttribute('src', 'http://m.tufts.edu/transit/fullscreen?type=route&id=doublemap__1');
         }
 	}
 }
