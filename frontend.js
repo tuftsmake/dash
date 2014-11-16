@@ -97,20 +97,21 @@ function isolate(id){
 }
 
 function revert(id){
+	
 	$('.bubble').show();
 
 	// change the background image
 	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
+	$(id).find('h2').innerHTML = id.toUpperCase();
+	$(id).attr('onclick', 'expand'+toTitleCase(id)+'()');
+	
 
 
-	document.getElementsByClassName(id)[0].getElementsByTagName('h2')[0].innerHTML = id.toUpperCase();
-	document.getElementsByClassName(id)[0].setAttribute('onclick', 'expand'+toTitleCase(id)+'()');
 	// The following two lines previously made the help icon extra small on iPhones after returning to the home screen
 	$("#buttonLeft").src = 'assets/ico-help.png';
-	$("#buttonLeft").setAttribute('onclick', 'help()')
+	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").innerHTML = 'Tufts Dash';
-	var toRemove = $('#temporary');
-	toRemove.parentNode.removeChild(toRemove);
+	$('#temporary').remove();
 }
 
 function toTitleCase(str){
