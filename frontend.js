@@ -1,38 +1,42 @@
 function populate(){
 	now = new Date();
 	var times = getJoeyTime();
-	document.getElementById('campustime').innerHTML = parseTime(times[0]);
-	document.getElementById('davistime').innerHTML = parseTime(times[1]);
-	document.getElementById('olintime').innerHTML = parseTime(times[2]);
+	$("#campustime").innerHTML = parseTime(times[0]);
+	$("#davistime").innerHTML = parseTime(times[1]);
+	$("#olintime").innerHTML = parseTime(times[2]);
 
 	//getstuff
 }
- function help(){
+
+function help(){
  	console.log('help');
  	//help function
 }
 
 // Andy - makes background images preload to avoid white flashes, although I notice that the network indicator still spins
 // http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
-	var images = new Array()
-	function preload() {
-		for (i = 0; i < preload.arguments.length; i++) {
-			images[i] = new Image()
-			images[i].src = preload.arguments[i]
-		}
-	}
-	preload(
-		"assets/bg-academic.jpg",
-		"assets/bg-bray.jpg",
-		"assets/bg-dewick.jpg",
-		"assets/bg-jumbo.jpg",
-		"assets/bg-quad.jpg",
-		"assets/bg-fall.jpg",
-		"assets/bg-water.jpg"
-	)
+	
+
+/* --------------- to delete ------------*/
+	// var images = new Array()
+	// function preload() {
+	// 	for (i = 0; i < preload.arguments.length; i++) {
+	// 		images[i] = new Image()
+	// 		images[i].src = preload.arguments[i]
+	// 	}
+	// }
+	// preload(
+	// 	"assets/bg-academic.jpg",
+	// 	"assets/bg-bray.jpg",
+	// 	"assets/bg-dewick.jpg",
+	// 	"assets/bg-jumbo.jpg",
+	// 	"assets/bg-quad.jpg",
+	// 	"assets/bg-fall.jpg",
+	// 	"assets/bg-water.jpg"
+	// )
 
 function expandJoey(){
-	isolate('joey');
+	isolate('#joey');
 	joey = document.getElementsByClassName('joey')[0];
 	joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
 	day = now.getDay();
@@ -48,105 +52,102 @@ function expandJoey(){
 		postSchedule(day);
 
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-quad.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
 	// add location to the url
 	window.location.hash = 'joey';
 	// reveal the full bubble
-	document.getElementById("joeyfull").style.display = 'block';
-	document.getElementById("joeyfull").style.visibility = 'visible';
-	document.getElementById("joeyfull").style.opacity = '100%';
-	
+	$("#joeyfull").show();	
 
 	// Andy - reveals the Joey DoubleMap tracker
-	document.getElementById("doublemap").style.display = "block";
+	$("#doublemap").show();
 	joey.setAttribute('onclick', null);
 	
 	// Andy - reveals the new map
-	// document.getElementById("map").style.visibility = "visible";
+	// $("map").style.visibility = "visible";
 	// Revealing maps as a block is a bag of hurt
-	//document.getElementById("map").style.display = "block";
+	//$("map").style.display = "block";
 	//google.maps.event.trigger(map, 'resize');
 }
 
 function expandEvents(){
-	isolate('events');
+	isolate('#events');
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-jumbo.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-jumbo.jpg)');
 	// add location to the url
 	window.location.hash = 'events';
 }
 
 function expandDining(){
-	isolate('dining');
+	isolate('#dining');
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-dewick.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-dewick.jpg)');
 	// add location to the url
 	window.location.hash = 'dining';
 }
 
 function expandNews(){
-	isolate('news');
+	isolate('#news');
 	// Andy - the following two lines change the background
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-fall.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-fall.jpg)');
 	// add location to the url
 	window.location.hash = 'news';
 }
 
 function expandPlaces(){
-	isolate('places');
+	isolate('#places');
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-bray.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
 	// add location to the url
 	window.location.hash = 'places';
 }
 
 function expandSports(){
-	isolate('sports')
+	isolate("#sports")
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-water.jpg)';
+	$("#background").css('background-image', 'url(assets/bg-water.jpg)');
 	// add location to the url
 	window.location.hash = 'sports';
 }
 
 function isolate(id){
-	var elements = document.getElementsByClassName('bubble');
-	var toExpand = document.getElementsByClassName(id);
+	$(".bubble").not(id).hide();
 
-	for(var i=0;i<elements.length;i++){
-		if (elements[i] != toExpand[0]){
-			elements[i].style.display='none';
-		}
-	}
 
-	document.getElementById('buttonLeft').src = 'assets/ico-arrow.png';
-	document.getElementById('buttonLeft').setAttribute('onclick', 'revert('+'\''+id+'\''+')')
-	document.getElementById('title').innerHTML = toTitleCase(id);
+
+	// var elements = document.getElementsByClassName('bubble');
+	// var toExpand = document.getElementsByClassName(id);
+
+	// for(var i=0;i<elements.length;i++){
+	// 	if (elements[i] != toExpand[0]){
+	// 		elements[i].css('display', 'none');
+	// 	}
+	// }
+
+	$("#buttonLeft").src = 'assets/ico-arrow.png';
+	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
+	$("#title").innerHTML = toTitleCase(id);
 }
 
 function revert(id){
-	var elements = document.getElementsByClassName('bubble');
-
-	for(var i=0;i<elements.length;i++){
-		elements[i].style.display='block';
-	}
+	$('.bubble').show();
 
 	// change the background image
-	document.getElementById("background").style.backgroundImage = 'url(assets/bg-academic.jpg)';
+	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
 	// add location to the url
 	//window.location.hash = '';
 	window.history.replaceState('Object', 'Title', '/dash/');
 
 	// Andy - hide the Joey DoubleMap tracker
-	document.getElementById("doublemap").style.display = "none";
+	$("#doublemap").hide();
 
 	document.getElementsByClassName(id)[0].getElementsByTagName('h2')[0].innerHTML = id.toUpperCase();
 	document.getElementsByClassName(id)[0].setAttribute('onclick', 'expand'+toTitleCase(id)+'()');
 	// The following two lines previously made the help icon extra small on iPhones after returning to the home screen
-	document.getElementById('buttonLeft').src = 'assets/ico-help.png';
-	document.getElementById('buttonLeft').setAttribute('onclick', 'help()')
-	document.getElementById('title').innerHTML = 'Tufts Dash';
-	var toRemove = document.getElementById('temporary');
+	$("#buttonLeft").src = 'assets/ico-help.png';
+	$("#buttonLeft").setAttribute('onclick', 'help()')
+	$("#title").innerHTML = 'Tufts Dash';
+	var toRemove = $('#temporary');
 	toRemove.parentNode.removeChild(toRemove);
 }
 
@@ -161,7 +162,7 @@ function parseTime(time){
 	if(hours > 12){
 		hours-=12;
 		meridiem = ' PM';
-		}
+	}
 	else if(hours == 0){
 		hours=12;
 	}
@@ -237,7 +238,7 @@ function postSchedule(day){
     	th.appendChild(tr);
     t.appendChild(th);
     t.appendChild(tb);
-    document.getElementById('temporary').appendChild(t);
+    $("#temporary").appendChild(t);
 }
 
 function parseDay(day){
@@ -273,7 +274,7 @@ function setMap(day, time) {
 	var day = joeyday.getDay();
 	var time = joeyday.getHours();
 
-	var map = document.getElementById(doublemapiframe);
+	var map = $(doublemapiframe);
 
 	switch (day) {
     case 6:
@@ -310,9 +311,9 @@ function setMap(day, time) {
 
 /*
 var done = true,
-    fading_div = document.getElementById('fading_div'),
-    fade_in_button = document.getElementById('fade_in'),
-    fade_out_button = document.getElementById('fade_out');
+    fading_div = $('fading_div'),
+    fade_in_button = $('fade_in'),
+    fade_out_button = $('fade_out');
 
 function function_opacity(opacity_value) {
     fading_div.style.opacity = opacity_value / 100;
