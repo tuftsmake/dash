@@ -38,7 +38,7 @@ function expandJoey(){
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');
-	setMap();
+	// setMap();
 
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
