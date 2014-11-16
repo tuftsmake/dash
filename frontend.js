@@ -51,6 +51,10 @@ function expandJoey(){
 	document.getElementById("background").style.backgroundImage = 'url(assets/bg-quad.jpg)';
 	// add location to the url
 	window.location.hash = 'joey';
+	// reveal the full bubble
+	document.getElementById("joeyfull").style.display = 'block';
+	document.getElementById("joeyfull").style.visibility = 'visible';
+	document.getElementById("joeyfull").style.opacity = '100%';
 	
 
 	// Andy - reveals the Joey DoubleMap tracker
