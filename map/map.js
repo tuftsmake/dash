@@ -20,13 +20,12 @@ var routes = [42.405303,-71.120566,42.40533,-71.1206,42.40538,-71.12073,42.40541
 $(document).ready(getBus);
 
 function getBus(){
-	// $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
-	// 	bus = JSON.parse(data.contents)[3];
-	// });
-	$.getJSON('http://anyorigin.com/dev/get?url=http%3A//tufts.doublemap.com/map/v2/buses&callback=?', function(data){
+	$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		bus = JSON.parse(data.contents)[3];
 	});
-	console.log(bus);
+	// $.getJSON('http://anyorigin.com/dev/get?url=http%3A//tufts.doublemap.com/map/v2/buses&callback=?', function(data){
+	// 	bus = data.contents[3];
+	// });
 }
 
 function drawMap() {
