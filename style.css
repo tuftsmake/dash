@@ -14,6 +14,11 @@ html {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  background-position: center top;
+  background-size: cover;
+  background-image: url(assets/bg-pattern-1.jpg);
+  transition: background-image 0.3s ease;
+  -webkit-transition: background-image 0.3s ease;
 }
 
 body {

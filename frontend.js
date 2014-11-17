@@ -1,17 +1,15 @@
-function populate(){
+jQuery(document).ready(function($) {
 	now = new Date();
 	var times = getJoeyTime();
-	$("#campustime").innerHTML = parseTime(times[0]);
-	$("#davistime").innerHTML = parseTime(times[1]);
-	$("#olintime").innerHTML = parseTime(times[2]);
-	if(localStorage.getItem("hazIntro") === "true"){
+	$("#campustime").text(parseTime(times[0]));
+	$("#davistime").text(parseTime(times[1]));
+	$("#olintime").text(parseTime(times[2]));
+	if(localStorage.getItem("hazIntro") == "true"){
 		$('#intro').hide();
 	}
-	/* TODO: get stuff from the internet about the other bubbles */
-}
+});
 
 function help(){
- 	console.log('help');
  	$('#intro').show();
 }
 
@@ -39,30 +37,35 @@ function help(){
 
 function expandJoey(){
 	isolate('#joey');
-	joey = document.getElementsByClassName('joey')[0];
-	joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
+	$('#joey').children('h2').text('NEXT STOPS')
+	// joey = document.getElementsByClassName('joey')[0];
+	// joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');
-	// setMap();
-
+	
+	mapdiv = document.createElement('div');
+	mapdiv.setAttribute('id', 'map_canvas');
+	temp.appendChild(mapdiv);
+	
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	temp.appendChild(dayname);
 
-	document.getElementsByClassName('joey')[0].appendChild(temp);
-		postSchedule(day);
+	$('#joey').append(temp);
+	postSchedule(day);
 
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
+	drawMap();
 
-	joey.setAttribute('onclick', null);
+	$('#joey').attr('onclick', null);
 	
 }
 
 function killIntro(){
-	$('#intro').hide();
 	localStorage.setItem("hazIntro", "true");
+	$('#intro').hide();
 	// add location to the url
 	// window.location.hash = 'places';
 }
@@ -122,7 +125,8 @@ function isolate(id){
 
 	$("#buttonLeft").attr('src', 'assets/ico-arrow.png');
 	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
-	$("#title").innerHTML = toTitleCase(id);
+	var name = id.split('#')[1];
+	$("#title").text(toTitleCase(name));
 }
 
 function revert(id){
@@ -140,7 +144,7 @@ function revert(id){
 	// The following two lines previously made the help icon extra small on iPhones after returning to the home screen
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
-	$("#title").innerHTML = 'Tufts Dash';
+	$("#title").text('Tufts Dash');
 	$('#temporary').remove();
 }
 
@@ -150,7 +154,6 @@ function toTitleCase(str){
 
 function parseTime(time){
 	var meridiem = ' AM';
-	console.log(time);
 	hours=parseInt(time.substring(0,2));
 	if(hours > 12){
 		hours-=12;
