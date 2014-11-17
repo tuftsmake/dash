@@ -24,10 +24,13 @@ jQuery(document).ready(function($) {
 });
 
 function drawMap() {
-	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	mapdiv = document.createElement('div');
+	mapdiv.setAttribute('id', 'map_canvas');
+	map = new google.maps.Map(mapdiv, myOptions);
 	fillRoutes();
 	console.log(bus);
 	createMarker();
+	$('#temporary').prepend(mapdiv);
 	setInterval(function(){$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		bus = JSON.parse(data.contents)[0];
 		marker.setPosition(new google.maps.LatLng(bus.lat,bus.lon));

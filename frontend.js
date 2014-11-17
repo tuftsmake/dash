@@ -42,21 +42,17 @@ function expandJoey(){
 	// joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
 	day = now.getDay();
 	temp = document.createElement('div');
-	temp.setAttribute('id', 'temporary');
-	
-	mapdiv = document.createElement('div');
-	mapdiv.setAttribute('id', 'map_canvas');
-	temp.appendChild(mapdiv);
-	
+	temp.setAttribute('id', 'temporary');	
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
-	temp.appendChild(dayname);
+	$('#temporary').append(dayname);
 
 	$('#joey').append(temp);
 	postSchedule(day);
 
 	// change the background image
 	$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
+	console.log(bus);
 	drawMap();
 
 	$('#joey').attr('onclick', null);
