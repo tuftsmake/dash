@@ -1,57 +1,57 @@
 <!--<html manifest="dash.manifest">-->
 <html >
 	<head>
-		<meta charset="UTF-8"> 
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		
 		<title>Tufts Dash Dev</title>
-
+		
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<link href="animate.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="inobounce.js"></script>
 		<script src="frontend.js"></script>
 		<script src="backend.js"></script>
 		<script src="fastclick/lib/fastclick.js"></script>
 		<script src="joeyschedule.js"></script>
-
-		<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 		<script src="map/map.js"></script>
 		
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
-		<!-- Favicons and Images -->
+		<!-- Favicons and Icons -->
 		<link rel="icon" sizes="192x192" href="assets/app-icon-192.png">
 		<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+		
+		<!-- iOS Startup images -->
+    <!-- iPad 1, 2 -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-1024x748.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
+    <!-- iPad 3, 4, Air, Air 2 -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-768x1004@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-1024x748@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 1, 3G, 3GS -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-480x300.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
+    <!-- iPhone 4 -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-320x460@2x.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-480x300@2x.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 5 -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-1136x600.png" media="(device-width: 320px) and (device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 6 -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-1334x710.png" media="(device-width: 375px) and (device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+    <!-- iPhone 6 Plus -->
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3)">
+    <link rel="apple-touch-startup-image" href="assets/apple-startup-2208x1182.png" media="(device-width: 414px) and (device-height: 736px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3)">
 
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 
-		<!-- Startup Images -->
-        <!-- iOS 6 & 7 iPad (retina, portrait) -->
-        <link href="assets/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
- 
-        <!-- iOS 6 & 7 iPad (retina, landscape) -->
-        <link href="assets/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
- 
-        <!-- iOS 6 iPad (portrait) -->
-        <link href="assets/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
- 
-        <!-- iOS 6 iPad (landscape) -->
-        <link href="assets/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
- 
-        <!-- iOS 6 & 7 iPhone 5 -->
-        <!-- An attempt to reduce the sudden white flash that appears
-        http://stackoverflow.com/questions/7731355/iphone-webapp-startup-screen-delay
- 		<link rel="apple-touch-startup-image" href="assets/apple-touch-startup-image-640x1096.png" media="screen and (max-device-width: 320px)" />
-        -->
-        <link href="assets/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
-        <!-- iOS 6 & 7 iPhone (retina) -->
-        <link href="assets/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
- 
-        <!-- iOS 6 iPhone -->
-        <link href="assets/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
 
 	</head>
 	<body>

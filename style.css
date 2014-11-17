@@ -1,216 +1,108 @@
-/*
+/* Google Fonts */
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400);
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400);
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
-*/
-
-/*
-====================
-GOOGLE FONTS
-====================
-*/
-
-/* Roboto */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    src: local('Roboto Thin'), local('Roboto-Thin'), url(http://fonts.gstatic.com/s/roboto/v13/Jzo62I39jc0gQRrbndN6nXYhjbSpvc47ee6xR_80Hnw.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Roboto Light'), local('Roboto-Light'), url(http://fonts.gstatic.com/s/roboto/v13/Hgo13k-tfSpn0qi1SFdUfSZ2oysoEQEeKwjgmXLRnTc.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Roboto Regular'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v13/QHD8zigcbDB8aPfIoaupKOvvDin1pK8aKteLpeZ5c0A.ttf) format('truetype');
-}
-
-/* Source Sans Pro */
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 200;
-    src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNF-01od694vbXd2r4ICkqU.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGPS42wKzre0cxmO5m5GyTsY.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlEY6Fu39Tt9XkmtSosaMoEA.ttf) format('truetype');
-}
-
-/* Lato */
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 300;
-    src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v11/0DeoTBMnW4sOpD0Zb8OQSALUuEpTyoUstqEm5AMlJo4.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Lato Regular'), local('Lato-Regular'), url(http://fonts.gstatic.com/s/lato/v11/1EqTbJWOZQBfhZ0e3RL9uvesZW2xOQ-xsNqO47m55DA.ttf) format('truetype');
-}
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,400);
 
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    /*
-    -webkit-transition: width 2s;
-    transition: width 2s;
-    */
-    height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
 }
 
 body {
-    /*font-family: 'Source Sans Pro', sans-serif;*/
-    font-family: 'Lato';
-    letter-spacing: 0px;
-    font-weight: normal;
-    margin: 0;
-    padding: 0;
-    z-index: 0;
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    top: 0;
+  margin: 0;
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 ul, ol, dl {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 a {
-    margin-right: 5%;
-    float: right;
+  margin-right: 5%;
+  float: right;
 }
 
 hr {
-    /*border: solid  1px rgba(255,255,255,.15);
-    	margin-bottom:2%;
-    	margin-top:1%;*/
-    border: none;
-}
-
-h1, h2, h3, h4, h5, h6, p, td, th {
-    font-weight: 500;
-    margin: 0;
-    color: #FFF;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    user-select: none;
-}
-
-p {
-    font-family: 'Lato';
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-#dining p {
-    margin-bottom: 0px;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    border-bottom: 2px solid rgba(3, 3, 3, 0.25);
-}
-
-h3 {
-    font-family: 'Roboto';
-    font-weight: 300;
-    font-size: 1.1rem;
+  border: none;
 }
 
 .sectionheader {
-    letter-spacing: 1px;
-    margin-top: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-    /*background-color: rgba(255, 255, 255, 0.15);*/
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+h1, h2, h3, h4, h5, h6, p, td, th {
+	font-family: 'Open Sans';
+  font-weight: 500;
+  margin: 0;
+  color: #FFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
 }
 
 h2 {
-    font-family: 'Roboto';
-    font-weight: 300;
-    letter-spacing: 2px;
-    font-size: 1.5rem;
-    padding: 5px 5px 5px 5px;
-    /* background-color: rgba(255, 255, 255, 0.15); */
-    /* border-bottom: rgb(177, 177, 177) 1px solid */
+  font-family: 'Roboto';
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  padding: 5px 5px 5px 5px;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 1.1rem;
 }
 
 h4 {
-    font-weight: 400;
-    font-size: .8rem;
-}
-
-.extrainfo {
-    height: 1.7rem;
-    padding-top: .8rem;
-    display: inline-block;
+  font-weight: 400;
+  font-size: .8rem;
 }
 
 h5 {
-    font-weight: 400;
-    font-size: .8rem;
+  font-weight: 400;
+  font-size: .8rem;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.extrainfo {
+  height: 1.7rem;
+  padding-top: .8rem;
+  display: inline-block;
 }
 
 .iteminfo {
-    margin-top: -7px;
-    margin-bottom: 5px;
+  margin-top: -7px;
+  margin-bottom: 5px;
 }
 
 #temporary > h2 {
-    text-align: center;
+  text-align: center;
 }
 
-/* Moves the title of the bubble to the center as planned, but currently affects dash screen position
-div.joey.bubble > h2 {
-text-align: center;
+/* Hides Google Maps' report error button */
+.gm-style-cc {
+	display: none;
 }
-*/
-
-
-
-
-
-
-/* Hides the "Report a Map Error" in Google Maps embed */
-.gmnoprint:nth-last-child(1) {
-    display: none !important;
-}
-.gmnoprint:last-child {
-    display: none !important;
-}
-
-
-
-
 
 #background {
 	position: fixed;
@@ -218,11 +110,91 @@ text-align: center;
 	width: 100%;
 	background-position: center top;
 	background-size: cover;
-	background-image: url(assets/bg-academic.jpg);
+	background-image: url(assets/bg-pattern-1.jpg);
 	transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
 }
 
+#titlebar {
+  /*background-color: rgba(179, 179, 179, 0.3);*/
+  border-bottom: rgb(225, 225, 225) 1px solid;
+}
+
+#title {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#header {
+  z-index: 2;
+  padding: 5px;
+  text-align: center;
+  line-height: 50px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  top: 0;
+  min-height: 60px;
+  background-color: rgba(255, 255, 255, .05);
+}
+
+#content {
+  margin-top: 60px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; /* enables inertial scrolling on iOS: http://cooshtee.com/blog/2012/11/add-inertial-scrolling-to-a-fixed-height-div-in-ios/ */
+  padding-bottom: 100px; /* Makes the last few bubbles visible on small screens, due to the way the header works */
+}
+
+.bubble {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 94%;
+  background-color: rgba(255, 255, 255, .15);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+
+.icon {
+  margin: 10 3%;
+  width: 1.9rem;
+  height: auto;
+}
+
+.fltrt {
+  float: right;
+}
+
+.fltlft {
+  float: left;
+}
+
+#halName {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 8px;
+}
+
+.ifon #route-selector {
+  display: none;
+}
+
+nav ul ul {
+  display: none;
+}
+
+/*Hide dropdown links until they are needed*/
+nav ul li: hover > ul {
+  display: block;
+}
 
 /*
 ====================
@@ -233,12 +205,12 @@ text-align: center;
 /* JOEY */
 #map_canvas {
 	height: 230px;
-	margin: 0 .5rem;
+	margin: 0.5rem;
 	border-radius: 5px;
 }
 #joey td {
-    width: 33%;
-    text-align: center;
+  width: 33%;
+  text-align: center;
 }
 
 /* EVENTS */
@@ -246,151 +218,61 @@ text-align: center;
   -webkit-animation-delay: .3s;
   animation-delay: .3s;
 }
-
 .time, .place {
 	font-size: .9rem;
 }
-
 .time {
 	padding-right: 5px;
 	text-align: right;
 }
-
-.place {
-	
-}
-
-
 table {
-    width: 100%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    table-layout: fixed;
+  width: 100%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  table-layout: fixed;
 }
-
 th {
 	font-size: 1.1rem;
 }
-
 #intro {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 
-
-/* DININGG */
+/* DINING */
 #dining {
-    -webkit-animation-delay: .2s;
-    animation-delay: .2s;
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+#dining p {
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-bottom: 2px solid rgba(3, 3, 3, 0.25);
 }
 
 /* NEWS */
 #news {
-    -webkit-animation-delay: .3s;
-    animation-delay: .3s;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
 }
 
 /* PLACES */
 #places {
-    -webkit-animation-delay: .4s;
-    animation-delay: .4s;
+  -webkit-animation-delay: .4s;
+  animation-delay: .4s;
 }
 
 /* SPORTS */
 #sports {
-    -webkit-animation-delay: .5s;
-    animation-delay: .5s;
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
 }
 
 /* LINKS */
 #links {
-    -webkit-animation-delay: .6s;
-    animation-delay: .6s;
-}
-
-
-
-
-
-#titlebar {
-    /*background-color: rgba(179, 179, 179, 0.3);*/
-    border-bottom: rgb(225, 225, 225) 1px solid;
-}
-
-#title {
-    font-family: 'Roboto';
-    font-weight: 300;
-    letter-spacing: 1px;
-    font-size: 2rem;
-    margin-bottom: 0px;
-    padding-right: 0px;
-    padding-left: 0px;
-}
-
-#header {
-    z-index: 2;
-    padding: 5px;
-    text-align: center;
-    line-height: 50px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    position: fixed;
-    top: 0;
-    min-height: 60px;
-    background-color: rgba(255, 255, 255, .05);
-}
-
-#content {
-    margin-top: 60px;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch; /* enables inertial scrolling on iOS: http://cooshtee.com/blog/2012/11/add-inertial-scrolling-to-a-fixed-height-div-in-ios/ */
-    padding-bottom: 100px; /* Makes the last few bubbles visible on small screens, due to the way the header works */
-}
-
-.bubble {
-    margin-top: 3%;
-    margin-bottom: 3%;
-    width: 94%;
-    background-color: rgba(255, 255, 255, .15);
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 2px;
-}
-
-.icon {
-    margin: 10 3%;
-    width: 1.9rem;
-    height: auto;
-}
-
-.fltrt {
-    float: right;
-}
-
-.fltlft {
-    float: left;
-}
-
-#halName {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding-top: 8px;
-}
-
-.ifon #route-selector {
-    display: none;
-}
-
-nav ul ul {
-    display: none;
-}
-
-/*Hide dropdown links until they are needed*/
-nav ul li: hover > ul {
-    display: block;
+  -webkit-animation-delay: .6s;
+  animation-delay: .6s;
 }
 
 /*
@@ -399,21 +281,21 @@ RESPONSIVE COMPONENTS
 ====================
 */
 /*@media (min-width: 960px) {
-    #content {
-        width: 90%;
-        margin: 60px auto 0;
-    }
+#content {
+  width: 90%;
+  margin: 60px auto 0;
+}
 
-    .bubble {
-        width: 49%;
-        float: left;
-        margin-right: .5%;
-        margin-left: .5%;
-    }
+.bubble {
+  width: 49%;
+  float: left;
+  margin-right: .5%;
+  margin-left: .5%;
+}
 
-    .icon {
-        margin: 10 5.2%;
-    }
+.icon {
+  margin: 10 5.2%;
+}
 }
 */
 
@@ -430,15 +312,15 @@ IOS STATUS BARS
 	only screen and (min-device-width: 320px) and (max-device-width: 480px) and (device-aspect-ratio: 2/3),       /* iPhone 4      */
 	only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (device-aspect-ratio: 3/4)       /* iPads         */
 {
-	#header {
-      padding-top: 20px;
-    }
+#header {
+  padding-top: 20px;
+}
 
-    #header-bg {
-      height: 70px;
-    }
+#header-bg {
+  height: 70px;
+}
 
-    #content {
-      margin-top: 75px !important;
-    }	
+#content {
+  margin-top: 75px !important;
+}	
 }

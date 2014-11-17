@@ -15,6 +15,28 @@ function help(){
  	$('#intro').show();
 }
 
+// Andy - Preload images to prevent white flashes
+// http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
+	var images = new Array()
+	preload (
+		"assets/bg-academic.jpg",
+		"assets/bg-bray.jpg",
+		"assets/bg-dewick.jpg",
+		"assets/bg-jumbo.jpg",
+		"assets/bg-quad.jpg",
+		"assets/bg-fall.jpg",
+		"assets/bg-water.jpg",
+		"assets/bg-pattern-1.jpg",
+		"assets/bg-pattern-2.jpg"
+	)
+	function preload() {
+		for (i = 0; i < preload.arguments.length; i++) {
+			images[i] = new Image()
+			images[i].src = preload.arguments[i]
+		}
+	}
+
+
 function expandJoey(){
 	isolate('#joey');
 	joey = document.getElementsByClassName('joey')[0];
