@@ -49,11 +49,11 @@ function expandJoey(){
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	$('#temporary').append(dayname);
 
+	drawMap();
 	postSchedule(day);
 
 	// change the background image
 	//$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
-	//drawMap();
 	$('#joey').attr('onclick', null);
 	
 }

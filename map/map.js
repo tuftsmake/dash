@@ -21,12 +21,10 @@ $(document).ready(getBus);
 
 function getBus(){
 	// $.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
-	// 	bus = JSON.parse(data.contents)[0];
-	// 	drawMap();
+	// 	bus = JSON.parse(data.contents)[3];
 	// });
 	$.getJSON('http://anyorigin.com/dev/get?url=http%3A//tufts.doublemap.com/map/v2/buses&callback=?', function(data){
-		bus = JSON.parse(data.contents)[0];
-		drawMap();
+		bus = JSON.parse(data.contents)[3];
 	});
 	console.log(bus);
 }
