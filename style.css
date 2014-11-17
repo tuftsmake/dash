@@ -166,6 +166,9 @@ p {
   margin-left: auto;
   margin-right: auto;
   border-radius: 2px;
+  padding: 1%;
+  -webkit-transition: top .2s;
+  transition: top .2s;
 }
 
 .icon {
@@ -278,6 +281,9 @@ th {
 #links {
   -webkit-animation-delay: .6s;
   animation-delay: .6s;
+}
+#links > a {
+  margin-top: 5px;
 }
 
 /*

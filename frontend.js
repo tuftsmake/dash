@@ -37,24 +37,23 @@ function help(){
 
 function expandJoey(){
 	isolate('#joey');
-	$('#joey').children('h2').text('NEXT STOPS')
+	$('#joey').children('#titlebar').children('h2').text('NEXT STOPS')
 	// joey = document.getElementsByClassName('joey')[0];
 	// joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');	
+	$('#joey').append(temp);
+	$('#temporary').hide();
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	$('#temporary').append(dayname);
 
-	$('#joey').append(temp);
 	postSchedule(day);
 
 	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
-	console.log(bus);
-	drawMap();
-
+	//$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
+	//drawMap();
 	$('#joey').attr('onclick', null);
 	
 }
@@ -127,13 +126,12 @@ function isolate(id){
 
 function revert(id){
 	
-	$('.bubble').show();
-
+	$('.bubble').not('#intro').show();
 	// change the background image
 	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
-	$(id).find('h2').innerHTML = id.toUpperCase();
 	var name = id.split('#')[1];
 	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
+	$(id).children('#titlebar').children('h2').text(name.toUpperCase());
 	
 
 
@@ -141,7 +139,9 @@ function revert(id){
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');
-	$('#temporary').remove();
+	$('#temporary').slideUp(500, function(){
+		$('#temporary').remove();
+	});
 }
 
 function toTitleCase(str){
@@ -233,6 +233,7 @@ function postSchedule(day){
     t.appendChild(th);
     t.appendChild(tb);
     $("#temporary").append(t);
+    $('#temporary').slideDown(500);
 }
 
 function parseDay(day){
