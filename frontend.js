@@ -48,7 +48,6 @@ function expandJoey(){
 	dayname = document.createElement('h2');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	$('#temporary').append(dayname);
-
 	drawMap();
 	postSchedule(day);
 
