@@ -49,10 +49,13 @@ function expandJoey(){
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	$('#temporary').append(dayname);
 	drawMap();
+	var currCenter = map.getCenter();
 	postSchedule(day);
 
 	// change the background image
 	//$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
+	google.maps.event.trigger(map, 'resize');
+	map.setCenter(currCenter);
 	$('#joey').attr('onclick', null);
 	
 }

@@ -37,7 +37,7 @@ function drawMap() {
 		fillRoutes();
 		drawBuses();
 		$('#temporary').prepend(mapdiv);
-		google.maps.event.trigger(map, 'resize');
+		//google.maps.event.trigger(map, 'resize');
 		//map.setCenter(center);
 		setInterval(function(){
 			getBuses();
