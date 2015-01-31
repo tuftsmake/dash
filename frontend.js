@@ -22,10 +22,11 @@ function help(){
 		"assets/bg-dewick.jpg",
 		"assets/bg-jumbo.jpg",
 		"assets/bg-quad.jpg",
+		"assets/bg-tisch.jpg",
 		"assets/bg-fall.jpg",
 		"assets/bg-water.jpg",
 		"assets/bg-pattern-1-green.png",
-		"assets/bg-pattern-1-green.png"
+		"assets/bg-pattern-1-blue.png"
 	)
 	function preload() {
 		for (i = 0; i < preload.arguments.length; i++) {
