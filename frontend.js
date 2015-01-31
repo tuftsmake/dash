@@ -24,8 +24,6 @@ function help(){
 		"assets/bg-quad.jpg",
 		"assets/bg-fall.jpg",
 		"assets/bg-water.jpg",
-		"assets/bg-pattern-1.jpg",
-		"assets/bg-pattern-2.jpg",
 		"assets/bg-pattern-1-green.png",
 		"assets/bg-pattern-1-green.png"
 	)
