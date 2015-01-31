@@ -37,7 +37,7 @@ function help(){
 	}
 
 $(document).ready(function() { 
-    $("img#more").click(function() {
+    $("#bgswitch").click(function() {
         var src = $('html').css('background-image');
         console.log($('html').css('background-image'))
         if(src == 'url(http://tuftsmake.com/dash/assets/bg-pattern-1-green.png)') {

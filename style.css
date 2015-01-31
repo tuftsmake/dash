@@ -19,6 +19,10 @@ html {
   background: url(assets/bg-pattern-1-green.png) repeat;
   transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  color: #FFF;
+  text-decoration: none;
 }
 
 body {
@@ -333,5 +337,78 @@ IOS STATUS BARS
 
 #content {
   margin-top: 75px !important;
-}	
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*http://cssdeck.com/labs/another-simple-css3-dropdown-menu*/
+
+#buttonright > ul {
+  margin: 0;
+  background-image: url(assets/ico-more.png);
+  background-size: cover;
+  list-style: none;
+}
+#buttonright > ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  position: relative;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+#buttonright > ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 150px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+#buttonright > ul li ul li { 
+  background: rgba(0, 0, 0, 0.6); 
+  display: block; 
+  color: #fff;
+}
+#buttonright > ul li ul li a {
+  float: none;
+  font-family: 'Open Sans';
+  font-weight: 500;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 1rem;
+}
+#buttonright > ul li ul li:hover {
+  background: rgba(58, 58, 58, 0.6);
+}
+#buttonright > ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
