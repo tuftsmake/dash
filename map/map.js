@@ -12,11 +12,11 @@ var buses;
 var markers=[];
 var latlng=[];
 var stops=[["Campus Center Front",42.405804,-71.11956],
-			["Davis Square",42.396786,-71.12262],
-			["T.A.B",42.401134,-71.126076],
-			["Campus Center Back",42.405323,-71.120407],
-			["Carmichael Hall",42.409435,-71.12252],
-			["Olin Hall",42.407639,-71.121262]];
+      		 ["Davis Square",42.396786,-71.12262],
+      		 ["T.A.B",42.401134,-71.126076],
+      		 ["Campus Center Back",42.405323,-71.120407],
+      		 ["Carmichael Hall",42.409435,-71.12252],
+      		 ["Olin Hall",42.407639,-71.121262]];
 
 $(document).ready(getBuses);
 
@@ -24,14 +24,9 @@ function getBuses(){
 	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		buses = JSON.parse(data.contents);
 	});
-	// $.getJSON('http://anyorigin.com/dev/get?url=http%3A//tufts.doublemap.com/map/v2/buses&callback=?', function(data){
-	// 	buses = data.contents;
-	// });
 }
-http://www.whateverorigin.org/get?url=http%3A%2F%2Ftufts.doublemap.com%2Fmap%2Fv2%2Fbuses&callback=jQuery111106881406155880541_1422668387825&_=1422668387839
-http://www.whateverorigin.org/get?url=http%3A%2F%2Ftufts.doublemap.com%2Fmap%2Fv2%2Fbuses&callback=jQuery111106881406155880541_1422668387825&_=1422668387840
 
-function drawMap() {
+function drawMap(){
 	if(buses != undefined){
 		mapdiv = document.createElement('div');
 		mapdiv.setAttribute('id', 'map_canvas');
@@ -39,8 +34,6 @@ function drawMap() {
 		fillRoutes();
 		drawBuses();
 		$('#temporary').prepend(mapdiv);
-		//google.maps.event.trigger(map, 'resize');
-		//map.setCenter(center);
 		setInterval(function(){
 			getBuses();
 			for(i=0;i<markers.length;i++){
@@ -48,7 +41,6 @@ function drawMap() {
 			}
 		},1000);
 	}
-	//getMe();
 }
 
 function fillRoutes(){
@@ -74,7 +66,6 @@ function createMarker(i){
 	});
 }
 
-	
 function drawLine(){
 	redline=new google.maps.Polyline({
 		clickable:false,
@@ -84,26 +75,3 @@ function drawLine(){
 		strokeWeight: 3
 	});
 }
-
-// function getMe()
-// {
-// 	if (navigator.geolocation){
-// 		navigator.geolocation.getCurrentPosition(function(position){
-// 			myLat = position.coords.latitude;
-// 			myLng = position.coords.longitude;
-// 			drawMe();
-// 		});
-// 	}
-// 	else {
-// 		alert("Geolocation is not supported by your web browser.");
-// 	}
-// }
-
-// function drawMe(){
-// 	me=new google.maps.LatLng(myLat,myLng);
-// 	memarker=new google.maps.Marker({
-// 		position: me,
-// 		title: "You are here",
-// 		map: map,
-// 	});
-// }
