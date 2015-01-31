@@ -21,13 +21,15 @@ var stops=[["Campus Center Front",42.405804,-71.11956],
 $(document).ready(getBuses);
 
 function getBuses(){
-	$.getJSON('http://whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
+	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		buses = JSON.parse(data.contents);
 	});
 	// $.getJSON('http://anyorigin.com/dev/get?url=http%3A//tufts.doublemap.com/map/v2/buses&callback=?', function(data){
 	// 	buses = data.contents;
 	// });
 }
+http://www.whateverorigin.org/get?url=http%3A%2F%2Ftufts.doublemap.com%2Fmap%2Fv2%2Fbuses&callback=jQuery111106881406155880541_1422668387825&_=1422668387839
+http://www.whateverorigin.org/get?url=http%3A%2F%2Ftufts.doublemap.com%2Fmap%2Fv2%2Fbuses&callback=jQuery111106881406155880541_1422668387825&_=1422668387840
 
 function drawMap() {
 	if(buses != undefined){
