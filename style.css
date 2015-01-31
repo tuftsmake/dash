@@ -16,7 +16,7 @@ html {
   height: 100%;
   background-position: center top;
   background-size: cover;
-  background-image: url(assets/bg-pattern-1.jpg);
+  background: url(assets/bg-pattern-1-green.png) repeat;
   transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
 }

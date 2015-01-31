@@ -25,7 +25,9 @@ function help(){
 		"assets/bg-fall.jpg",
 		"assets/bg-water.jpg",
 		"assets/bg-pattern-1.jpg",
-		"assets/bg-pattern-2.jpg"
+		"assets/bg-pattern-2.jpg",
+		"assets/bg-pattern-1-green.png",
+		"assets/bg-pattern-1-green.png"
 	)
 	function preload() {
 		for (i = 0; i < preload.arguments.length; i++) {
@@ -33,6 +35,34 @@ function help(){
 			images[i].src = preload.arguments[i]
 		}
 	}
+
+$(document).ready(function() { 
+    $("img#more").click(function() {
+        var src = $('html').css('background-image');
+        console.log($('html').css('background-image'))
+        if(src == 'url(http://tuftsmake.com/dash/assets/bg-pattern-1-green.png)') {
+          $("html").css("background","url(assets/bg-pattern-1-blue.png) repeat");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-pattern-1-blue.png)") {
+          $("html").css("background-image","url(assets/bg-academic.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-academic.jpg)") {
+          $("html").css("background-image","url(assets/bg-bray.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-bray.jpg)") {
+          $("html").css("background-image","url(assets/bg-dewick.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-dewick.jpg)") {
+          $("html").css("background-image","url(assets/bg-fall.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-fall.jpg)") {
+          $("html").css("background-image","url(assets/bg-jumbo.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-jumbo.jpg)") {
+          $("html").css("background-image","url(assets/bg-quad.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-quad.jpg)") {
+          $("html").css("background-image","url(assets/bg-tisch.jpg)");
+        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-tisch.jpg)") {
+          $("html").css("background-image","url(assets/bg-water.jpg)");
+        } else {
+          $("html").css("background-image","url(assets/bg-pattern-1-green.png)");
+        }
+    }); 
+});
 
 
 function expandJoey(){
