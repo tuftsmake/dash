@@ -41,9 +41,11 @@ $(document).ready(function() {
         var src = $('html').css('background-image');
         console.log($('html').css('background-image'))
         if(src == 'url(http://tuftsmake.com/dash/assets/bg-pattern-1-green.png)') {
-          $("html").css("background","url(assets/bg-pattern-1-blue.png) repeat");
+          $("html").css("background-image","url(assets/bg-pattern-1-blue.png)");
         } else if(src == "url(http://tuftsmake.com/dash/assets/bg-pattern-1-blue.png)") {
           $("html").css("background-image","url(assets/bg-academic.jpg)");
+          $("html").css("background-repeat","none");
+          $("html").css("background-size","cover");
         } else if(src == "url(http://tuftsmake.com/dash/assets/bg-academic.jpg)") {
           $("html").css("background-image","url(assets/bg-bray.jpg)");
         } else if(src == "url(http://tuftsmake.com/dash/assets/bg-bray.jpg)") {
@@ -60,6 +62,8 @@ $(document).ready(function() {
           $("html").css("background-image","url(assets/bg-water.jpg)");
         } else {
           $("html").css("background-image","url(assets/bg-pattern-1-green.png)");
+          $("html").css("background-repeat","repeat");
+          $("html").css("background-size","initial");
         }
     }); 
 });
@@ -93,49 +97,26 @@ function expandJoey(){
 function killIntro(){
 	localStorage.setItem("hazIntro", "true");
 	$('#intro').hide();
-	// add location to the url
-	// window.location.hash = 'places';
 }
 
 function expandEvents(){
 	isolate('#events');
-	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-jumbo.jpg)');
-	// add location to the url
-	// window.location.hash = 'events';
 }
 
 function expandDining(){
 	isolate('#dining');
-	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-dewick.jpg)');
-	// add location to the url
-	// window.location.hash = 'dining';
 }
 
 function expandNews(){
 	isolate('#news');
-	// Andy - the following two lines change the background
-	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-fall.jpg)');
-	// add location to the url
-	// window.location.hash = 'news';
 }
 
 function expandPlaces(){
 	isolate('#places');
-	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-bray.jpg)');
-	// add location to the url
-	// window.location.hash = 'places';
 }
 
 function expandSports(){
 	isolate("#sports")
-	// change the background image
-	$("#background").css('background-image', 'url(assets/bg-water.jpg)');
-	// add location to the url
-	// window.location.hash = 'sports';
 }
 
 function isolate(id){
@@ -231,41 +212,41 @@ function getJoeyTime(){
 }
 
 function postSchedule(day){
-    var t  = document.createElement('table');
-    var tb = document.createElement('tbody');
-    for(i=0;i<joeyTimes[day].length;i++){
-    	var tr = document.createElement('tr');
-    	for(j=0;j<joeyTimes[day][i].length;j++){
-    		var td = document.createElement('td');
-	   		td.appendChild(document.createTextNode(parseTime(joeyTimes[day][i][j]))); 
-	   		tr.appendChild(td);
-    	}
-    	tb.appendChild(tr);
-    }
-    var th = document.createElement('thead');
-       	var tr = document.createElement('tr');
-    	for(j=0;j<3;j++){
-    		var td = document.createElement('td');
-    		var place;
-    		switch (j){
-    			case 0:
-    				place = 'CAMPUS';
-    				break;
-				case 1:
-					place = 'DAVIS';
-					break;
-				case 2:
-					place = 'OLIN';
-					break;
-    		}
-    		td.appendChild(document.createTextNode(place));
-	   		tr.appendChild(td);
-    	}
-    	th.appendChild(tr);
-    t.appendChild(th);
-    t.appendChild(tb);
-    $("#temporary").append(t);
-    $('#temporary').slideDown(500);
+  var t  = document.createElement('table');
+  var tb = document.createElement('tbody');
+  for(i=0;i<joeyTimes[day].length;i++){
+  	var tr = document.createElement('tr');
+  	for(j=0;j<joeyTimes[day][i].length;j++){
+  		var td = document.createElement('td');
+   		td.appendChild(document.createTextNode(parseTime(joeyTimes[day][i][j]))); 
+   		tr.appendChild(td);
+  	}
+  	tb.appendChild(tr);
+  }
+  var th = document.createElement('thead');
+     	var tr = document.createElement('tr');
+  	for(j=0;j<3;j++){
+  		var td = document.createElement('td');
+  		var place;
+  		switch (j){
+  			case 0:
+  				place = 'CAMPUS';
+  				break;
+			case 1:
+				place = 'DAVIS';
+				break;
+			case 2:
+				place = 'OLIN';
+				break;
+  		}
+  		td.appendChild(document.createTextNode(place));
+   		tr.appendChild(td);
+  	}
+  	th.appendChild(tr);
+  t.appendChild(th);
+  t.appendChild(tb);
+  $("#temporary").append(t);
+  $('#temporary').slideDown(500);
 }
 
 function parseDay(day){

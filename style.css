@@ -15,8 +15,8 @@ html {
   -webkit-overflow-scrolling: touch;
   height: 100%;
   background-position: center top;
-  background-size: cover;
-  background: url(assets/bg-pattern-1-green.png) repeat;
+  background-image: url(assets/bg-pattern-1-green.png);
+  background-repeat: repeat;
   transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
   font-family: 'Open Sans';
