@@ -6,7 +6,7 @@ var myOptions = {
 			center: new google.maps.LatLng(42.4029363,-71.1224503),
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 		};
-var center = new google.maps.LatLng(42.4029363,-71.1224503)
+var center = new google.maps.LatLng(42.4029363,-71.1224503);
 var map;
 var buses;
 var markers=[];
@@ -23,11 +23,12 @@ $(document).ready(getBuses);
 function getBuses(){
 	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		buses = JSON.parse(data.contents);
+		console.log(data.contents);
 	});
 }
 
 function drawMap(){
-	if(buses != undefined){
+	if(buses !== undefined){
 		mapdiv = document.createElement('div');
 		mapdiv.setAttribute('id', 'map_canvas');
 		map = new google.maps.Map(mapdiv, myOptions);
@@ -62,7 +63,7 @@ function createMarker(i){
 	markers[i] = new google.maps.Marker({
 		map: map,
 		position:new google.maps.LatLng(buses[i].lat,buses[i].lon),
-		icon: "assets/icon-bus.svg",
+		icon: "assets/ico-bus.svg",
 	});
 }
 

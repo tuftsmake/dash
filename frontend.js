@@ -39,25 +39,25 @@ $(document).ready(function() {
     $("#bgswitch").click(function() {
         var src = $('html').css('background-image');
         console.log($('html').css('background-image'))
-        if(src == 'url(http://tuftsmake.com/dash/assets/bg-pattern-1-green.png)') {
+        if(src == 'url(http://tuftsdash.com/dev/assets/bg-pattern-1-green.png)') {
           $("html").css("background-image","url(assets/bg-pattern-1-blue.png)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-pattern-1-blue.png)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-pattern-1-blue.png)") {
           $("html").css("background-image","url(assets/bg-academic.jpg)");
           $("html").css("background-repeat","none");
           $("html").css("background-size","cover");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-academic.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-academic.jpg)") {
           $("html").css("background-image","url(assets/bg-bray.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-bray.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-bray.jpg)") {
           $("html").css("background-image","url(assets/bg-dewick.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-dewick.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-dewick.jpg)") {
           $("html").css("background-image","url(assets/bg-fall.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-fall.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-fall.jpg)") {
           $("html").css("background-image","url(assets/bg-jumbo.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-jumbo.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-jumbo.jpg)") {
           $("html").css("background-image","url(assets/bg-quad.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-quad.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-quad.jpg)") {
           $("html").css("background-image","url(assets/bg-tisch.jpg)");
-        } else if(src == "url(http://tuftsmake.com/dash/assets/bg-tisch.jpg)") {
+        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-tisch.jpg)") {
           $("html").css("background-image","url(assets/bg-water.jpg)");
         } else {
           $("html").css("background-image","url(assets/bg-pattern-1-green.png)");
@@ -67,7 +67,43 @@ $(document).ready(function() {
     }); 
 });
 
+function killIntro(){
+	localStorage.setItem("hazIntro", "true");
+	$('#intro').hide();
+}
 
+
+/* WMFO Radio JSONP data collection
+http://stackoverflow.com/questions/14305128/how-to-use-jsonp
+-------------------------------------------------- */
+
+$(document).ready(function updateRadio(){
+  jQuery.ajax({
+  "async": true,
+  "dataType": 'jsonp',
+  "url": "http://spinitron.com/public/newestsong.php?station=wmfo&callback=whatever",
+  "method": "GET",
+  "error": function (jqXHR, textStatus, errorThrown) {
+      //included so you can see any errors
+      console.log(textStatus + ': ' + errorThrown);
+  },
+  "success": function (data, textStatus, jqXHR) {
+      data = jQuery.parseHTML(data);
+      songname = $(data).find(".songpart").text();
+      artist = $(data).find(".artistpart").text();
+      album = $(data).find(".diskpart").text();
+      dj = $(data).find(".djpart").text();
+      $("#songname").text(songname);
+      $("#artist").text(artist);
+      $("#album").text(album);
+      $("#dj").text(dj);
+  }
+  });
+setTimeout(updateRadio, 15000);
+});
+
+/* Expand Bubbles
+-------------------------------------------------- */
 function expandJoey(){
 	isolate('#joey');
 	$('#joey').children('#titlebar').children('h2').text('NEXT STOPS')
@@ -91,11 +127,6 @@ function expandJoey(){
 	map.setCenter(currCenter);
 	$('#joey').attr('onclick', null);
 	
-}
-
-function killIntro(){
-	localStorage.setItem("hazIntro", "true");
-	$('#intro').hide();
 }
 
 function expandEvents(){

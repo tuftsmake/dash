@@ -11,7 +11,7 @@
 }
 
 html {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   -webkit-overflow-scrolling: touch;
   height: 100%;
   background-position: center top;
@@ -159,7 +159,10 @@ p {
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch; /* enables inertial scrolling on iOS: http://cooshtee.com/blog/2012/11/add-inertial-scrolling-to-a-fixed-height-div-in-ios/ */
-  padding-bottom: 100px; /* Makes the last few bubbles visible on small screens, due to the way the header works */
+  padding-bottom: 100px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .bubble {
@@ -260,7 +263,7 @@ th {
   margin-bottom: 0px;
   padding-bottom: 10px;
   padding-top: 10px;
-  border-bottom: 2px solid rgba(3, 3, 3, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 /* NEWS */

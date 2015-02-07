@@ -50,10 +50,8 @@
 	</head>
 
 	<body>
-		<!-- <div id="background"></div> -->
 		<div id="header">
 			<img src="assets/ico-help.png" class="fltlft icon" id="buttonLeft" onclick="help()">
-			<!--<img src="assets/ico-more.png" id="more" class="fltrt icon" id="buttonRight">-->
 			
 			<div class="fltrt icon" id="buttonRight">
   			<ul id="more-menu" class="fltrt icon">
@@ -70,8 +68,9 @@
 		</div>
 		<div id="content">
 			<div id="intro" class="bubble animated fadeinright" onclick="killIntro()">
-				<h3>Welcome to Tufts Dash Beta</br>Tap the "more" button for backgrounds.</br>Tap here to hide this tutorial.</h3>
+				<h3>This is a partially-functional preview of Tufts Dash</br>There will be bugs, and sample data is used in some places.</br>Tap here to hide this tutorial.</h3>
 			</div>
+      
 			<div id="joey" class="bubble animated fadeinright" onclick="expandJoey()">
 				<div id="titlebar"><h2>JOEY</h2></div>
 				<table>
@@ -88,12 +87,29 @@
 				</table>
 			</div>
 
+			<div id="radio" class="bubble animated fadeinright">
+				<div id="titlebar"><h2>RADIO</h2></div>
+				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
+        <button onclick="document.getElementById('player').play()">Play</button>
+        <button onclick="document.getElementById('player').pause()">Pause</button>
+        <span id="songname"></span> <span id="artist"></span> <span id="album"></span> spun <span id="dj"></span>
+			</div>
+			
+			<div id="dining" class="bubble animated fadeinright" onclick="expandDining()">
+				<h4 class="fltrt extrainfo">Dewick</h4>
+				<div id="titlebar"><h2>DINING</h2></div>
+				<h3 class="sectionheader">ENTREES</h3>
+				<p>Mandarin Turkey Stir Fry</p>
+				<p>Baked Lasagna</p>
+			</div>
+			
 			<div id="events" class="bubble animated fadeinright" onclick="expandEvents()">
 				<div id="titlebar"><h2>EVENTS</h2></div>
 				<table>
 					<tbody>
 						<tr>
-							<th colspan="2">Small Jazz Concert II blah blah blah blah long stuff here hahahahah hsh shs hhah s</th>
+							<th colspan="2">Small Jazz Concert II </th>
 						</tr>
 						<tr>
 							<td class="place">Granoff Music Center 210</td>
@@ -111,14 +127,7 @@
 				<p>A Night of Comedy featuring Keenan Thompson</p>
 				<h4 class="iteminfo">Cohen Auditorium</h4>
 			</div>
-			<div id="dining" class="bubble animated fadeinright" onclick="expandDining()">
-				<h4 class="fltrt extrainfo">Dewick</h4>
-				<div id="titlebar"><h2>DINING</h2></div>
-				
-				<h3 class="sectionheader">ENTREES</h3>
-				<p>Mandarin Turkey Stir Fry</p>
-				<p>Baked Lasagna</p>
-			</div>
+			
 			<div id="news" class="bubble animated fadeinright" onclick="expandNews()">
 				<h4 class="fltrt extrainfo">Features</h4>
 				<div id="titlebar"><h2>NEWS</h2></div>
@@ -126,16 +135,19 @@
 				<p>Students see Valentine's Day as a giant scheme to support the fascist party.</p>
 				<p>Political science class makes return with giant hot air balloon over Boston.</p>
 			</div>
+			
 			<div id="places" class="bubble animated fadeinright" onclick="expandPlaces()">
 				<div id="titlebar"><h2>PLACES</h2></div>
 				<p>Not sure what timely info</p>
 				<p>would be placed here.</p>
 			</div>
+			
 			<div id="sports" class="bubble animated fadeinright" onclick="expandSports()">
 				<div id="titlebar"><h2>SPORTS</h2></div>
 				<p>Sports scores placed here</p>
 				<p>Maybe as a grid?</p>
 			</div>
+			
 			<div id="links" class="bubble animated fadeinright">
 				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
 				<a href="http://isis.tufts.edu/"> <img src="assets/isis.png"> </a>
