@@ -134,7 +134,14 @@ function expandEvents(){
 }
 
 function expandDining(){
-	isolate('#dining');
+  isolate('#diningfull');
+	document.getElementById('dining').style.display='none';
+	document.getElementById('diningfull').style.display='block';
+	document.getElementById('diningfull').addClass('fadeoutleft').removeClass('fadeinright');
+}
+
+function contractDining() {
+  
 }
 
 function expandNews(){
@@ -168,17 +175,10 @@ function isolate(id){
 }
 
 function revert(id){
-	
 	$('.bubble').not('#intro').show();
-	// change the background image
-	$("#background").css('backgroundImage','url(assets/bg-academic.jpg)');
 	var name = id.split('#')[1];
 	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
 	$(id).children('#titlebar').children('h2').text(name.toUpperCase());
-	
-
-
-	// The following two lines previously made the help icon extra small on iPhones after returning to the home screen
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');
