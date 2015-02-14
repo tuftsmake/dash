@@ -51,23 +51,27 @@
 
 	<body>
 		<div id="header">
-			<img src="assets/ico-help.png" class="fltlft icon" id="buttonLeft" onclick="help()">
-			<div class="fltrt icon" id="buttonRight">
-  			<ul id="more-menu" class="fltrt icon">
-    			<li>
-    			  <ul>
-      			  <li><a id="bgswitch">Background</a></li>
-      			  <li><a href="http://maker.tufts.edu/projects/tufts-dash/">Info</a></li>
-    			  </ul>
-    			</li>
-  			</ul>
+  		<div id="headercontent">
+  			<img src="assets/ico-help.png" class="fltlft icon" id="buttonLeft" onclick="help()">
+  			<div class="fltrt icon" id="buttonRight">
+    			<ul id="more-menu" class="fltrt icon">
+      			<li>
+      			  <ul>
+        			  <li><a id="bgswitch">Background</a></li>
+        			  <li><a href="http://maker.tufts.edu/projects/tufts-dash/">Info</a></li>
+      			  </ul>
+      			</li>
+    			</ul>
+  			</div>
+        <h1 id="title" class="animated fadein">Tufts Dash</h1>
 			</div>
-			<h1 id="title" class="animated fadein">Tufts Dash</h1>
 		</div>
 		
 		<div id="content">
 			<div id="intro" class="bubble animated fadeinleft" onclick="killIntro()">
-				<h3>This is a partially-functional preview of Tufts Dash</br>There will be bugs, and sample data is used in some places.</br>Tap here to hide this tutorial.</h3>
+  			<div class="bubblecontent">
+				  <h3>This is a partially-functional preview of Tufts Dash</br>There will be bugs, and sample data is used in some places.</br>Tap here to hide this tutorial.</h3>
+				</div>
 			</div>
       
 			<div id="joey" class="bubble animated fadeinleft" onclick="expandJoey()">
@@ -88,7 +92,7 @@
 				</div>
 			</div>
 			
-			<div id="dining" class="bubble animated fadeinleft" onclick="expandDining()">
+			<div id="dining" class="bubble animated fadeinleft" onclick="newexpandDining()">
 				<div class="titlebar"><h2>DINING</h2></div>
 				<div class="bubblecontent">
   				<table>

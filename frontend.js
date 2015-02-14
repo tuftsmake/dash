@@ -35,6 +35,13 @@ function help(){
 		}
 	}
 
+/* Background image switcher
+Note: we should probably use a numbered naming scheme to make switching easier
+Ex: bg-1.jpg, bg-2.png, bg-3.png, bg-4.png
+This switcher would probably have to switch between png and jpg files though
+-------------------------------------------------- */
+
+
 $(document).ready(function() { 
     $("#bgswitch").click(function() {
         var src = $('html').css('background-image');
@@ -134,7 +141,10 @@ function expandEvents(){
 }
 
 function expandDining(){
-  isolate('#diningfull');
+  isolate('#dining');
+}
+
+function newexpandDining(){
 	document.getElementById('dining').style.display='none';
 	document.getElementById('diningfull').style.display='block';
 	document.getElementById('diningfull').addClass('fadeoutleft').removeClass('fadeinright');

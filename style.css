@@ -4,6 +4,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,400);
 
+
+/* Universal
+-------------------------------------------------- */
+
 * {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -14,8 +18,7 @@ html {
   -webkit-overflow-scrolling: touch;
   height: 100%;
   background-position: center top;
-  /*background-image: url(assets/bg-pattern-1-green.png);*/
-	background-color: rgb(220, 220, 220);
+  background-image: url(assets/bg-academic.jpg);
   background-repeat: repeat;
   transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
@@ -93,6 +96,46 @@ p {
   margin-bottom: 5px;
 }
 
+/* Header
+-------------------------------------------------- */
+
+#header {
+  z-index: 2;
+  padding: 5px;
+  text-align: center;
+  line-height: 50px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  top: 0;
+  min-height: 60px;
+  background-color: rgba(75, 110, 145, 0.9);
+}
+
+#headercontent {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+#intro h3 {
+  white-space: initial;
+  overflow: initial;
+  text-overflow: initial;
+}
+
+
+
+
+
+
+
+
 .extrainfo {
   height: 1.7rem;
   padding-top: .8rem;
@@ -131,6 +174,7 @@ p {
 
 .bubblecontent {
   padding: 2%;
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 #title {
@@ -144,19 +188,7 @@ p {
   color: white;
 }
 
-#header {
-  z-index: 2;
-  padding: 5px;
-  text-align: center;
-  line-height: 50px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  position: fixed;
-  top: 0;
-  min-height: 60px;
-  background-color: rgb(67, 108, 184);
-}
+
 
 #content {
   margin-top: 60px;
@@ -165,7 +197,7 @@ p {
   overflow: auto;
   -webkit-overflow-scrolling: touch; /* enables inertial scrolling on iOS: http://cooshtee.com/blog/2012/11/add-inertial-scrolling-to-a-fixed-height-div-in-ios/ */
   padding-bottom: 100px;
-  max-width: 1080px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -173,13 +205,12 @@ p {
 .bubble {
   margin-top: 3%;
   margin-bottom: 3%;
-  width: 94%;
-  background-color: rgba(255, 255, 255, 0.85);
   margin-left: auto;
   margin-right: auto;
   border-radius: 2px;
   -webkit-transition: top .2s;
   transition: top .2s;
+  padding: 0 2%;
 }
 
 .icon {
@@ -440,6 +471,36 @@ http://cssdeck.com/labs/another-simple-css3-dropdown-menu
   opacity: 1;
   visibility: visible;
 }
+
+
+
+
+
+
+
+
+/* Themes
+-------------------------------------------------- */
+
+.titlebar {
+  background-color: rgba(75, 110, 145, 0.9) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
