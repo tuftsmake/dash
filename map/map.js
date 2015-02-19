@@ -23,7 +23,7 @@ $(document).ready(getBuses);
 function getBuses(){
 	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		buses = JSON.parse(data.contents);
-		console.log(data.contents);
+		//console.log(data.contents);
 	});
 }
 
@@ -53,9 +53,9 @@ function fillRoutes(){
 
 function drawBuses(){
 	for(i=0;i<buses.length;i++){
-		if(buses[i].route == 1){
+		// if(buses[i].route == 1){
 			createMarker(i);
-		}
+		//}
 	}
 }
 
@@ -63,7 +63,7 @@ function createMarker(i){
 	markers[i] = new google.maps.Marker({
 		map: map,
 		position:new google.maps.LatLng(buses[i].lat,buses[i].lon),
-		icon: "assets/ico-bus.svg",
+		icon: 'assets/ico-bus'+i+'.svg',
 	});
 }
 
@@ -72,7 +72,7 @@ function drawLine(){
 		clickable:false,
 		map:map,
 		path:latlng,
-		strokeColor:"#6699cc",
+		strokeColor:'#6699cc',
 		strokeWeight: 3
 	});
 }

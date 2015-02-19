@@ -113,15 +113,14 @@ setTimeout(updateRadio, 15000);
 -------------------------------------------------- */
 function expandJoey(){
 	isolate('#joey');
-	$('#joey').children('#titlebar').children('h2').text('NEXT STOPS')
-	// joey = document.getElementsByClassName('joey')[0];
-	// joey.getElementsByTagName('h2')[0].innerHTML = 'NEXT STOPS';
+	$('#joey').children('#titlebar').children('h3').text('NEXT STOPS')
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');	
+	temp.setAttribute('class', 'bubblecontent');
 	$('#joey').append(temp);
 	$('#temporary').hide();
-	dayname = document.createElement('h2');
+	dayname = document.createElement('h3');
 	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
 	$('#temporary').append(dayname);
 	drawMap();
@@ -188,7 +187,7 @@ function revert(id){
 	$('.bubble').not('#intro').show();
 	var name = id.split('#')[1];
 	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
-	$(id).children('#titlebar').children('h2').text(name.toUpperCase());
+	$(id).children('#titlebar').children('h3').text(name.toUpperCase());
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');
