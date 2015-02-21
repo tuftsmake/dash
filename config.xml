@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.example"
+        versionCode = "10" 
+        version     = "1.0.1" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Tufts Dash</name>
+    <description>
+        Tufts Make's new information app for Tufts.
+    </description>
+
+    <author href="http://tuftsmake.com/" email="officers@tuftsmake.com">
+        Tufts Make 
+    </author>
+    
+    <!-- Platforms we want built -->
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+    <gap:platform name="winphone" />
+
+    <preference name="phonegap-version" value="3.1.0" />
+    <preference name="orientation" value="portrait" />
+
+    <!-- Android splash screen duration -->
+    <preference name="splash-screen-duration" value="10000"/>
+
+</widget>

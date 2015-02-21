@@ -81,15 +81,88 @@ function killIntro(){
 
 
 
-/* NIGHT MODE
+
+
+/* COLORS
 -------------------------------------------------- */
 
-function nightmode() {
-  $(".bubbletitle").toggleClass("night");
-  $(".bubblecontent").toggleClass("night");
-  $("html").toggleClass("night");
-  $("#header").toggleClass("night");
+/* This is a cookie-checker */
+function getCookie(cname) {
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for (var i=0; i<ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1);
+    if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+  }
+  return "";
 }
+
+/* Checks all cookies on load and applies the correct color scheme and night mode setting */
+$(document).ready(
+function checkCookie() {
+  colorsetting = getCookie("color");
+  nightsetting = getCookie("night");
+  if (colorsetting == "") {
+    $('#colorswitcher').attr('onclick', "color2()");
+    color1();
+    document.cookie = "color=color1;";
+  }
+  if (colorsetting == "color1") { color1() }
+  if (colorsetting == "color2") { color2() }
+  if (colorsetting == "color3") { color3() }
+  if (nightsetting == "night") { nightmodeon() }
+}
+);
+
+function color1() {
+  $('#colorswitcher').attr('onclick', "color2()");
+  $(".bubbletitle").removeClass("color3");
+  $(".bubbletitle").addClass("color1");
+  $("#header").removeClass("color3");
+  $("#header").addClass("color1");
+  document.cookie = "color=color1;";
+}
+function color2() {
+  $('#colorswitcher').attr('onclick', "color3()");
+  $(".bubbletitle").removeClass("color1");
+  $(".bubbletitle").addClass("color2");
+  $("#header").removeClass("color1");
+  $("#header").addClass("color2");
+  document.cookie = "color=color2;";
+}
+function color3() {
+  $('#colorswitcher').attr('onclick', "color1()");
+  $(".bubbletitle").removeClass("color2");
+  $(".bubbletitle").addClass("color3");
+  $("#header").removeClass("color2");
+  $("#header").addClass("color3");
+  document.cookie = "color=color3;";
+}
+
+
+/* NIGHT MODE
+-------------------------------------------------- */
+function nightmodeon() {
+  $('#nightswitcher').attr('onclick', "nightmodeoff()");
+  $(".bubbletitle").addClass("night");
+  $(".bubblecontent").addClass("night");
+  $("html").addClass("night");
+  $("#header").addClass("night");
+  document.cookie = "night=night;";
+}
+function nightmodeoff() {
+  $('#nightswitcher').attr('onclick', "nightmodeon()");
+  $(".bubbletitle").removeClass("night");
+  $(".bubblecontent").removeClass("night");
+  $("html").removeClass("night");
+  $("#header").removeClass("night");
+  document.cookie = "night=day;";
+}
+
+
+
+
 
 
 /* WMFO Radio JSONP data collection

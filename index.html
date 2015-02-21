@@ -58,7 +58,8 @@
       			<li>
       			  <ul>
         			  <li><a id="bgswitch">Background</a></li>
-        			  <li><a id="nightmode" onclick="nightmode()">Night Mode</a></li>
+        			  <li><a id="colorswitcher" onclick="color2()">Colors</a></li>
+        			  <li><a id="nightswitcher" onclick="nightmodeon()">Night Mode</a></li>
         			  <li><a href="http://maker.tufts.edu/projects/tufts-dash/">Info</a></li>
       			  </ul>
       			</li>
@@ -170,7 +171,7 @@
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
           <button onclick="document.getElementById('player').play()">Play</button>
           <button onclick="document.getElementById('player').pause()">Pause</button>
-          <span id="songname"></span> <span id="artist"></span> <span id="album"></span> spun <span id="dj"></span>
+          <p><span id="songname"></span> <span id="artist"></span> <span id="album"></span><span> spun </span><span id="dj"></span></p>
         </div>
 			</div>
 			

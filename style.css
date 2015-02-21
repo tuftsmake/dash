@@ -254,19 +254,6 @@ nav ul li: hover > ul {
 /* Bubble-specific stuff
 -------------------------------------------------- */
 
-#joey   .bubbletitle { background-color: #379ABB; }
-#radio  .bubbletitle { background-color: #86C374; }
-#dining .bubbletitle { background-color: #E28A49; }
-#diningfull .bubbletitle { background-color: #E28A49; }
-#events .bubbletitle { background-color: #D3568F; }
-#news   .bubbletitle { background-color: #904ED7; }
-#places .bubbletitle { background-color: #E46768; }
-#sports .bubbletitle { background-color: #DBBF4F; }
-#laundry .bubbletitle { background-color: #DBBF4F; }
-#links  .bubbletitle { background-color: #5FB67E; }
-
-
-
 /* JOEY */
 #map_canvas {
 	height: 230px;
@@ -464,38 +451,47 @@ http://cssdeck.com/labs/another-simple-css3-dropdown-menu
 
 
 
-
-
-
-
 /* Themes
 -------------------------------------------------- */
 
-.bubbletitle {
-  background-color: rgba(75, 110, 145, 0.9) !important;
+/* Blue */
+.bubbletitle.color1 {
+  background-color: rgba(75, 110, 145, 0.9);
+}
+#header.color1 {
+  background-color: rgba(75, 110, 145, 0.9);
 }
 
+/* Green */
+.bubbletitle.color2 {
+  background-color: rgba(98, 145, 75, 0.9);
+}
+#header.color2 {
+  background-color: rgba(98, 145, 75, 0.9);
+}
 
-
-
-
-
-
+/* Red */
+.bubbletitle.color3 {
+  background-color: rgba(150, 52, 52, 0.9);
+}
+#header.color3 {
+  background-color: rgba(150, 52, 52, 0.9);
+}
 
 
 /* Night Mode
 -------------------------------------------------- */
+html.night {
+  background-image: none;
+}
+
 .bubbletitle.night {
-background-color: #2C2C2C !important;
-color: #F0F0F0;
+  background-color: #2C2C2C;
+  color: #F0F0F0;
 }
 
 .bubblecontent.night {
   background-color: #454545;
-}
-
-html.night {
-  background-image: none;
 }
 
 #header.night {
@@ -503,49 +499,26 @@ html.night {
 }
 
 .night h2 {
-  color: rgba(108, 159, 209, 0.9) !important;
+  color: rgba(108, 159, 209, 0.9);
 }
 
 .night h1, .night h3, .night h4, .night h5, .night h6, .night p, .night td, .night th, .night span {
   color: #bebebe;
 }
 
-.night #name, .night #styleselector, .night a, .night h2 {
-color: orange;
-}
-.night .nav a {
-color: #C8C3BC;
-}
-.night .nav a:hover {
-color: orange;
-}
-.night img {
-	filter: brightness(0.8);
-	-webkit-filter: brightness(0.8);
-}
-.night blockquote {
-	color: #AAA;
-}
-.night h1 {
-color: orange;
-}
-.night #navcompact > ul li ul {
-  background-color: #2C2C2C;
-  border: 1px solid rgb(86, 86, 86);
-}
-.night #navcompact > ul li ul li:hover {
-  background: rgba(58, 58, 58, 0.6);
-}
 
-
-
-
-
-
-
-
-
-
+/*
+#joey   .bubbletitle { background-color: #379ABB; }
+#radio  .bubbletitle { background-color: #86C374; }
+#dining .bubbletitle { background-color: #E28A49; }
+#diningfull .bubbletitle { background-color: #E28A49; }
+#events .bubbletitle { background-color: #D3568F; }
+#news   .bubbletitle { background-color: #904ED7; }
+#places .bubbletitle { background-color: #E46768; }
+#sports .bubbletitle { background-color: #DBBF4F; }
+#laundry .bubbletitle { background-color: #DBBF4F; }
+#links  .bubbletitle { background-color: #5FB67E; }
+*/
 
 
 

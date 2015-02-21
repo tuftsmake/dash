@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>ico-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="ico-arrow" sketch:type="MSArtboardGroup" stroke="#FFFFFF" stroke-width="2">
+            <circle id="circle" sketch:type="MSShapeGroup" cx="30" cy="30" r="30"></circle>
+            <g id="arrow" sketch:type="MSLayerGroup" transform="translate(13.000000, 19.000000)" stroke-linecap="square">
+                <path d="M33.5,11 L1.49609399,11" id="line" sketch:type="MSShapeGroup"></path>
+                <path d="M12.5,0.5 L0.5,11 L11.75,21.5" id="head" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
