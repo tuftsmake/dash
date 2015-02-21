@@ -80,6 +80,38 @@ function killIntro(){
 }
 
 
+
+/* NIGHT MODE
+-------------------------------------------------- */
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+window.onload = function checkCookie() {
+    var setting = getCookie("nightmode");
+    if (setting == "night") {
+      nightmode();
+    } else {
+    }
+}
+
+function nightmode() {
+  document.cookie="nightmode=night;path=/";
+  $(".bubbletitle").toggleClass("night");
+  $(".bubblecontent").toggleClass("night");
+  $("html").toggleClass("night");
+  $("#header").toggleClass("night");
+}
+
+
 /* WMFO Radio JSONP data collection
 http://stackoverflow.com/questions/14305128/how-to-use-jsonp
 -------------------------------------------------- */
@@ -113,7 +145,7 @@ setTimeout(updateRadio, 15000);
 -------------------------------------------------- */
 function expandJoey(){
 	isolate('#joey');
-	$('#joey').children('#titlebar').children('h3').text('NEXT STOPS')
+	$('#joey').children('#bubbletitle').children('h3').text('NEXT STOPS')
 	day = now.getDay();
 	temp = document.createElement('div');
 	temp.setAttribute('id', 'temporary');	
@@ -187,7 +219,7 @@ function revert(id){
 	$('.bubble').not('#intro').show();
 	var name = id.split('#')[1];
 	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
-	$(id).children('#titlebar').children('h3').text(name.toUpperCase());
+	$(id).children('#bubbletitle').children('h3').text(name.toUpperCase());
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');

@@ -58,6 +58,7 @@
       			<li>
       			  <ul>
         			  <li><a id="bgswitch">Background</a></li>
+        			  <li><a id="nightmode" onclick="nightmode()">Night Mode</a></li>
         			  <li><a href="http://maker.tufts.edu/projects/tufts-dash/">Info</a></li>
       			  </ul>
       			</li>
@@ -75,7 +76,7 @@
 			</div>
       
 			<div id="joey" class="bubble animated fadeinleft" onclick="expandJoey()">
-				<div class="titlebar"><h2>JOEY</h2></div>
+				<div class="bubbletitle"><h2>JOEY</h2></div>
 				<div class="bubblecontent">
   				<table>
   					<tr>
@@ -93,7 +94,7 @@
 			</div>
 			
 			<div id="dining" class="bubble animated fadeinleft" onclick="newexpandDining()">
-				<div class="titlebar"><h2>DINING</h2></div>
+				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div class="bubblecontent">
   				<table>
   					<tbody>
@@ -120,7 +121,7 @@
 
 			<div id="diningfull" class="bubble animated fadeinright">
   			<h4 class="fltrt extrainfo">Dewick</h4>
-				<div class="titlebar"><h2>DINING</h2></div>
+				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div class="bubblecontent">
   				<table>
   					<tbody>
@@ -138,7 +139,7 @@
 			</div>
 			
 			<div id="events" class="bubble animated fadeinleft" onclick="expandEvents()">
-				<div class="titlebar"><h2>EVENTS</h2></div>
+				<div class="bubbletitle"><h2>EVENTS</h2></div>
 				<div class="bubblecontent">
   				<table>
   					<tbody>
@@ -154,7 +155,7 @@
 			</div>
 			
 			<div id="news" class="bubble animated fadeinleft" onclick="expandNews()">
-				<div class="titlebar"><h2>NEWS</h2></div>
+				<div class="bubbletitle"><h2>NEWS</h2></div>
 				<div class="bubblecontent">
   				<p>Meet the members of the class of 2014 and blah blah blah.</p>
   				<p>Students see Valentine's Day as a giant scheme to support the fascist party.</p>
@@ -163,7 +164,7 @@
 			</div>
 			
 			<div id="radio" class="bubble animated fadeinleft">
-				<div class="titlebar"><h2>RADIO</h2></div>
+				<div class="bubbletitle"><h2>RADIO</h2></div>
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
@@ -174,7 +175,7 @@
 			</div>
 			
 			<div id="places" class="bubble animated fadeinleft" onclick="expandPlaces()">
-				<div class="titlebar"><h2>PLACES</h2></div>
+				<div class="bubbletitle"><h2>PLACES</h2></div>
 				<div class="bubblecontent">
   				<p>Not sure what timely info</p>
   				<p>would be placed here.</p>
@@ -182,7 +183,7 @@
 			</div>
 			
 			<div id="sports" class="bubble animated fadeinleft" onclick="expandSports()">
-				<div class="titlebar"><h2>SPORTS</h2></div>
+				<div class="bubbletitle"><h2>SPORTS</h2></div>
 				<div class="bubblecontent">
   				<table style="text-align: center;">
   					<tbody>
@@ -214,7 +215,7 @@
 
 			<div id="laundry" class="bubble animated fadeinleft" onclick="expandSports()">
   			<h4 class="fltrt extrainfo">South Right</h4>
-				<div class="titlebar"><h2>LAUNDRY</h2></div>
+				<div class="bubbletitle"><h2>LAUNDRY</h2></div>
 				<div class="bubblecontent">
   				<table>
   					<tbody>
@@ -252,7 +253,7 @@
 			</div>
 			
 			<div id="links" class="bubble animated fadeinleft">
-  		  <div class="titlebar"><h2>LINKS</h2></div>
+  		  <div class="bubbletitle"><h2>LINKS</h2></div>
   			<div class="bubblecontent">
   				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
   				<a href="http://isis.tufts.edu/"> <img src="assets/isis.png"> </a>
