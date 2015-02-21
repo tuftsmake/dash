@@ -86,27 +86,15 @@ function killIntro(){
 /* COLORS
 -------------------------------------------------- */
 
-/* This is a cookie-checker */
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i=0; i<ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1);
-    if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
-  }
-  return "";
-}
-
-/* Checks all cookies on load and applies the correct color scheme and night mode setting */
+/* Checks user settings on load and applies them */
 $(document).ready(
-function checkCookie() {
-  colorsetting = getCookie("color");
-  nightsetting = getCookie("night");
-  if (colorsetting == "") {
+function checkSettings() {
+  colorsetting = localStorage.getItem("color");
+  nightsetting = localStorage.getItem("night");
+  if (colorsetting == null) {
     $('#colorswitcher').attr('onclick', "color2()");
     color1();
-    document.cookie = "color=color1;";
+    localStorage.setItem("color", "color1");
   }
   if (colorsetting == "color1") { color1() }
   if (colorsetting == "color2") { color2() }
@@ -121,7 +109,7 @@ function color1() {
   $(".bubbletitle").addClass("color1");
   $("#header").removeClass("color3");
   $("#header").addClass("color1");
-  document.cookie = "color=color1;";
+  localStorage.setItem("color", "color1");
 }
 function color2() {
   $('#colorswitcher').attr('onclick', "color3()");
@@ -129,7 +117,7 @@ function color2() {
   $(".bubbletitle").addClass("color2");
   $("#header").removeClass("color1");
   $("#header").addClass("color2");
-  document.cookie = "color=color2;";
+  localStorage.setItem("color", "color2");
 }
 function color3() {
   $('#colorswitcher').attr('onclick', "color1()");
@@ -137,7 +125,7 @@ function color3() {
   $(".bubbletitle").addClass("color3");
   $("#header").removeClass("color2");
   $("#header").addClass("color3");
-  document.cookie = "color=color3;";
+  localStorage.setItem("color", "color3");
 }
 
 
@@ -149,7 +137,7 @@ function nightmodeon() {
   $(".bubblecontent").addClass("night");
   $("html").addClass("night");
   $("#header").addClass("night");
-  document.cookie = "night=night;";
+  localStorage.setItem("night", "night");
 }
 function nightmodeoff() {
   $('#nightswitcher').attr('onclick', "nightmodeon()");
@@ -157,7 +145,7 @@ function nightmodeoff() {
   $(".bubblecontent").removeClass("night");
   $("html").removeClass("night");
   $("#header").removeClass("night");
-  document.cookie = "night=day;";
+  localStorage.setItem("night", "day");
 }
 
 
