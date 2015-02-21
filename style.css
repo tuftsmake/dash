@@ -479,46 +479,27 @@ http://cssdeck.com/labs/another-simple-css3-dropdown-menu
 }
 
 
-/* Night Mode
+/* NIGHT MODE
 -------------------------------------------------- */
 html.night {
   background-image: none;
 }
-
 .bubbletitle.night {
   background-color: #2C2C2C;
   color: #F0F0F0;
 }
-
 .bubblecontent.night {
   background-color: #454545;
 }
-
 #header.night {
   background-color: rgba(29, 42, 55, 0.9);
 }
-
 .night h2 {
   color: rgba(108, 159, 209, 0.9);
 }
-
 .night h1, .night h3, .night h4, .night h5, .night h6, .night p, .night td, .night th, .night span {
   color: #bebebe;
 }
-
-
-/*
-#joey   .bubbletitle { background-color: #379ABB; }
-#radio  .bubbletitle { background-color: #86C374; }
-#dining .bubbletitle { background-color: #E28A49; }
-#diningfull .bubbletitle { background-color: #E28A49; }
-#events .bubbletitle { background-color: #D3568F; }
-#news   .bubbletitle { background-color: #904ED7; }
-#places .bubbletitle { background-color: #E46768; }
-#sports .bubbletitle { background-color: #DBBF4F; }
-#laundry .bubbletitle { background-color: #DBBF4F; }
-#links  .bubbletitle { background-color: #5FB67E; }
-*/
 
 
 
