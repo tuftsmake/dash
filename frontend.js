@@ -173,14 +173,29 @@ $(document).ready(function updateRadio(){
       artist = $(data).find(".artistpart").text();
       album = $(data).find(".diskpart").text();
       dj = $(data).find(".djpart").text();
+      songurl = ("https://www.google.com/?gws_rd=ssl#q=" + songname + " " + artist).replace(/\s/g,"+");;
       $("#songname").text(songname);
       $("#artist").text(artist);
       $("#album").text(album);
       $("#dj").text(dj);
+      $("#songurl").attr('href', songurl);
   }
   });
 setTimeout(updateRadio, 15000);
 });
+
+
+function radioOn() {
+  document.getElementById('player').play();
+  $("#radiobutton").attr('src', 'assets/ico-pause.png');
+  $('#radiobutton').attr('onclick', "radioOff()");
+}
+
+function radioOff() {
+  document.getElementById('player').pause();
+  $("#radiobutton").attr('src', 'assets/ico-play.png');
+  $('#radiobutton').attr('onclick', "radioOn()");
+}
 
 /* Expand Bubbles
 -------------------------------------------------- */

@@ -72,7 +72,7 @@
 		<div id="content">
 			<div id="intro" class="bubble animated fadeinleft" onclick="killIntro()">
   			<div class="bubblecontent">
-				  <h3>This is an early preview of Tufts Dash</br>There are a lot of bugs and static data.</br>Please do not rely on this app too much yet</br>Tap here to hide this tutorial.</h3>
+				  <h3>This is an early preview of Tufts Dash</br>There will be bugs and incorrect data</br>Please don't rely on this app yet</br>(Tap here to hide this bubble)</h3>
 				</div>
 			</div>
       
@@ -92,6 +92,16 @@
   					</tr>
   				</table>
 				</div>
+			</div>
+			
+			<div id="radio" class="bubble animated fadeinleft">
+				<div class="bubbletitle"><h2>RADIO</h2></div>
+				<div class="bubblecontent">
+  				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+  				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
+  				<img id="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+          <p><a id="songurl"><span id="songname"></span> <span id="artist"></span></a> <!--<span id="album"></span>--><br><span> spun </span><span id="dj"></span></p>
+        </div>
 			</div>
 			
 			<div id="dining" class="bubble animated fadeinleft" onclick="newexpandDining()">
@@ -162,17 +172,6 @@
   				<p>Students see Valentine's Day as a giant scheme to support the fascist party.</p>
   				<p>Political science class makes return with giant hot air balloon over Boston.</p>
 				</div>
-			</div>
-			
-			<div id="radio" class="bubble animated fadeinleft">
-				<div class="bubbletitle"><h2>RADIO</h2></div>
-				<div class="bubblecontent">
-  				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
-  				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
-          <button onclick="document.getElementById('player').play()">Play</button>
-          <button onclick="document.getElementById('player').pause()">Pause</button>
-          <p><span id="songname"></span> <span id="artist"></span> <span id="album"></span><span> spun </span><span id="dj"></span></p>
-        </div>
 			</div>
 			
 			<div id="places" class="bubble animated fadeinleft" onclick="expandPlaces()">

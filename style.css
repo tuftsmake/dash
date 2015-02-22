@@ -46,7 +46,6 @@ ul, ol, dl {
 
 a {
   margin-right: 5%;
-  float: right;
 }
 
 hr {
@@ -120,22 +119,11 @@ p {
   margin-right: auto;
 }
 
-
-
-
-
 #intro h3 {
   white-space: initial;
   overflow: initial;
   text-overflow: initial;
 }
-
-
-
-
-
-
-
 
 .extrainfo {
   height: 1.7rem;
@@ -209,6 +197,7 @@ p {
 .bubblecontent {
   padding: 2%;
   background-color: rgba(255, 255, 255, 0.85);
+  overflow: auto;
 }
 .bubble h2 {
   border-bottom: rgb(225, 225, 225) 1px solid;
@@ -265,6 +254,15 @@ nav ul li: hover > ul {
   text-align: center;
 }
 
+/* RADIO */
+#radiobutton {
+  float: left;
+  margin-right: 2%;
+}
+
+
+
+
 /* EVENTS */
 #events {
   -webkit-animation-delay: .3s;
@@ -277,26 +275,6 @@ nav ul li: hover > ul {
 	padding-right: 5px;
 	text-align: right;
 }
-
-
-
-table {
-  width: 100%;
-  table-layout: fixed;
-  border-spacing: 0;
-  padding: 0;
-}
-th {
-	font-size: 1.1rem;
-	text-align: left;
-	padding: 0;
-}
-td {
-  padding: 0;
-}
-
-
-
 
 #intro {
   padding: 15px;
@@ -317,9 +295,6 @@ td {
 #diningfull {
   display: none;
 }
-
-
-
 
 
 
@@ -350,6 +325,26 @@ td {
 #links > a {
   margin-top: 5px;
 }
+
+
+
+
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 0;
+  padding: 0;
+}
+th {
+	font-size: 1.1rem;
+	text-align: left;
+	padding: 0;
+}
+td {
+  padding: 0;
+}
+
 
 /*
 ====================
