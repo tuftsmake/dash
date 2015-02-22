@@ -46,6 +46,11 @@ ul, ol, dl {
 
 a {
   margin-right: 5%;
+  text-decoration: none;
+}
+
+#songurl span {
+  color: rgb(0, 8, 150);
 }
 
 hr {
@@ -96,9 +101,8 @@ p {
   margin-bottom: 5px;
 }
 
-/* Header
+/* HEADER
 -------------------------------------------------- */
-
 #header {
   z-index: 2;
   padding: 5px;
@@ -240,7 +244,7 @@ nav ul li: hover > ul {
 
 
 
-/* Bubble-specific stuff
+/* BUBBLE-SPECIFIC
 -------------------------------------------------- */
 
 /* JOEY */
@@ -346,34 +350,7 @@ td {
   padding: 0;
 }
 
-
-/*
-====================
-RESPONSIVE COMPONENTS
-====================
-*/
-/*@media (min-width: 960px) {
-#content {
-  width: 90%;
-  margin: 60px auto 0;
-}
-
-.bubble {
-  width: 49%;
-  float: left;
-  margin-right: .5%;
-  margin-left: .5%;
-}
-
-.icon {
-  margin: 10 5.2%;
-}
-}
-*/
-
-
-
-/* iOS Status Bar correction
+/* IOS STATUS BAR CORRECTION
 -------------------------------------------------- */
 @media
 	only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-device-pixel-ratio: 3),  /* iPhone 6 Plus */
@@ -396,7 +373,7 @@ RESPONSIVE COMPONENTS
 
 
 
-/* Dropdown menu
+/* DROPDOWN MENU
 http://cssdeck.com/labs/another-simple-css3-dropdown-menu
 -------------------------------------------------- */
 #buttonright > ul {
@@ -427,7 +404,7 @@ http://cssdeck.com/labs/another-simple-css3-dropdown-menu
   display: block; 
   color: #fff;
 }
-#buttonright > ul li ul li a {
+#buttonright > ul li ul a li {
   float: none;
   font-family: 'Open Sans';
   font-weight: 500;
@@ -447,33 +424,33 @@ http://cssdeck.com/labs/another-simple-css3-dropdown-menu
 
 
 
-/* Themes
+/* COLORS
 -------------------------------------------------- */
 
 /* Blue */
-.bubbletitle.color1 {
-  background-color: rgba(75, 110, 145, 0.9);
-}
-#header.color1 {
+#header.color1, .bubbletitle.color1 {
   background-color: rgba(75, 110, 145, 0.9);
 }
 
 /* Green */
-.bubbletitle.color2 {
-  background-color: rgba(98, 145, 75, 0.9);
-}
-#header.color2 {
+#header.color2, .bubbletitle.color2 {
   background-color: rgba(98, 145, 75, 0.9);
 }
 
 /* Red */
-.bubbletitle.color3 {
-  background-color: rgba(150, 52, 52, 0.9);
-}
-#header.color3 {
+#header.color3, .bubbletitle.color3 {
   background-color: rgba(150, 52, 52, 0.9);
 }
 
+/* Gold */
+#header.color4, .bubbletitle.color4{
+  background-color: rgba(176, 151, 73, 0.9);
+}
+
+/* Purple */
+#header.color5, .bubbletitle.color5{
+  background-color: rgba(133, 65, 173, 0.9);
+}
 
 /* NIGHT MODE
 -------------------------------------------------- */

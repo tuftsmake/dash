@@ -35,13 +35,10 @@ function help(){
 		}
 	}
 
-/* Background image switcher
-Note: we should probably use a numbered naming scheme to make switching easier
-Ex: bg-1.jpg, bg-2.png, bg-3.png, bg-4.png
-This switcher would probably have to switch between png and jpg files though
+/* BACKGROUND IMAGE SWITCHER
+  - with a numbered filenaming scheme we could make this switcher simpler
+  - bg-1.jpg, bg-2.jpg, bg-3.png, etc
 -------------------------------------------------- */
-
-
 $(document).ready(function() { 
     $("#bgswitch").click(function() {
         var src = $('html').css('background-image');
@@ -79,10 +76,6 @@ function killIntro(){
 	$('#intro').hide();
 }
 
-
-
-
-
 /* COLORS
 -------------------------------------------------- */
 
@@ -99,15 +92,17 @@ function checkSettings() {
   if (colorsetting == "color1") { color1() }
   if (colorsetting == "color2") { color2() }
   if (colorsetting == "color3") { color3() }
+  if (colorsetting == "color4") { color4() }
+  if (colorsetting == "color5") { color5() }
   if (nightsetting == "night") { nightmodeon() }
 }
 );
 
 function color1() {
   $('#colorswitcher').attr('onclick', "color2()");
-  $(".bubbletitle").removeClass("color3");
+  $(".bubbletitle").removeClass("color5");
   $(".bubbletitle").addClass("color1");
-  $("#header").removeClass("color3");
+  $("#header").removeClass("color5");
   $("#header").addClass("color1");
   localStorage.setItem("color", "color1");
 }
@@ -120,14 +115,29 @@ function color2() {
   localStorage.setItem("color", "color2");
 }
 function color3() {
-  $('#colorswitcher').attr('onclick', "color1()");
+  $('#colorswitcher').attr('onclick', "color4()");
   $(".bubbletitle").removeClass("color2");
   $(".bubbletitle").addClass("color3");
   $("#header").removeClass("color2");
   $("#header").addClass("color3");
   localStorage.setItem("color", "color3");
 }
-
+function color4() {
+  $('#colorswitcher').attr('onclick', "color5()");
+  $(".bubbletitle").removeClass("color3");
+  $(".bubbletitle").addClass("color4");
+  $("#header").removeClass("color3");
+  $("#header").addClass("color4");
+  localStorage.setItem("color", "color4");
+}
+function color5() {
+  $('#colorswitcher').attr('onclick', "color1()");
+  $(".bubbletitle").removeClass("color4");
+  $(".bubbletitle").addClass("color5");
+  $("#header").removeClass("color4");
+  $("#header").addClass("color5");
+  localStorage.setItem("color", "color5");
+}
 
 /* NIGHT MODE
 -------------------------------------------------- */
