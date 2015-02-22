@@ -253,18 +253,12 @@ function expandSports(){
 	isolate("#sports")
 }
 
+function expandLaundry(){
+    isolate("#laundry")
+}
+
 function isolate(id){
 	$(".bubble").not(id).hide();
-
-	// var elements = document.getElementsByClassName('bubble');
-	// var toExpand = document.getElementsByClassName(id);
-
-	// for(var i=0;i<elements.length;i++){
-	// 	if (elements[i] != toExpand[0]){
-	// 		elements[i].css('display', 'none');
-	// 	}
-	// }
-
 	$("#buttonLeft").attr('src', 'assets/ico-arrow.png');
 	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
 	var name = id.split('#')[1];
