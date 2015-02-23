@@ -49,10 +49,6 @@ a {
   text-decoration: none;
 }
 
-#songurl span {
-  color: rgb(0, 8, 150);
-}
-
 hr {
   border: none;
 }
@@ -259,12 +255,24 @@ nav ul li: hover > ul {
 }
 
 /* RADIO */
-#radiobutton {
+.radiobutton {
   float: left;
   margin-right: 2%;
   width: 48px;
 }
-
+.songurl span {
+  color: rgb(0, 8, 150);
+}
+.albumart {
+  max-width: 40%;
+  float: right;
+}
+marquee {
+  width: 60%;
+}
+#radiofull a.songurl {
+  white-space: initial;
+}
 
 
 

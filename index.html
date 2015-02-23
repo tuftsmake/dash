@@ -99,8 +99,18 @@
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
-  				<img id="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
-          <p><a id="songurl"><span id="songname"></span> <span id="artist"></span></a> <!--<span id="album"></span>--><br><span> spun </span><span id="dj"></span></p>
+  				<img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+          <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
+        </div>
+			</div>
+
+			<div id="radiofull" class="bubble animated fadeinright">
+				<div class="bubbletitle"><h2>RADIO FULL</h2></div>
+				<div class="bubblecontent">
+  				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+  				<img class="albumart" src="assets/dummy-albumart.jpg"></img>
+          <!--<marquee behavior="scroll" direction="left">--><p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p><!--</marquee>-->
+          <img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
         </div>
 			</div>
 			
@@ -171,14 +181,6 @@
   				<p>Meet the members of the class of 2014 and blah blah blah.</p>
   				<p>Students see Valentine's Day as a giant scheme to support the fascist party.</p>
   				<p>Political science class makes return with giant hot air balloon over Boston.</p>
-				</div>
-			</div>
-			
-			<div id="places" class="bubble animated fadeinleft" onclick="expandPlaces()">
-				<div class="bubbletitle"><h2>PLACES</h2></div>
-				<div class="bubblecontent">
-  				<p>Not sure what timely info</p>
-  				<p>would be placed here.</p>
 				</div>
 			</div>
 			

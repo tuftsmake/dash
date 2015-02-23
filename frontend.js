@@ -163,10 +163,11 @@ function nightmodeoff() {
 
 
 
-/* WMFO Radio JSONP data collection
+/* WMFO Radio
 http://stackoverflow.com/questions/14305128/how-to-use-jsonp
 -------------------------------------------------- */
 
+/* Grab the data that Spinitron graciously provides via JSONP */
 $(document).ready(function updateRadio(){
   jQuery.ajax({
   "async": true,
@@ -184,27 +185,26 @@ $(document).ready(function updateRadio(){
       album = $(data).find(".diskpart").text();
       dj = $(data).find(".djpart").text();
       songurl = ("https://www.google.com/?gws_rd=ssl#q=" + songname + " " + artist).replace(/\s/g,"+");;
-      $("#songname").text(songname);
-      $("#artist").text(artist);
-      $("#album").text(album);
-      $("#dj").text(dj);
-      $("#songurl").attr('href', songurl);
+      $(".songname").text(songname);
+      $(".artist").text(artist);
+      $(".album").text(album);
+      $(".dj").text(dj);
+      $(".songurl").attr('href', songurl);
   }
   });
 setTimeout(updateRadio, 15000);
 });
 
-
+/* Flip the play/pause button's image and function */
 function radioOn() {
   document.getElementById('player').play();
-  $("#radiobutton").attr('src', 'assets/ico-pause.png');
-  $('#radiobutton').attr('onclick', "radioOff()");
+  $(".radiobutton").attr('src', 'assets/ico-pause.png');
+  $('.radiobutton').attr('onclick', "radioOff()");
 }
-
 function radioOff() {
   document.getElementById('player').pause();
-  $("#radiobutton").attr('src', 'assets/ico-play.png');
-  $('#radiobutton').attr('onclick', "radioOn()");
+  $(".radiobutton").attr('src', 'assets/ico-play.png');
+  $('.radiobutton').attr('onclick', "radioOn()");
 }
 
 /* Expand Bubbles
