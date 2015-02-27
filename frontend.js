@@ -1,9 +1,9 @@
 jQuery(document).ready(function($) {
 	now = new Date();
 	var times = getJoeyTime();
-	$("#campustime").text(parseTime(times[0]));
-	$("#davistime").text(parseTime(times[1]));
-	$("#olintime").text(parseTime(times[2]));
+	$(".campustime").text(parseTime(times[0]));
+	$(".davistime").text(parseTime(times[1]));
+	$(".olintime").text(parseTime(times[2]));
 	if(localStorage.getItem("hazIntro") == "true"){
 		$('#intro').hide();
 	}
@@ -209,27 +209,48 @@ function radioOff() {
 
 /* Expand Bubbles
 -------------------------------------------------- */
-function expandJoey(){
-	isolate('#joey');
-	$('#joey').children('#bubbletitle').children('h3').text('NEXT STOPS')
-	day = now.getDay();
-	temp = document.createElement('div');
-	temp.setAttribute('id', 'temporary');	
-	temp.setAttribute('class', 'bubblecontent');
-	$('#joey').append(temp);
-	$('#temporary').hide();
-	dayname = document.createElement('h3');
-	dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
-	$('#temporary').append(dayname);
-	drawMap();
-	var currCenter = map.getCenter();
-	postSchedule(day);
+$(function() {
+  $('.bubble').click(function() {
+      var id = $(this).attr('id');
+      var toShow = id+'full';
+      $('.bubble').not(id+'full').hide();
+      $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
+      $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
+      $('#title').text(toTitleCase(id));
+      $('#'+toShow).show();
+  });
+});
 
-	// change the background image
-	//$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
-	google.maps.event.trigger(map, 'resize');
-	map.setCenter(currCenter);
-	$('#joey').attr('onclick', null);
+function expandJoey(){
+  isolate('#joey');
+  $('#joeyfull').show(function(){
+      day = now.getDay();
+      dayname = document.createElement('h3');
+      dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
+      $('#joeyfull > .bubblecontent').append(dayname);
+      drawMap();
+      postSchedule(day);
+  });
+
+	// //isolate('#joey');
+	// //$('#joey').children('#bubbletitle').children('h3').text('NEXT STOPS')
+	// day = now.getDay();
+	// // temp = document.createElement('div');
+	// // temp.setAttribute('id', 'temporary');	
+	// // temp.setAttribute('class', 'bubblecontent');
+	// // $('#joey').append(temp);
+	// //$('#temporary').hide();
+	// dayname = document.createElement('h3');
+	// dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
+	// $('#joeyfull > .bubblecontent').append(dayname);
+	// drawMap();
+	// // var currCenter = map.getCenter();
+	// postSchedule(day);
+	// // // change the background image
+	// // //$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
+	// // google.maps.event.trigger(map, 'resize');
+	// // map.setCenter(currCenter);
+	// //$('#joey').attr('onclick', null);
 	
 }
 
@@ -239,16 +260,6 @@ function expandEvents(){
 
 function expandDining(){
   isolate('#dining');
-}
-
-function newexpandDining(){
-	document.getElementById('dining').style.display='none';
-	document.getElementById('diningfull').style.display='block';
-	document.getElementById('diningfull').addClass('fadeoutleft').removeClass('fadeinright');
-}
-
-function contractDining() {
-  
 }
 
 function expandNews(){
@@ -268,7 +279,7 @@ function expandLaundry(){
 }
 
 function isolate(id){
-	$(".bubble").not(id).hide();
+	$(".bubble").not(id+'full').hide();
 	$("#buttonLeft").attr('src', 'assets/ico-arrow.png');
 	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
 	var name = id.split('#')[1];
@@ -276,16 +287,12 @@ function isolate(id){
 }
 
 function revert(id){
-	$('.bubble').not('#intro').show();
-	var name = id.split('#')[1];
-	$(id).attr('onclick', 'expand'+toTitleCase(name)+'()');
-	$(id).children('#bubbletitle').children('h3').text(name.toUpperCase());
+  $('.bubble').not('#intro').show();
+  $('.full').hide();
+	// $('#'+id).children('#bubbletitle').children('h3').text(name.toUpperCase());
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');
-	$('#temporary').slideUp(500, function(){
-		$('#temporary').remove();
-	});
 }
 
 function toTitleCase(str){
@@ -363,12 +370,12 @@ function postSchedule(day){
   			case 0:
   				place = 'CAMPUS';
   				break;
-			case 1:
-				place = 'DAVIS';
-				break;
-			case 2:
-				place = 'OLIN';
-				break;
+  			case 1:
+  				place = 'DAVIS';
+  				break;
+  			case 2:
+  				place = 'OLIN';
+  				break;
   		}
   		td.appendChild(document.createTextNode(place));
    		tr.appendChild(td);
@@ -376,8 +383,8 @@ function postSchedule(day){
   	th.appendChild(tr);
   t.appendChild(th);
   t.appendChild(tb);
-  $("#temporary").append(t);
-  $('#temporary').slideDown(500);
+  $("#joeyfull > .bubblecontent").append(t);
+  $('#joeyfull > .bubblecontent').slideDown(500);
 }
 
 function parseDay(day){

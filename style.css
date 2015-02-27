@@ -136,7 +136,7 @@ p {
   margin-bottom: 5px;
 }
 
-#temporary > h3 {
+#joeyfull h3 {
   text-align: center;
 }
 
@@ -236,7 +236,9 @@ nav ul li: hover > ul {
   display: block;
 }
 
-
+.full{
+  display: none;
+}
 
 
 
@@ -249,7 +251,7 @@ nav ul li: hover > ul {
 	margin: 0.5rem;
 	border-radius: 5px;
 }
-#joey td {
+#joey td, #joeyfull td{
   width: 33%;
   text-align: center;
 }

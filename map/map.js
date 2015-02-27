@@ -1,6 +1,7 @@
+// var mapdiv = $('#map_canvas');
 var myOptions = {
 			zoom: 14,
-			draggable: false,
+			draggable: true,
 			disableDefaultUI: true,
 			scrollwheel: false,
 			center: new google.maps.LatLng(42.4029363,-71.1224503),
@@ -34,7 +35,10 @@ function drawMap(){
 		map = new google.maps.Map(mapdiv, myOptions);
 		fillRoutes();
 		drawBuses();
-		$('#temporary').prepend(mapdiv);
+		$('#joeyfull > .bubblecontent').append(mapdiv);
+		var currCenter = map.getCenter();
+		google.maps.event.trigger(map, 'resize');
+		map.setCenter(currCenter);
 		setInterval(function(){
 			getBuses();
 			for(i=0;i<markers.length;i++){
@@ -54,7 +58,13 @@ function fillRoutes(){
 function drawBuses(){
 	for(i=0;i<buses.length;i++){
 		// if(buses[i].route == 1){
-			createMarker(i);
+			createMarker(i); 
+			/* 0 blue
+			   1 yellow
+			   2 red
+			   3 purple
+			   4 green
+			   5 cyan*/
 		//}
 	}
 }
