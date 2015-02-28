@@ -221,15 +221,15 @@ function find_category_match(newsCategories, articleCats) {
 function build_news_full_bubble(data) {
   var newsArticles = data['responseData']['feed']['entries'];
   var newsCategories = {
-    news: [];
-    features: [];
-    arts: [];
-    opinion: [];
-    sports: [];
-    columns: [];
-    multimedia: [];
-    archives: [];
-    blogs: [];
+    news: [],
+    features: [],
+    arts: [],
+    opinion: [],
+    sports: [],
+    columns: [],
+    multimedia: [],
+    archives: [],
+    blogs: [],
   }
   
 
