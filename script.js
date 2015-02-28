@@ -265,7 +265,7 @@ $(function() {
       $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
       $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
       $('#title').text(toTitleCase(id));
-      $('#'+toShow).show(function(toShow){
+      $('#'+toShow).show(0,function(toShow){
         switch($(this).attr('id')) {
           case 'joeyfull':
               day = now.getDay();

@@ -189,8 +189,6 @@ p {
   margin-left: auto;
   margin-right: auto;
   border-radius: 2px;
-/*  -webkit-transition: top .2s;
-  transition: top .2s;*/
   padding: 0 2%;
 }
 
@@ -257,6 +255,10 @@ nav ul li: hover > ul {
   color: rgb(215, 215, 215);
 }
 /* RADIO */
+#radio {
+    -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
 .radiobutton {
   float: left;
   margin-right: 2%;
@@ -521,32 +523,32 @@ http://daneden.github.io/animate.css/
 /* Fade in right */
 .fadeinright {-webkit-animation-name: fadeinright;animation-name: fadeinright;}
 @-webkit-keyframes fadeinright {
-  0% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
+  0% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 @keyframes fadeinright {
-  0% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
+  0% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 /* Fade out right */
 .fadeoutright {-webkit-animation-name: fadeoutright; animation-name: fadeoutright;}
 @-webkit-keyframes fadeoutright {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
 }
 @keyframes fadeoutright {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
 }
 
 /* Fade in left */
 .fadeinleft {-webkit-animation-name: fadeinleft; animation-name: fadeinleft;}
 @-webkit-keyframes fadeinleft {
-  0% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
+  0% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none;transform: none;}
 }
 @keyframes fadeinleft {
-  0% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
+  0% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 
@@ -554,11 +556,11 @@ http://daneden.github.io/animate.css/
 .fadeoutleft {-webkit-animation-name: fadeoutleft; animation-name: fadeoutleft;}
 @-webkit-keyframes fadeoutleft {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}
 }
 @keyframes fadeoutleft {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}
 }
 
 

@@ -43,10 +43,10 @@ function drawMap(){
 		setInterval(function(){
 			getBuses();
 			getMe();
+			memarker.setPosition(new google.maps.LatLng(myLat, myLng));
 			for(i=0;i<markers.length;i++){
 				markers[i].setPosition(new google.maps.LatLng(buses[i].lat,buses[i].lon));
 			}
-			memarker.setPosition(new google.maps.LatLng(myLat, myLng));
 		},1000);
 	}
 }
