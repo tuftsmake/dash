@@ -1,4 +1,3 @@
-<!--<html manifest="dash.manifest">-->
 <html >
 	<head>
 		<meta charset="UTF-8">
@@ -76,7 +75,7 @@
 				</div>
 			</div>
       
-			<div id="joey" class="bubble animated fadeinleft" onclick="expandJoey()">
+			<div id="joey" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>JOEY</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -94,7 +93,7 @@
 				</div>
 			</div>
 			
-      <div id="joeyfull" class="bubble full animated fadeinleft">
+      <div id="joeyfull" class="bubble full animated fadeinright">
         <div class="bubbletitle"><h2>JOEY</h2></div>
         <div class="bubblecontent">
           <table>
@@ -109,6 +108,19 @@
               <td class="olintime">0:00</td>
             </tr>
           </table>
+          <h3></h3>
+          <div id='map_canvas'></div>
+          <table>
+            <thead>
+              <tr>
+                <td>CAMPUS</td>
+                <td>DAVIS</td>
+                <td>OLIN</td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -117,22 +129,22 @@
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
-  				<img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+  				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
           <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
         </div>
 			</div>
 
 			<div id="radiofull" class="bubble full animated fadeinright">
-				<div class="bubbletitle"><h2>RADIO FULL</h2></div>
+				<div class="bubbletitle"><h2>RADIO</h2></div>
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<img class="albumart" src="assets/dummy-albumart.jpg"></img>
           <!--<marquee behavior="scroll" direction="left">--><p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p><!--</marquee>-->
-          <img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+          <img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
         </div>
 			</div>
 			
-			<div id="dining" class="bubble animated fadeinleft" onclick="newexpandDining()">
+			<div id="dining" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -177,7 +189,7 @@
 				</div>
 			</div>
 			
-			<div id="events" class="bubble animated fadeinleft" onclick="expandEvents()">
+			<div id="events" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>EVENTS</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -193,7 +205,7 @@
 				</div>
 			</div>
 			
-			<div id="news" class="bubble animated fadeinleft" onclick="expandNews()">
+			<div id="news" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>NEWS</h2></div>
 				<div class="bubblecontent">
   				<p>Meet the members of the class of 2014 and blah blah blah.</p>
@@ -202,7 +214,7 @@
 				</div>
 			</div>
 			
-			<div id="sports" class="bubble animated fadeinleft" onclick="expandSports()">
+			<div id="sports" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>SPORTS</h2></div>
 				<div class="bubblecontent">
   				<table style="text-align: center;">
@@ -233,7 +245,7 @@
 				</div>
 			</div>
 
-			<div id="laundry" class="bubble animated fadeinleft" onclick="expandLaundry()">
+			<div id="laundry" class="bubble animated fadeinleft">
   			<h4 class="fltrt extrainfo">South Right</h4>
 				<div class="bubbletitle"><h2>LAUNDRY</h2></div>
 				<div class="bubblecontent">

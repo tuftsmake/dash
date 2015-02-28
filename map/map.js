@@ -1,7 +1,6 @@
-// var mapdiv = $('#map_canvas');
 var myOptions = {
 			zoom: 14,
-			draggable: true,
+			draggable: false,
 			disableDefaultUI: true,
 			scrollwheel: false,
 			center: new google.maps.LatLng(42.4029363,-71.1224503),
@@ -30,12 +29,9 @@ function getBuses(){
 
 function drawMap(){
 	if(buses !== undefined){
-		mapdiv = document.createElement('div');
-		mapdiv.setAttribute('id', 'map_canvas');
-		map = new google.maps.Map(mapdiv, myOptions);
+		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		fillRoutes();
 		drawBuses();
-		$('#joeyfull > .bubblecontent').append(mapdiv);
 		var currCenter = map.getCenter();
 		google.maps.event.trigger(map, 'resize');
 		map.setCenter(currCenter);
