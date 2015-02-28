@@ -307,21 +307,29 @@ function postSchedule(day){
   else{
     time = String(now.getHours())+String(minute);
   }
+  time = normalize_time(time);
   for(i = 0; i < joeyTimes[day].length; i++){
   	var tr = document.createElement('tr');
-    if (time > joeyTimes[day][i][2]){
+    if (time > normalize_time(joeyTimes[day][i][2])){
         continue;
     }
-  	for(j = 0;j < joeyTimes[day][i].length; j++){
+  	for(j = 0; j < joeyTimes[day][i].length; j++){
   		var td = document.createElement('td');
    		td.appendChild(document.createTextNode(parseTime(joeyTimes[day][i][j]))); 
-   		if(time > joeyTimes[day][i][j]){
+   		if(time > normalize_time(joeyTimes[day][i][j])){
         td.className += "old_time";
       }
       tr.appendChild(td);
-
   	}
   	tb.append(tr);
+  }
+}
+
+function normalize_time (early_time){
+  if (early_time < "0600"){
+    return String(parseInt(early_time) + 2400);
+  } else {
+    return early_time;
   }
 }
 

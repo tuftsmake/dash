@@ -2,7 +2,6 @@
 
 var refresh_dining = function()
 {
-    console.log("wow oh wow dining");
     $(".dining_loading").show();
 
     // $.getJSON('http://tuftsdiningapi.appspot.com/api/', function(data){
@@ -12,7 +11,6 @@ var refresh_dining = function()
     $.ajax({
         url: 'http://tuftsdiningapi.appspot.com/api/', 
         success: function(data){
-                    console.log(data);
                     $(".dining_loading").hide();
                     // foods = $.parseJSON(data);
                     dentrees = data['dewick']['Dinner']['Dinner Entrees'];
