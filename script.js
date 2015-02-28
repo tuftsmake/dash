@@ -182,10 +182,13 @@ function nightmodeoff() {
 -------------------------------------------------- */
 
 function populate_news_bubble(data) {
-  newsEntrees = data['responseData']['feed']['entries'];
-  newsEntrees.forEach(function(elem){
-    $ ('<a href=' + elem.link + '>' + elem.title + '</a>');
-  })
+  newsArticles = data['responseData']['feed']['entries'];
+  console.log(newsArticles);
+  for (i = 0; i < 3 && i < newsArticles.length; i++) {
+    $ ('<p> <a href="' + newsArticles[i].link + '">' + newsArticles[i].title + '</a></p>'
+      + '<p>' + newsArticles[i].contentSnippet + '</p>')
+    .appendTo("#news_list");
+  }
 }
 
 $(document).ready(function parseRSS(url) {
