@@ -1,4 +1,4 @@
-<html>
+<html >
 	<head>
 		<meta charset="UTF-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,7 +94,7 @@
 				</div>
 			</div>
 			
-      <div id="joeyfull" class="bubble full animated fadeinleft">
+      <div id="joeyfull" class="bubble full animated fadeinright">
         <div class="bubbletitle"><h2>JOEY</h2></div>
         <div class="bubblecontent">
           <table>
@@ -109,6 +109,19 @@
               <td class="olintime">0:00</td>
             </tr>
           </table>
+          <h3></h3>
+          <div id='map_canvas'></div>
+          <table>
+            <thead>
+              <tr>
+                <td>CAMPUS</td>
+                <td>DAVIS</td>
+                <td>OLIN</td>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -117,18 +130,18 @@
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
-  				<img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+  				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
           <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
         </div>
 			</div>
 
 			<div id="radiofull" class="bubble full animated fadeinright">
-				<div class="bubbletitle"><h2>RADIO FULL</h2></div>
+				<div class="bubbletitle"><h2>RADIO</h2></div>
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<img class="albumart" src="assets/dummy-albumart.jpg"></img>
           <!--<marquee behavior="scroll" direction="left">--><p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p><!--</marquee>-->
-          <img class="radiobutton" src="assets/ico-play.png" onclick="radioOn()"></img>
+          <img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
         </div>
 			</div>
 			

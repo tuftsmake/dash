@@ -240,8 +240,6 @@ nav ul li: hover > ul {
   display: none;
 }
 
-
-
 /* BUBBLE-SPECIFIC
 -------------------------------------------------- */
 
@@ -261,6 +259,7 @@ nav ul li: hover > ul {
   float: left;
   margin-right: 2%;
   width: 48px;
+  z-index: 5;
 }
 .songurl span {
   color: rgb(0, 8, 150);
@@ -370,6 +369,7 @@ td {
 	only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2),  /* iPhone 5      */
 	only screen and (min-device-width: 320px) and (max-device-width: 480px) and (device-aspect-ratio: 2/3),       /* iPhone 4      */
 	only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (device-aspect-ratio: 3/4)       /* iPads         */ {
+
 #header {
   padding-top: 20px;
 }
@@ -381,9 +381,8 @@ td {
 #content {
   margin-top: 75px !important;
 }
+
 }
-
-
 
 /* DROPDOWN MENU
 http://cssdeck.com/labs/another-simple-css3-dropdown-menu
@@ -511,46 +510,46 @@ http://daneden.github.io/animate.css/
 
 
 /* Fade in right */
-.fadeInRight {-webkit-animation-name: fadeInRight;animation-name: fadeInRight;}
-@-webkit-keyframes fadeInRight {
+.fadeinright {-webkit-animation-name: fadeinright;animation-name: fadeinright;}
+@-webkit-keyframes fadeinright {
   0% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
-@keyframes fadeInRight {
-  0% {opacity: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0);}
+@keyframes fadeinright {
+  0% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 /* Fade out right */
-.fadeOutRight {-webkit-animation-name: fadeOutRight; animation-name: fadeOutRight;}
-@-webkit-keyframes fadeOutRight {
+.fadeoutright {-webkit-animation-name: fadeoutright; animation-name: fadeoutright;}
+@-webkit-keyframes fadeoutright {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
 }
-@keyframes fadeOutRight {
+@keyframes fadeoutright {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(100%, 0, 0); transform: translate3d(100%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(1%, 0, 0); transform: translate3d(1%, 0, 0);}
 }
 
 /* Fade in left */
-.fadeInLeft {-webkit-animation-name: fadeInLeft; animation-name: fadeInLeft;}
-@-webkit-keyframes fadeInLeft {
+.fadeinleft {-webkit-animation-name: fadeinleft; animation-name: fadeinleft;}
+@-webkit-keyframes fadeinleft {
   0% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none;transform: none;}
 }
-@keyframes fadeInLeft {
-  0% {opacity: 0; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);}
+@keyframes fadeinleft {
+  0% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 
 /* Fade out left */
-.fadeOutLeft {-webkit-animation-name: fadeOutLeft; animation-name: fadeOutLeft;}
-@-webkit-keyframes fadeOutLeft {
+.fadeoutleft {-webkit-animation-name: fadeoutleft; animation-name: fadeoutleft;}
+@-webkit-keyframes fadeoutleft {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
 }
-@keyframes fadeOutLeft {
+@keyframes fadeoutleft {
   0% {opacity: 1;}
-  100% {opacity: 0; -webkit-transform: translate3d(-100%, 0, 0); transform: translate3d(-100%, 0, 0);}
+  100% {opacity: 0; -webkit-transform: translate3d(-1%, 0, 0); transform: translate3d(-1%, 0, 0);}
 }
 
 

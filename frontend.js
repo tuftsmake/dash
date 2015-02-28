@@ -210,86 +210,33 @@ function radioOff() {
 /* Expand Bubbles
 -------------------------------------------------- */
 $(function() {
-  $('.bubble').click(function() {
+  $('.bubble').not('.full').click(function(elem) {
+      if($(elem.target).is('.button')){
+            return;
+      }
       var id = $(this).attr('id');
+      // console.log(id);
       var toShow = id+'full';
       $('.bubble').not(id+'full').hide();
       $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
       $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
       $('#title').text(toTitleCase(id));
-      $('#'+toShow).show();
+      $('#'+toShow).show(function(toShow){
+        switch($(this).attr('id')) {
+          case 'joeyfull':
+              day = now.getDay();
+              $('#joeyfull h3').html(parseDay(day).toUpperCase()+' SCHEDULE');
+              drawMap();
+              postSchedule(day);
+              break;
+        }
+      });
   });
 });
-
-function expandJoey(){
-  isolate('#joey');
-  $('#joeyfull').show(function(){
-      day = now.getDay();
-      dayname = document.createElement('h3');
-      dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
-      $('#joeyfull > .bubblecontent').append(dayname);
-      drawMap();
-      postSchedule(day);
-  });
-
-	// //isolate('#joey');
-	// //$('#joey').children('#bubbletitle').children('h3').text('NEXT STOPS')
-	// day = now.getDay();
-	// // temp = document.createElement('div');
-	// // temp.setAttribute('id', 'temporary');	
-	// // temp.setAttribute('class', 'bubblecontent');
-	// // $('#joey').append(temp);
-	// //$('#temporary').hide();
-	// dayname = document.createElement('h3');
-	// dayname.innerHTML = parseDay(day).toUpperCase()+' SCHEDULE';
-	// $('#joeyfull > .bubblecontent').append(dayname);
-	// drawMap();
-	// // var currCenter = map.getCenter();
-	// postSchedule(day);
-	// // // change the background image
-	// // //$("#background").css('background-image', 'url(assets/bg-quad.jpg)');
-	// // google.maps.event.trigger(map, 'resize');
-	// // map.setCenter(currCenter);
-	// //$('#joey').attr('onclick', null);
-	
-}
-
-function expandEvents(){
-	isolate('#events');
-}
-
-function expandDining(){
-  isolate('#dining');
-}
-
-function expandNews(){
-	isolate('#news');
-}
-
-function expandPlaces(){
-	isolate('#places');
-}
-
-function expandSports(){
-	isolate("#sports")
-}
-
-function expandLaundry(){
-    isolate("#laundry")
-}
-
-function isolate(id){
-	$(".bubble").not(id+'full').hide();
-	$("#buttonLeft").attr('src', 'assets/ico-arrow.png');
-	$("#buttonLeft").attr('onclick', 'revert('+'\''+id+'\''+')');
-	var name = id.split('#')[1];
-	$("#title").text(toTitleCase(name));
-}
 
 function revert(id){
   $('.bubble').not('#intro').show();
   $('.full').hide();
-	// $('#'+id).children('#bubbletitle').children('h3').text(name.toUpperCase());
 	$("#buttonLeft").attr('src', 'assets/ico-help.png');
 	$("#buttonLeft").attr('onclick', 'help()');
 	$("#title").text('Tufts Dash');
@@ -350,8 +297,8 @@ function getJoeyTime(){
 }
 
 function postSchedule(day){
-  var t  = document.createElement('table');
-  var tb = document.createElement('tbody');
+  var tb = $('#joeyfull tbody').last();
+  tb.empty();
   for(i=0;i<joeyTimes[day].length;i++){
   	var tr = document.createElement('tr');
   	for(j=0;j<joeyTimes[day][i].length;j++){
@@ -359,32 +306,8 @@ function postSchedule(day){
    		td.appendChild(document.createTextNode(parseTime(joeyTimes[day][i][j]))); 
    		tr.appendChild(td);
   	}
-  	tb.appendChild(tr);
+  	tb.append(tr);
   }
-  var th = document.createElement('thead');
-     	var tr = document.createElement('tr');
-  	for(j=0;j<3;j++){
-  		var td = document.createElement('td');
-  		var place;
-  		switch (j){
-  			case 0:
-  				place = 'CAMPUS';
-  				break;
-  			case 1:
-  				place = 'DAVIS';
-  				break;
-  			case 2:
-  				place = 'OLIN';
-  				break;
-  		}
-  		td.appendChild(document.createTextNode(place));
-   		tr.appendChild(td);
-  	}
-  	th.appendChild(tr);
-  t.appendChild(th);
-  t.appendChild(tb);
-  $("#joeyfull > .bubblecontent").append(t);
-  $('#joeyfull > .bubblecontent').slideDown(500);
 }
 
 function parseDay(day){
