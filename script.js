@@ -182,10 +182,13 @@ function nightmodeoff() {
 -------------------------------------------------- */
 
 function populate_news_bubble(data) {
-  newsEntrees = data['responseData']['feed']['entries'];
-  newsEntrees.forEach(function(elem){
-    $ ('<a href=' + elem.link + '>' + elem.title + '</a>');
-  })
+  newsArticles = data['responseData']['feed']['entries'];
+  console.log(newsArticles);
+  for (i = 0; i < 3 && i < newsArticles.length; i++) {
+    $ ('<p> <a href="' + newsArticles[i].link + '">' + newsArticles[i].title + '</a></p>'
+      + '<p>' + newsArticles[i].contentSnippet + '</p>')
+    .appendTo("#news_list");
+  }
 }
 
 $(document).ready(function parseRSS(url) {
@@ -256,13 +259,13 @@ $(function() {
             return;
       }
       var id = $(this).attr('id');
-      // console.log(id);
       var toShow = id+'full';
-      $('.bubble').not(id+'full').hide();
+      //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
+      $('.bubble').not('#'+toShow).hide(0);
       $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
       $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
       $('#title').text(toTitleCase(id));
-      $('#'+toShow).show(function(toShow){
+      $('#'+toShow).show(0,function(toShow){
         switch($(this).attr('id')) {
           case 'joeyfull':
               day = now.getDay();
@@ -271,16 +274,19 @@ $(function() {
               postSchedule(day);
               break;
         }
+      //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
       });
   });
 });
 
 function revert(id){
   $('.bubble').not('#intro').show();
-  $('.full').hide();
-	$("#buttonLeft").attr('src', 'assets/ico-help.png');
-	$("#buttonLeft").attr('onclick', 'help()');
-	$("#title").text('Tufts Dash');
+  //$('.full').toggleClass('fadeoutright fadeinright');
+  $('.full').hide(0);
+  $("#buttonLeft").attr('src', 'assets/ico-help.png');
+  $("#buttonLeft").attr('onclick', 'help()');
+  $("#title").text('Tufts Dash');
+  //$('.full').toggleClass('fadeoutright fadeinright');
 }
 
 function toTitleCase(str){

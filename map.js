@@ -36,17 +36,17 @@ function drawMap(){
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		fillRoutes();
 		drawBuses();
-		drawMe();
+		//drawMe();
 		var currCenter = map.getCenter();
 		google.maps.event.trigger(map, 'resize');
 		map.setCenter(currCenter);
 		setInterval(function(){
 			getBuses();
-			getMe();
+			//getMe();
+			//memarker.setPosition(new google.maps.LatLng(myLat, myLng));
 			for(i=0;i<markers.length;i++){
 				markers[i].setPosition(new google.maps.LatLng(buses[i].lat,buses[i].lon));
 			}
-			memarker.setPosition(new google.maps.LatLng(myLat, myLng));
 		},1000);
 	}
 }
