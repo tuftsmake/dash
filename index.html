@@ -150,7 +150,7 @@
               <td style="width:45%">
                 <table>
                   <tbody>
-                    <th id="dewick_table" class="dining_hall_name">Dewick</th>
+                    <th id="dewick_table" class="dining_hall_name">DEWICK</th>
                     <tr><td class="dining_loading"><br>Loading...<br></td></tr>
                     <!-- dewick data loads here via jquery!-->
                     <hr>
@@ -161,7 +161,7 @@
               <td style="width:45%">
                 <table>
                   <tbody>
-                    <th id="carm_table" class="dining_hall_name">Carm</th>
+                    <th id="carm_table" class="dining_hall_name">CARMICHAEL</th>
                     <tr><td class="dining_loading"><br>Loading...<br></td></tr>
                     <!--  data loads here via jquery!-->
                     <hr>    
@@ -178,13 +178,12 @@
   			<h4 class="fltrt extrainfo">Dewick</h4>
 				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div id="food_list" class="bubblecontent">
-  				<table>
-            <tbody>
-              <tr>
-                <td>Breakfast</td><td><td>Lunch</td><td>Dinner</td>
-              </tr>
-            </tbody>
-          </table>
+          <span style="text-align:center"><span id="bfast_button" class="meal_name selected_meal">BREAKFAST</span> | 
+          <span id="lunch_button" class="meal_name">LUNCH</span> | 
+          <span id="dinner_button" class="meal_name">DINNER</span></span> 
+          <div id="breakfast_list" class="foodlist"></div>
+          <div id="lunch_list" class="foodlist"></div>
+          <div id="dinner_list"class="foodlist"></div>
 				</div>
 			</div>
 			

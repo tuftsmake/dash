@@ -13,11 +13,29 @@ function build_dining_preview(data){
 }  
 
 function build_dining_full_bubble(data){
+    $(".meal_name").click(function(){
+        $(".selected_meal").removeClass("selected_meal");
+        $(this).addClass("selected_meal");
+        $(".foodlist").hide()
+        $("#" + $(this).html().toLowerCase() + "_list").show()
+    });
     dewick_data = data['dewick'];
-    for (var meal in data['dewick']){
-        console.log(meal);
+    meals = ["Breakfast", "Lunch", "Dinner"];
+    for (var meal in meals){
+        meal_name = meals[meal]
+        meal_list_id = "#" + meal_name.toLowerCase() + "_list";
+        for (var category in data['dewick'][meal_name]) {
+            $('<h4>' + category.toUpperCase() +'</h4>').appendTo(meal_list_id);
+            for (var item in data['dewick'][meal_name][category]) {
+                $('<h5>' + data['dewick'][meal_name][category][item] + '</h5>').appendTo(meal_list_id);
+            }
+        }
     }
+    $("#lunch_list").hide();
+    $("#dinner_list").hide();
 }
+
+
 
 var refresh_dining = function()
 {

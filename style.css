@@ -311,6 +311,9 @@ marquee {
 #diningfull {
   display: none;
 }
+.selected_meal {
+  font-weight: bold;
+} 
 
 /* TODO: someone (andy) plz make overflow nice, make titles look nice :) */
 
