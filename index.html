@@ -66,13 +66,13 @@
 		</div>
 		
 		<div id="content">
-			<div id="intro" class="bubble animated fadeinleft" onclick="killIntro()">
+			<div id="intro" class=" animated fadeinleft" onclick="killIntro()">
   			<div class="bubblecontent">
 				  <h3>This is an early preview of Tufts Dash</br>There will be bugs and incorrect data</br>Please don't rely on this app yet</br>(Tap here to hide this bubble)</h3>
 				</div>
 			</div>
       
-			<div id="joey" class="bubble animated fadeinleft">
+			<div id="joey" class="bubble animated fadeinleft a">
 				<div class="bubbletitle"><h2>JOEY</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -121,7 +121,7 @@
         </div>
       </div>
 
-			<div id="radio" class="bubble animated fadeinleft">
+			<div id="radio" class="bubble animated fadeinleft b">
 				<div class="bubbletitle"><h2>RADIO</h2></div>
 				<div class="bubblecontent">
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
@@ -141,7 +141,7 @@
         </div>
 			</div>
 			
-			<div id="dining" class="bubble animated fadeinleft">
+			<div id="dining" class="bubble animated fadeinleft c">
 				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div class="bubblecontent">
   			<table>
@@ -150,10 +150,9 @@
               <td style="width:45%">
                 <table>
                   <tbody>
-                    <th id="dewick_table" class="dining_hall_name">Dewick</th>
+                    <th id="dewick_table" class="dining_hall_name">DEWICK</th>
                     <tr><td class="dining_loading"><br>Loading...<br></td></tr>
                     <!-- dewick data loads here via jquery!-->
-                    <hr>
                     <td>    
                   </tbody>  
                 </table>
@@ -161,10 +160,9 @@
               <td style="width:45%">
                 <table>
                   <tbody>
-                    <th id="carm_table" class="dining_hall_name">Carm</th>
+                    <th id="carm_table" class="dining_hall_name">CARMICHAEL</th>
                     <tr><td class="dining_loading"><br>Loading...<br></td></tr>
                     <!--  data loads here via jquery!-->
-                    <hr>    
                   </tbody>  
                 </table>
               </td>
@@ -178,17 +176,16 @@
   			<h4 class="fltrt extrainfo">Dewick</h4>
 				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div id="food_list" class="bubblecontent">
-  				<table>
-            <tbody>
-              <tr>
-                <td>Breakfast</td><td><td>Lunch</td><td>Dinner</td>
-              </tr>
-            </tbody>
-          </table>
+          <span style="text-align:center"><span id="bfast_button" class="meal_name selected_meal">BREAKFAST</span> | 
+          <span id="lunch_button" class="meal_name">LUNCH</span> | 
+          <span id="dinner_button" class="meal_name">DINNER</span></span> 
+          <div id="breakfast_list" class="foodlist"></div>
+          <div id="lunch_list" class="foodlist"></div>
+          <div id="dinner_list"class="foodlist"></div>
 				</div>
 			</div>
 			
-			<div id="events" class="bubble animated fadeinleft">
+			<div id="events" class="bubble animated fadeinleft d">
 				<div class="bubbletitle"><h2>EVENTS</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -204,7 +201,23 @@
 				</div>
 			</div>
 			
-			<div id="news" class="bubble animated fadeinleft">
+			<div id="eventsfull" class="bubble animated full fadeinleft">
+				<div class="bubbletitle"><h2>EVENTS FULL</h2></div>
+				<div class="bubblecontent">
+  				<table>
+  					<tbody>
+  						<tr><th colspan="2">Small Jazz Concert II</th></tr>
+  						<tr><td class="place">Granoff Music Center 210</td><td class="time">5:30PM</td></tr>
+  						<tr><th colspan="2">Tufts MAKE Info Session</th></tr>
+  						<tr><td class="place">Aidekman Auditorium</td><td class="time">6:00PM</td></tr>
+  						<tr><th colspan="2">A Night of Comedy Featuring Keenan Thompson</th></tr>
+  						<tr><td class="place">Cohen Auditorium</td><td class="time">9:00PM</td></tr>
+  					</tbody>
+  				</table>
+				</div>
+			</div>
+			
+			<div id="news" class="bubble animated fadeinleft e">
 				<div class="bubbletitle"><h2>NEWS</h2></div>
 				<div class="bubblecontent">
           <div id="news_list">
@@ -220,7 +233,7 @@
         </div>
       </div>
 			
-			<div id="sports" class="bubble animated fadeinleft">
+			<div id="sports" class="bubble animated fadeinleft f">
 				<div class="bubbletitle"><h2>SPORTS</h2></div>
 				<div class="bubblecontent">
   				<table style="text-align: center;">
@@ -251,9 +264,11 @@
 				</div>
 			</div>
 
-			<div id="laundry" class="bubble animated fadeinleft">
-  			<h4 class="fltrt extrainfo">South Right</h4>
-				<div class="bubbletitle"><h2>LAUNDRY</h2></div>
+			<div id="laundry" class="bubble animated fadeinleft g">
+				<div class="bubbletitle">
+  				<h4 class="fltrt extrainfo">South Right</h4>
+  				<h2>LAUNDRY</h2>
+  		  </div>
 				<div class="bubblecontent">
   				<table>
   					<tbody>
@@ -290,7 +305,7 @@
 				</div>
 			</div>
 			
-			<div id="links" class="bubble animated fadeinleft">
+			<div id="links" class="bubble animated fadeinleft h">
   		  <div class="bubbletitle"><h2>LINKS</h2></div>
   			<div class="bubblecontent">
   				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
