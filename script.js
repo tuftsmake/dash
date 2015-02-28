@@ -180,16 +180,28 @@ function nightmodeoff() {
 
 /* NEWS (TUFTS DAILY) PARSER
 -------------------------------------------------- */
+
+function populate_news_bubble(data) {
+  newsEntrees = data['responseData']['feed']['entries'];
+  newsEntrees.forEach(function(elem){
+    $ ('<a href=' + elem.link + '>' + elem.title + '</a>');
+  })
+}
+
 $(document).ready(function parseRSS(url) {
   $.ajax({
     url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("http://tuftsdaily.com/feed/"),
     dataType: 'json',
     success: function(data) {
       console.log(data);
+      populate_news_bubble(data);
     }
   });
   console.log(url);
 });
+
+
+
 
 
 /* WMFO Radio
