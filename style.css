@@ -254,7 +254,7 @@ nav ul li: hover > ul {
   text-align: center;
 }
 .old_time {
-  color: grey; /* todo: andy, pick a fucking color */
+  color: rgb(215, 215, 215);
 }
 /* RADIO */
 .radiobutton {

@@ -163,6 +163,28 @@ function nightmodeoff() {
 
 
 
+
+
+
+
+
+
+
+
+/* NEWS (TUFTS DAILY) PARSER
+-------------------------------------------------- */
+$(document).ready(function parseRSS(url) {
+  $.ajax({
+    url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("http://tuftsdaily.com/feed/"),
+    dataType: 'json',
+    success: function(data) {
+      console.log(data);
+    }
+  });
+  console.log(url);
+});
+
+
 /* WMFO Radio
 http://stackoverflow.com/questions/14305128/how-to-use-jsonp
 -------------------------------------------------- */
