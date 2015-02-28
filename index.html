@@ -18,7 +18,7 @@
 		<script src="joeyschedule.js"></script>
     <script src="dining.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
-		<script src="map/map.js"></script>
+		<script src="map.js"></script>
 		
 		<!-- Favicons and App Icons -->
 		<link rel="icon" sizes="192x192" href="assets/app-icon-192.png">
@@ -31,9 +31,6 @@
     <!-- iPad 3, 4, Air, Air 2 -->
     <link rel="apple-touch-startup-image" href="assets/apple-startup-768x1004@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
     <link rel="apple-touch-startup-image" href="assets/apple-startup-1024x748@2x.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
-    <!-- iPhone 1, 3G, 3GS -->
-    <link rel="apple-touch-startup-image" href="assets/apple-startup-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
-    <link rel="apple-touch-startup-image" href="assets/apple-startup-480x300.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
     <!-- iPhone 4 -->
     <link rel="apple-touch-startup-image" href="assets/apple-startup-320x460@2x.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
     <link rel="apple-touch-startup-image" href="assets/apple-startup-480x300@2x.png" media="(device-width: 320px) and (device-height: 480px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
@@ -180,19 +177,14 @@
 			<div id="diningfull" class="bubble full animated fadeinright">
   			<h4 class="fltrt extrainfo">Dewick</h4>
 				<div class="bubbletitle"><h2>DINING</h2></div>
-				<div class="bubblecontent">
+				<div id="food_list" class="bubblecontent">
   				<table>
-  					<tbody>
-  						<tr><th>ENTREES</th></tr>
-  						<tr><td>Mandarin Turkey Stir Fry</td></tr>
-  						<tr><td>Baked Lasagna</td></tr>
-  						<tr><td>General Tso's Chicken</td></tr>
-  						<tr><th>SOUPS</th></tr>
-  						<tr><td>Mandarin Turkey Soup</td></tr>
-  						<tr><td>Baked Lasagna Soup</td></tr>
-  						<tr><td>General Tso's Chicken Soup</td></tr>
-  					</tbody>
-  				</table>
+            <tbody>
+              <tr>
+                <td>Breakfast</td><td><td>Lunch</td><td>Dinner</td>
+              </tr>
+            </tbody>
+          </table>
 				</div>
 			</div>
 			
