@@ -1,3 +1,7 @@
+var myLat =42.4029363;
+var myLng =-71.1224503;
+var me;
+var memarker;
 var myOptions = {
 			zoom: 14,
 			draggable: false,
@@ -32,14 +36,17 @@ function drawMap(){
 		map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		fillRoutes();
 		drawBuses();
+		drawMe();
 		var currCenter = map.getCenter();
 		google.maps.event.trigger(map, 'resize');
 		map.setCenter(currCenter);
 		setInterval(function(){
 			getBuses();
+			getMe();
 			for(i=0;i<markers.length;i++){
 				markers[i].setPosition(new google.maps.LatLng(buses[i].lat,buses[i].lon));
 			}
+			memarker.setPosition(new google.maps.LatLng(myLat, myLng));
 		},1000);
 	}
 }
@@ -63,6 +70,7 @@ function drawBuses(){
 			   5 cyan*/
 		//}
 	}
+
 }
 
 function createMarker(i){
@@ -80,5 +88,27 @@ function drawLine(){
 		path:latlng,
 		strokeColor:'#6699cc',
 		strokeWeight: 3
+	});
+}
+
+function getMe()
+{
+	if (navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(function(position){
+			myLat = position.coords.latitude;
+			myLng = position.coords.longitude;
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.");
+	}
+}
+
+function drawMe() {
+		me=new google.maps.LatLng(myLat,myLng);
+		memarker=new google.maps.Marker({
+		map: map,
+		position: me,
+		icon: 'assets/locationmarker.svg',
 	});
 }
