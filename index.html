@@ -1,5 +1,4 @@
-<!--<html manifest="dash.manifest">-->
-<html >
+<html>
 	<head>
 		<meta charset="UTF-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,6 +17,7 @@
 		<script src="backend.js"></script>
 		<script src="fastclick/lib/fastclick.js"></script>
 		<script src="joeyschedule.js"></script>
+    <script src="dining.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
 		<script src="map/map.js"></script>
 		
@@ -76,7 +76,7 @@
 				</div>
 			</div>
       
-			<div id="joey" class="bubble animated fadeinleft" onclick="expandJoey()">
+			<div id="joey" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>JOEY</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -132,30 +132,37 @@
         </div>
 			</div>
 			
-			<div id="dining" class="bubble animated fadeinleft" onclick="newexpandDining()">
+			<div id="dining" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div class="bubblecontent">
-  				<table>
-  					<tbody>
-  						<tr>
-    						<th>Dewick</th>
-    						<th>Carmichael</th>
-    				  </tr>
-  						<tr>
-    						<td>Chicken Cordon Blue</td>
-    						<td>Chicken cutlet w/No Sauce</td>
-    				  </tr>
-  						<tr>
-    						<td>Fried clam strips</td>
-    						<td>Chicken Parmesan</td>
-    				  </tr>
-  						<tr>
-    						<td></td>
-    						<td>Orange Teriyaki Salmon</td>
-    				  </tr>
-  					</tbody>
-  				</table>
-				</div>
+  			<table>
+          <tbody>
+            <tr>
+              <td style="width:45%">
+                <table>
+                  <tbody>
+                    <th id="dewick_table">Dewick</th>
+                    <tr><td class="dining_loading">Loading...</td></tr>
+                    <!-- dewick data loads here via jquery!-->
+                    <hr>
+                    <td>    
+                  </tbody>  
+                </table>
+              </td>
+              <td style="width:45%">
+                <table>
+                  <tbody>
+                    <th id="carm_table">Carm</th>
+                    <tr><td class="dining_loading">Loading...</td></tr>
+                    <!--  data loads here via jquery!-->
+                    <hr>    
+                  </tbody>  
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
 			</div>
 
 			<div id="diningfull" class="bubble full animated fadeinright">
@@ -177,7 +184,7 @@
 				</div>
 			</div>
 			
-			<div id="events" class="bubble animated fadeinleft" onclick="expandEvents()">
+			<div id="events" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>EVENTS</h2></div>
 				<div class="bubblecontent">
   				<table>
@@ -193,7 +200,7 @@
 				</div>
 			</div>
 			
-			<div id="news" class="bubble animated fadeinleft" onclick="expandNews()">
+			<div id="news" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>NEWS</h2></div>
 				<div class="bubblecontent">
   				<p>Meet the members of the class of 2014 and blah blah blah.</p>
@@ -202,7 +209,7 @@
 				</div>
 			</div>
 			
-			<div id="sports" class="bubble animated fadeinleft" onclick="expandSports()">
+			<div id="sports" class="bubble animated fadeinleft">
 				<div class="bubbletitle"><h2>SPORTS</h2></div>
 				<div class="bubblecontent">
   				<table style="text-align: center;">
@@ -233,7 +240,7 @@
 				</div>
 			</div>
 
-			<div id="laundry" class="bubble animated fadeinleft" onclick="expandLaundry()">
+			<div id="laundry" class="bubble animated fadeinleft">
   			<h4 class="fltrt extrainfo">South Right</h4>
 				<div class="bubbletitle"><h2>LAUNDRY</h2></div>
 				<div class="bubblecontent">
