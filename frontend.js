@@ -299,12 +299,27 @@ function getJoeyTime(){
 function postSchedule(day){
   var tb = $('#joeyfull tbody').last();
   tb.empty();
-  for(i=0;i<joeyTimes[day].length;i++){
+  var minute = now.getMinutes()
+  var time =""
+  if(minute<=9){
+    time = String(now.getHours())+'0'+String(minute);
+  }
+  else{
+    time = String(now.getHours())+String(minute);
+  }
+  for(i = 0; i < joeyTimes[day].length; i++){
   	var tr = document.createElement('tr');
-  	for(j=0;j<joeyTimes[day][i].length;j++){
+    if (time > joeyTimes[day][i][2]){
+        continue;
+    }
+  	for(j = 0;j < joeyTimes[day][i].length; j++){
   		var td = document.createElement('td');
    		td.appendChild(document.createTextNode(parseTime(joeyTimes[day][i][j]))); 
-   		tr.appendChild(td);
+   		if(time > joeyTimes[day][i][j]){
+        td.className += "old_time";
+      }
+      tr.appendChild(td);
+
   	}
   	tb.append(tr);
   }

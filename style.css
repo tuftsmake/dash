@@ -253,7 +253,9 @@ nav ul li: hover > ul {
   width: 33%;
   text-align: center;
 }
-
+.old_time {
+  color: grey; /* todo: andy, pick a fucking color */
+}
 /* RADIO */
 .radiobutton {
   float: left;
