@@ -17,12 +17,12 @@ var refresh_dining = function()
                     // foods = $.parseJSON(data);
                     dentrees = data['dewick']['Dinner']['Dinner Entrees'];
                     dentrees.forEach(function(elem){
-                       $( "<tr><td>" + elem + "</td></tr>" ).appendTo("#dewick_table");
+                       $( '<tr><td class="dining_menu_item">' + elem + "</td></tr>" ).appendTo("#dewick_table");
                     })
                     $("<br>").appendTo("#")
                     centrees = data['carm']['Dinner']['Dinner Entrees'];
                     centrees.forEach(function(elem){
-                       $( "<tr><td>" + elem + "</td></tr>" ).appendTo("#carm_table");
+                       $( '<tr><td class="dining_menu_item">' + elem + "</td></tr>" ).appendTo("#carm_table");
                     })
                 }
     });

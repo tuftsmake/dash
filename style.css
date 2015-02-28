@@ -310,10 +310,17 @@ marquee {
   display: none;
 }
 
+/* TODO: someone (andy) plz make overflow nice, make titles look nice :) */
+
 .dininghall {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
+.dining_menu_item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 /* NEWS */
 #news {
