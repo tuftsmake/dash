@@ -509,17 +509,17 @@ http://daneden.github.io/animate.css/
 }
 
 /* Fade in */
-.fadeIn {-webkit-animation-name: fadeIn; animation-name: fadeIn;}
-@-webkit-keyframes fadeIn {0% {opacity: 0;} 100% {opacity: 1;}}
-@keyframes fadeIn {0% {opacity: 0;} 100% {opacity: 1;}}
+.fadein {-webkit-animation-name: fadein; animation-name: fadein;}
+@-webkit-keyframes fadein {0% {opacity: 0;} 100% {opacity: 1;}}
+@keyframes fadein {0% {opacity: 0;} 100% {opacity: 1;}}
 /* Fade out */
-.fadeOut {-webkit-animation-name: fadeOut; animation-name: fadeOut;}
-@-webkit-keyframes fadeOut {0% {opacity: 1;} 100% {opacity: 0;}}
-@keyframes fadeOut {0% {opacity: 1;} 100% {opacity: 0;}}
+.fadeout {-webkit-animation-name: fadeout; animation-name: fadeout;}
+@-webkit-keyframes fadeout {0% {opacity: 1;} 100% {opacity: 0;}}
+@keyframes fadeout {0% {opacity: 1;} 100% {opacity: 0;}}
 
 
 /* Fade in right */
-.fadeinright {-webkit-animation-name: fadeinright;animation-name: fadeinright;}
+.fadeinright {-webkit-animation-name: fadeinright;animation-name: fadeinright;z-index:-1;}
 @-webkit-keyframes fadeinright {
   0% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none; transform: none;}
@@ -529,7 +529,7 @@ http://daneden.github.io/animate.css/
   100% {opacity: 1; -webkit-transform: none; transform: none;}
 }
 /* Fade out right */
-.fadeoutright {-webkit-animation-name: fadeoutright; animation-name: fadeoutright;}
+.fadeoutright {-webkit-animation-name: fadeoutright; animation-name: fadeoutright;z-index:1;}
 @-webkit-keyframes fadeoutright {
   0% {opacity: 1;}
   100% {opacity: 0; -webkit-transform: translate3d(7%, 0, 0); transform: translate3d(7%, 0, 0);}
@@ -540,7 +540,7 @@ http://daneden.github.io/animate.css/
 }
 
 /* Fade in left */
-.fadeinleft {-webkit-animation-name: fadeinleft; animation-name: fadeinleft;}
+.fadeinleft {-webkit-animation-name: fadeinleft; animation-name: fadeinleft; z-index:-1;}
 @-webkit-keyframes fadeinleft {
   0% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}
   100% {opacity: 1; -webkit-transform: none;transform: none;}
@@ -551,7 +551,7 @@ http://daneden.github.io/animate.css/
 }
 
 /* Fade out left */
-.fadeoutleft {-webkit-animation-name: fadeoutleft; animation-name: fadeoutleft;}
+.fadeoutleft {-webkit-animation-name: fadeoutleft; animation-name: fadeoutleft; z-index: -1;}
 @-webkit-keyframes fadeoutleft {
   0% {opacity: 1;}
   100% {opacity: 0; -webkit-transform: translate3d(-7%, 0, 0); transform: translate3d(-7%, 0, 0);}

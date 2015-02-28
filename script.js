@@ -261,7 +261,9 @@ $(function() {
       var id = $(this).attr('id');
       // console.log(id);
       var toShow = id+'full';
-      $('.bubble').not(id+'full').hide();
+      console.log(toShow);
+      //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
+      $('.bubble').not('#'+toShow).hide(0);
       $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
       $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
       $('#title').text(toTitleCase(id));
@@ -274,16 +276,19 @@ $(function() {
               postSchedule(day);
               break;
         }
+      //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
       });
   });
 });
 
 function revert(id){
   $('.bubble').not('#intro').show();
-  $('.full').hide();
-	$("#buttonLeft").attr('src', 'assets/ico-help.png');
-	$("#buttonLeft").attr('onclick', 'help()');
-	$("#title").text('Tufts Dash');
+  //$('.full').toggleClass('fadeoutright fadeinright');
+  $('.full').hide(0);
+  $("#buttonLeft").attr('src', 'assets/ico-help.png');
+  $("#buttonLeft").attr('onclick', 'help()');
+  $("#title").text('Tufts Dash');
+  //$('.full').toggleClass('fadeoutright fadeinright');
 }
 
 function toTitleCase(str){
