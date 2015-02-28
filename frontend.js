@@ -283,6 +283,9 @@ function parseTime(time){
 	else if(hours == 0){
 		hours=12;
 	}
+  else if(hours == 12) {
+    meridiem =  ' PM';
+  }
 	return String(hours) + ':' + time.substring(2) + meridiem;
 }
 
