@@ -259,9 +259,7 @@ $(function() {
             return;
       }
       var id = $(this).attr('id');
-      // console.log(id);
       var toShow = id+'full';
-      console.log(toShow);
       //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
       $('.bubble').not('#'+toShow).hide(0);
       $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
