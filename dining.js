@@ -22,7 +22,11 @@ var refresh_dining = function()
                     centrees.forEach(function(elem){
                        $( '<tr><td class="dining_menu_item">' + elem + "</td></tr>" ).appendTo("#carm_table");
                     })
-                }
+                },
+
+        error: function(data){
+                    $(".dining_loading").value = "Failed to load"
+              }
     });
 }  
 
@@ -31,4 +35,3 @@ var populate_dining = function() {
 }
 
 $(document).ready(refresh_dining);
-$("#dining").click(populate_dining);
