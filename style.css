@@ -309,6 +309,9 @@ marquee {
   font-weight: bold;
 } 
 
+#foodlist > span {
+  width: 100%;
+}
 /* TODO: someone (andy) plz make overflow nice, make titles look nice :) */
 
 .dininghall {
