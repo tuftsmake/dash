@@ -254,8 +254,6 @@ nav ul li: hover > ul {
 }
 /* RADIO */
 #radio {
-    -webkit-animation-delay: .1s;
-  animation-delay: .1s;
 }
 .radiobutton {
   float: left;
@@ -281,8 +279,6 @@ marquee {
 
 /* EVENTS */
 #events {
-  -webkit-animation-delay: .3s;
-  animation-delay: .3s;
 }
 .time, .place {
 	font-size: .9rem;
@@ -299,8 +295,6 @@ marquee {
 
 /* DINING */
 #dining, #diningfull {
-  -webkit-animation-delay: .2s;
-  animation-delay: .2s;
 }
 #dining p, #diningfull p {
   margin-bottom: 0px;
@@ -326,26 +320,18 @@ marquee {
 
 /* NEWS */
 #news {
-  -webkit-animation-delay: .3s;
-  animation-delay: .3s;
 }
 
 /* PLACES */
 #places {
-  -webkit-animation-delay: .4s;
-  animation-delay: .4s;
 }
 
 /* SPORTS */
 #sports {
-  -webkit-animation-delay: .5s;
-  animation-delay: .5s;
 }
 
 /* LINKS */
 #links {
-  -webkit-animation-delay: .6s;
-  animation-delay: .6s;
 }
 #links > a {
   margin-top: 5px;
@@ -493,10 +479,14 @@ html.night {
 .night h1, .night h3, .night h4, .night h5, .night h6, .night p, .night td, .night th, .night span {
   color: #bebebe;
 }
-
-
-
-
+.a{}
+.b{-webkit-animation-delay: .1s; animation-delay: .1s;}
+.c{-webkit-animation-delay: .2s; animation-delay: .2s;}
+.d{-webkit-animation-delay: .3s; animation-delay: .3s;}
+.e{-webkit-animation-delay: .4s; animation-delay: .4s;}
+.f{-webkit-animation-delay: .5s; animation-delay: .5s;}
+.g{-webkit-animation-delay: .6s; animation-delay: .6s;}
+.h{-webkit-animation-delay: .7s; animation-delay: .7s;}
 
 /* Animations
 http://daneden.github.io/animate.css/
