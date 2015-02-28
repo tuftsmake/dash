@@ -18,8 +18,10 @@ window.addEventListener('load', function() {
     FastClick.attach(document.body);
 }, false);
 
-// Andy - Preload images to prevent white flashes
-// http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
+/* PRELOAD IMAGES
+  - prevents white flashes
+  http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
+-------------------------------------------------- */
 	var images = new Array()
 	preload (
 		"assets/bg-academic.jpg",
