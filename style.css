@@ -126,9 +126,8 @@ p {
 }
 
 .extrainfo {
-  height: 1.7rem;
-  padding-top: .8rem;
-  display: inline-block;
+  padding: .8rem .8rem 0 0;
+  color: rgb(240, 240, 240);
 }
 
 .iteminfo {
@@ -198,7 +197,6 @@ p {
   overflow: auto;
 }
 .bubble h2 {
-  border-bottom: rgb(225, 225, 225) 1px solid;
   padding: 2%;
 }
 .icon {
@@ -252,7 +250,7 @@ nav ul li: hover > ul {
   text-align: center;
 }
 .old_time {
-  color: rgb(215, 215, 215);
+  color: rgb(178, 178, 178);
 }
 /* RADIO */
 #radio {
