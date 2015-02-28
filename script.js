@@ -181,7 +181,7 @@ function nightmodeoff() {
 /* NEWS (TUFTS DAILY) PARSER
 -------------------------------------------------- */
 
-function populate_news_bubble(data) {
+function build_news_preview(data) {
   newsArticles = data['responseData']['feed']['entries'];
   console.log(newsArticles);
   for (i = 0; i < 3 && i < newsArticles.length; i++) {
@@ -191,13 +191,72 @@ function populate_news_bubble(data) {
   }
 }
 
+function find_category_match(newsCategories, articleCats) {
+  found = false;
+  /*
+  console.log('------starting find------');
+  console.log(articleCats);
+  console.log(newsCategories);
+  */
+  for (i = 0; i < articleCats.length; i++) {
+    console.log('// comparison ' + i + ' //');
+    for (j = 0; j < newsCategories.length; j++) {
+      /*
+      console.log("--");
+      console.log(j);
+      console.log(articleCats[i]);
+      console.log(newsCategories[j]);
+      */
+      if (articleCats[i] == newsCategories[j]) {
+        found = true;
+        return j;
+      }
+    }
+  }
+  if (!found) {
+    return -1;
+  }
+}
+
+function build_news_full_bubble(data) {
+  var newsArticles = data['responseData']['feed']['entries'];
+  var newsCategories = {
+    news: [];
+    features: [];
+    arts: [];
+    opinion: [];
+    sports: [];
+    columns: [];
+    multimedia: [];
+    archives: [];
+    blogs: [];
+  }
+  
+
+  for (i = 0; i < newsArticles.length; i++) {
+    
+    var categoryIndex = find_category_match(newsCategories, newsArticles[i].categories);
+    
+    if (categoryIndex != -1) {
+      newsCategories[categoryIndex].newsArticles[i]
+    }
+
+    break;
+
+    $ ('<div class="newsItem"> <p> <a href="' + newsArticles[i].link + '">' + newsArticles[i].title + '</a></p>'
+      + '<p>' + newsArticles[i].contentSnippet + '</p> </div>')
+    .appendTo("#news_list_full");
+  }
+}
+
 $(document).ready(function parseRSS(url) {
   $.ajax({
     url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("http://tuftsdaily.com/feed/"),
     dataType: 'json',
     success: function(data) {
       console.log(data);
-      populate_news_bubble(data);
+      build_news_preview(data);
+      build_news_full_bubble(data);
     }
   });
   console.log(url);
