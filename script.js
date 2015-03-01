@@ -185,8 +185,7 @@ function build_news_preview(data) {
   newsArticles = data['responseData']['feed']['entries'];
   console.log(newsArticles);
   for (i = 0; i < 3 && i < newsArticles.length; i++) {
-    $ ('<p> <a href="' + newsArticles[i].link + '">' + newsArticles[i].title + '</a></p>'
-      + '<p>' + newsArticles[i].contentSnippet + '</p>')
+    $ ('<p> <a href="' + newsArticles[i].link + '">' + newsArticles[i].title + '</a></p>')
     .appendTo("#news_list");
   }
 }
