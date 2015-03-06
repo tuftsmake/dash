@@ -353,7 +353,6 @@ function toTitleCase(str){
 
 function parseTime(time){
 	var meridiem = ' AM';
-	alert(time);
   hours=parseInt(time.substring(0,2));
 	if(hours > 12){
 		hours-=12;
@@ -382,8 +381,6 @@ function getJoeyTime(){
   }
 	var time = shour + smin;
 	var day = now.getDay();
-  alert(joeyTimes[day][0][0]);
-  alert(time);
 	for(i=0;i<joeyTimes[day].length;i++){
 		if(time<=joeyTimes[day][i][2]){
 			toDisplay[2]=joeyTimes[day][i][2];
@@ -408,7 +405,6 @@ function getJoeyTime(){
 			break;
 		}
 	}
-  alert(toDisplay);
 	return toDisplay;
 }
 
