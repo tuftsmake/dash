@@ -324,6 +324,29 @@ marquee {
   text-overflow: ellipsis;
 }
 
+.foodlist h4 {
+  background-color: rgb(177, 182, 203);
+  margin: 0 -2%;
+  padding: 0 2%;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.foodlist h4:nth-child(1) {background-color: #B8BCCD;}
+.foodlist h4:nth-child(2) {background-color: #B9CEC2;}
+.foodlist h4:nth-child(3) {background-color: #CEC7B9;}
+.foodlist h4:nth-child(4) {background-color: #CEB9B9;}
+.foodlist h4:nth-child(5) {background-color: #CCB9CE;}
+.foodlist h4:nth-child(6) {background-color: #B9CEC9;}
+
+.foodlist h5 {
+  line-height: 2rem;
+}
+
+
+
+
+
 /* NEWS */
 #news {
 }
