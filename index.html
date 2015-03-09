@@ -90,7 +90,6 @@
 			</div>
 			
       <div id="joeyfull" class="bubble full animated fadeinright">
-        <div class="bubbletitle"><h2>JOEY</h2></div>
         <div class="bubblecontent">
           <table>
             <tr>
@@ -126,17 +125,68 @@
   				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
   				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
   				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
-          <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
+          <p><span class="songname"></span> <span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
         </div>
 			</div>
 
 			<div id="radiofull" class="bubble full animated fadeinright">
-				<div class="bubbletitle"><h2>RADIO</h2></div>
 				<div class="bubblecontent">
-  				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
-  				<img class="albumart" src="assets/dummy-albumart.jpg"></img>
-          <!--<marquee behavior="scroll" direction="left">--><p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p><!--</marquee>-->
-          <img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
+  				<div class="radioplayer">
+    				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+    				<div class="albumcontainer">
+      				<div class="albumart" src="assets/dummy-albumart.jpg">
+        				<div class="radiobutton button play" src="assets/ico-play.png" onclick="radioOn()"></div>
+              </div>
+              
+            </div>
+            <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
+          </div>
+          <div class="songhistory">
+            <h4 class="sectionheader">Recently Played</h4>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>The Girl And The Robot</h3>
+                    <p>Royksopp</p>
+                  </div>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>It's Amazing</h3>
+                    <p>Jem</p>
+                  </div>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>Ain't No Mountain High Enough and more words to make this longer</h3>
+                    <p>Marvin Gaye</p>
+                  </div>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>Bad Moon Rising</h3>
+                    <p>Creedence Clearwater Revival</p>
+                  </div>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>Shooting Star</h3>
+                    <p>Bad Company</p>
+                  </div>
+                  <div class="song">
+                    <div class="songbutton">
+                      <ul class="more-menu" class="fltrt icon"></ul>
+                    </div>
+                    <h3>Bitter Sweet Symphony</h3>
+                    <p>The Verve</p>
+                  </div>
+
+          </div>
         </div>
 			</div>
 			
@@ -173,7 +223,6 @@
 
 			<div id="diningfull" class="bubble full animated fadeinright">
   			<h4 class="fltrt extrainfo">Dewick</h4>
-				<div class="bubbletitle"><h2>DINING</h2></div>
 				<div id="food_list" class="bubblecontent">
           <span style="text-align:center"><span id="bfast_button" class="meal_name selected_meal">BREAKFAST</span> | 
           <span id="lunch_button" class="meal_name">LUNCH</span> | 
@@ -193,7 +242,6 @@
 			</div>
 
       <div id="newsfull" class="bubble full animated fadeinright">
-        <div class="bubbletitle"><h2>NEWS</h2></div>
         <div class="bubblecontent">
           <div id="news_list_full">
           </div>
@@ -217,7 +265,6 @@
       </div>
       
       <div id="eventsfull" class="bubble animated full fadeinleft">
-        <div class="bubbletitle"><h2>EVENTS FULL</h2></div>
         <div class="bubblecontent">
           <table>
             <tbody>

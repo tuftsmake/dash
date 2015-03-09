@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6, p, td, th, span {
   user-select: none;
 }
 
+/* H2 used only for bubble headings */
 h2 {
   font-family: 'Roboto';
   font-weight: 300;
@@ -81,7 +82,13 @@ h3 {
   font-size: 1.1rem;
 }
 
+/* H4 used to delineate sections of listed content */
 h4 {
+  background-color: rgb(177, 182, 203);
+  margin: 0 -2%;
+  padding: 0 2%;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
   font-weight: 400;
   font-size: .8rem;
 }
@@ -252,9 +259,9 @@ nav ul li: hover > ul {
 .old_time {
   color: rgb(178, 178, 178);
 }
+
 /* RADIO */
-#radio {
-}
+
 .radiobutton {
   float: left;
   margin-right: 2%;
@@ -265,8 +272,7 @@ nav ul li: hover > ul {
   color: rgb(0, 8, 150);
 }
 .albumart {
-  max-width: 40%;
-  float: right;
+  float: left;
 }
 marquee {
   width: 60%;
@@ -274,6 +280,97 @@ marquee {
 #radiofull a.songurl {
   white-space: initial;
 }
+
+.radioplayer {
+  overflow: auto;
+}
+
+.songhistory {
+  margin-top: 2%;
+}
+
+.song {
+  padding: 5px 0px;
+  border-bottom: 1px solid rgb(173, 173, 173);
+}
+.song:last-child {
+  border-bottom: none;
+}
+
+.songbutton {
+  float: right;
+  margin: 10 3%;
+  width: 1.9rem;
+  height: auto;
+}
+.songbutton > ul {
+  margin: 0;
+  background-image: url(assets/ico-more.png);
+  background-size: contain;
+  list-style: none;
+  height: 30px;
+}
+.songbutton > ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  position: relative;
+  padding: 15px 15px;
+  cursor: pointer;
+}
+
+
+
+
+.albumcontainer {
+  width: 48%;
+  height: 22%;
+  overflow: auto;
+  /*
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  background-color: transparent;
+  padding-bottom: 56.25%;
+  margin: 0.5rem 0;
+  */
+}
+
+.albumart {
+  width: 100%;
+  height: 100%;
+  background-image: url(assets/dummy-albumart.jpg);
+  background-size: 100%;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+  /*
+  max-height: 111px;
+  position: absolute;
+  */
+}
+
+.albumart .play {
+  content: url("assets/ico-play.png") url("assets/ico-pause.png");
+  background: url("assets/ico-play.png") no-repeat center center;
+  background-size: auto;
+  height: 100%;
+  width: 100%;
+  opacity: .8;
+  filter: alpha(opacity=80);
+  transition: all 0.2s ease-out;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
