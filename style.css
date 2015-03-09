@@ -322,9 +322,10 @@ marquee {
 
 
 .albumcontainer {
-  width: 48%;
-  height: 22%;
+  width: 30%;
+  height: 14%;
   overflow: auto;
+  float: left;
   /*
   position: relative;
   overflow: hidden;
@@ -421,13 +422,6 @@ marquee {
   text-overflow: ellipsis;
 }
 
-.foodlist h4 {
-  background-color: rgb(177, 182, 203);
-  margin: 0 -2%;
-  padding: 0 2%;
-  line-height: 1.5rem;
-  letter-spacing: 1px;
-}
 
 .foodlist h4:nth-child(1) {background-color: #B8BCCD;}
 .foodlist h4:nth-child(2) {background-color: #B9CEC2;}
