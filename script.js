@@ -7,6 +7,8 @@ jQuery(document).ready(function($) {
 	if(localStorage.getItem("hazIntro") == "true"){
 		$('#intro').hide();
 	}
+	refreshArtwork();
+	checkLocation();
 });
 
 function help(){
@@ -14,9 +16,9 @@ function help(){
 }
 
 // Initiate FastClick
-window.addEventListener('load', function() {
+$(function() {
     FastClick.attach(document.body);
-}, false);
+});
 
 /* PRELOAD IMAGES
   - prevents white flashes
@@ -173,6 +175,30 @@ function nightmodeoff() {
 
 
 
+/* PRESERVE NAVIGATION STATE
+-------------------------------------------------- */
+/*
+function checkHash() {
+  setTimeout(function() {
+    if (location.hash.substr(1) !== "") {
+    $('#radio').click();
+    console.log("clicked");
+    }
+  }, 1);
+};
+*/
+
+function checkLocation() { setTimeout(function() {
+  if (localStorage.getItem("location") == "joey"){ $('#joey').click();}
+  if (localStorage.getItem("location") == "radio"){ $('#radio').click();}
+  if (localStorage.getItem("location") == "dining"){ $('#dining').click();}
+  if (localStorage.getItem("location") == "news"){ $('#news').click();}
+}, 1);
+};
+
+
+
+
 
 
 
@@ -271,30 +297,33 @@ http://stackoverflow.com/questions/14305128/how-to-use-jsonp
 
 /* Grab the data that Spinitron graciously provides via JSONP */
 $(document).ready(function updateRadio(){
-  jQuery.ajax({
-  "async": true,
-  "dataType": 'jsonp',
-  "url": "http://spinitron.com/public/newestsong.php?station=wmfo&callback=whatever",
-  "method": "GET",
-  "error": function (jqXHR, textStatus, errorThrown) {
+  $.ajax({
+  async: true,
+  dataType: 'jsonp',
+  url: "http://spinitron.com/public/newestsong.php?station=wmfo&callback=whatever",
+  method: "GET",
+  error: function (jqXHR, textStatus, errorThrown) {
       //included so you can see any errors
       console.log(textStatus + ': ' + errorThrown);
   },
-  "success": function (data, textStatus, jqXHR) {
+  success: function (data, textStatus, jqXHR) {
       data = jQuery.parseHTML(data);
-      songname = $(data).find(".songpart").text();
-      artist = $(data).find(".artistpart").text();
-      album = $(data).find(".diskpart").text();
-      dj = $(data).find(".djpart").text();
-      songurl = ("https://www.google.com/?gws_rd=ssl#q=" + songname + " " + artist).replace(/\s/g,"+");;
-      $(".songname").text(songname);
-      $(".artist").text(artist);
-      $(".album").text(album);
-      $(".dj").text(dj);
-      $(".songurl").attr('href', songurl);
+      radio.songname = $(data).find(".songpart").text();
+      radio.artist = $(data).find(".artistpart").text();
+      radio.album = $(data).find(".diskpart").text();
+      radio.dj = $(data).find(".djpart").text();
+      radio.songurl = ("https://www.google.com/?gws_rd=ssl#q=" + radio.songname + " " + radio.artist).replace(/\s/g,"+");;
+      $(".songname").text(radio.songname);
+      $(".artist").text(radio.artist);
+      $(".album").text(radio.album);
+      $(".dj").text(radio.dj);
+      $(".songurl").attr('href', radio.songurl);
+      return radio.songname;
+      return radio.artist;
   }
   });
 setTimeout(updateRadio, 15000);
+setTimeout(refreshArtwork, 15000);
 });
 
 /* Flip the play/pause button's image and function */
@@ -302,12 +331,50 @@ function radioOn() {
   document.getElementById('player').play();
   $(".radiobutton").attr('src', 'assets/ico-pause.png');
   $('.radiobutton').attr('onclick', "radioOff()");
+  $(".albumart").attr('src', 'assets/ico-pause-album.png');
+  $('.albumart').attr('onclick', "radioOff()");
 }
 function radioOff() {
   document.getElementById('player').pause();
   $(".radiobutton").attr('src', 'assets/ico-play.png');
   $('.radiobutton').attr('onclick', "radioOn()");
+  $(".albumart").attr('src', 'assets/ico-play-album.png');
+  $('.albumart').attr('onclick', "radioOn()");
 }
+
+/* Grab the album artwork from the iTunes Search API */
+/* http://stackoverflow.com/questions/11877392/using-shoutcast-display-now-playing-album-art */
+
+function refreshArtwork(artist, track) {
+  console.log(radio.artist);
+    $.ajax({
+      url: 'http://itunes.apple.com/search',
+      data: {
+        term: radio.artist + ' ' + radio.songname,
+        media: 'music'
+      },
+      dataType: 'jsonp',
+      success: function(json) {
+        if(json.results.length === 0) {
+          $('.albumart').attr('src', '');
+          return;
+        }
+
+        // trust the first result blindly...
+        var artworkURL = "url(" + json.results[0].artworkUrl100.replace("100x100","150x150") + ")";
+        console.log(artworkURL);
+        $(".albumart").css('background-image', artworkURL);
+      }
+   });
+}
+
+
+
+
+
+
+
+
 
 /* Expand Bubbles
 -------------------------------------------------- */
@@ -334,6 +401,7 @@ $(function() {
         }
       //$('.bubble').not('#'+toShow).toggleClass('fadeoutleft fadeinleft');
       });
+      localStorage.setItem("location", id);
   });
 });
 
@@ -345,6 +413,7 @@ function revert(id){
   $("#buttonLeft").attr('onclick', 'help()');
   $("#title").text('Tufts Dash');
   //$('.full').toggleClass('fadeoutright fadeinright');
+  localStorage.setItem("location", "home");
 }
 
 function toTitleCase(str){
@@ -353,7 +422,8 @@ function toTitleCase(str){
 
 function parseTime(time){
 	var meridiem = ' AM';
-  hours=parseInt(time.substring(0,2));
+	console.log(parseInt(time));
+  hours=parseInt(time.substring(0,2));     // this is undefined from somewhere around 11:52PM to 
 	if(hours > 12){
 		hours-=12;
 		meridiem = ' PM';

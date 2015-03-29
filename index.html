@@ -1,4 +1,5 @@
-<html>
+<html manifest="dash.manifest">
+
 	<head>
 		<meta charset="UTF-8">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,7 +14,7 @@
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="inobounce.js"></script>
 		<script src="script.js"></script>
-		<script src="fastclick/lib/fastclick.js"></script>
+		<script src="fastclick.js"></script>
 		<script src="joeyschedule.js"></script>
     <script src="dining.js"></script>
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=true&libraries=places"></script>
@@ -133,13 +134,9 @@
 				<div class="bubblecontent">
   				<div class="radioplayer">
     				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
-    				<div class="albumcontainer">
-      				<div class="albumart" src="assets/dummy-albumart.jpg">
-        				<div class="radiobutton button play" src="assets/ico-play.png" onclick="radioOn()"></div>
-              </div>
-              
-            </div>
-            <p><a class="songurl"><span class="songname"></span> <span class="artist"></span></a><br><span> spun </span><span class="dj"></span></p>
+
+            <img class="albumart radiobutton" src="assets/ico-play-album.png" onclick="radioOn()">
+            <p><span class="songname"></span><br><span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
           </div>
           <div class="songhistory">
             <h4 class="sectionheader">Recently Played</h4>

@@ -26,7 +26,9 @@ $(document).ready(getBuses);
 
 function getBuses(){
 	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
-		buses = JSON.parse(data.contents);
+		// buses = JSON.parse(data.contents);
+		// the JSON has already been parsed http://stackoverflow.com/questions/15617164/parsing-json-giving-unexpected-token-o-error
+		buses = data.contents;
 		//console.log(data.contents);
 	});
 }
