@@ -48,313 +48,343 @@
 	<body>
 		<div id="header">
   		<div id="headercontent">
-  			<img src="assets/ico-help.png" class="fltlft icon" id="buttonLeft" onclick="help()">
-  			<div class="fltrt icon" id="buttonRight">
-    			<ul id="more-menu" class="fltrt icon">
-      			<li>
+    		
+    		<div class="headerbutton">
+    			<img src="assets/ico-help.png" id="buttonLeft" onclick="showInfo()">
+    		</div>
+    		
+        <div class="md-modal md-effect-1" id="modal-2">
+        	<div class="md-content">
+        		<div class="bubbletitle"><h3>Info</h3></div>
+        		<div class="bubblecontent">
+        			<p>This is an early preview of Tufts Dash</p>
+        			<p>There will be bugs and incorrect data</p>
+        			<button class="md-close" onclick="hideInfo()">Close</button>
+        		</div>
+        	</div>
+        </div>
+        <div class="md-overlay" onclick="hideInfo()"></div>
+    		
+    		<div class="title">
+      		<h1 id="title" class="animated fadein">Tufts Dash</h1>
+    		</div>
+    		
+    		<div class="headerbutton" id="buttonRight" onclick="showSettings()">
+      		<img src="assets/ico-more.png">
+    		</div>
+    		
+        <div class="md-modal md-effect-1" id="modal-1">
+        	<div class="md-content">
+        		<div class="bubbletitle"><h3>Settings</h3></div>
+        		<div class="bubblecontent">
+        			<p>Blah de Blah</p>
       			  <ul>
         			  <a id="bgswitch"><li>Background</li></a>
         			  <a id="colorswitcher" onclick="color2()"><li>Colors</li></a>
         			  <a id="nightswitcher" onclick="nightmodeon()"><li>Night Mode</li></a>
         			  <a href="http://maker.tufts.edu/projects/tufts-dash/"><li>Info</li></a>
       			  </ul>
-      			</li>
-    			</ul>
-  			</div>
-        <h1 id="title" class="animated fadein">Tufts Dash</h1>
+        			<button class="md-close" onclick="hideSettings()">Close</button>
+        		</div>
+        	</div>
+        </div>
+        <div class="md-overlay" onclick="hideSettings()"></div>
+      
 			</div>
 		</div>
 		
 		<div id="content">
-			<div id="intro" class=" animated fadeinleft" onclick="killIntro()">
-  			<div class="bubblecontent">
-				  <h3>This is an early preview of Tufts Dash</br>There will be bugs and incorrect data</br>Please don't rely on this app yet</br>(Tap here to hide this bubble)</h3>
-				</div>
-			</div>
-      
-			<div id="joey" class="bubble animated fadeinleft a">
-				<div class="bubbletitle"><h2>JOEY</h2></div>
-				<div class="bubblecontent">
-  				<table>
-  					<tr>
-  						<td>CAMPUS</td>
-  						<td>DAVIS</td>
-  						<td>OLIN</td>
-  					</tr>
-  					<tr>
-  						<td class="campustime">0:00</td>
-  						<td class="davistime">0:00</td>
-  						<td class="olintime">0:00</td>
-  					</tr>
-  				</table>
-				</div>
-			</div>
-			
-      <div id="joeyfull" class="bubble full animated fadeinright">
-        <div class="bubblecontent">
-          <table>
-            <tr>
-              <td>CAMPUS</td>
-              <td>DAVIS</td>
-              <td>OLIN</td>
-            </tr>
-            <tr>
-              <td class="campustime">0:00</td>
-              <td class="davistime">0:00</td>
-              <td class="olintime">0:00</td>
-            </tr>
-          </table>
-          <div id='map_canvas'></div>
-          <h3></h3>
-          <table>
-            <thead>
+  		<div id="bubblecontainer">
+  			<div id="intro" class="" onclick="killIntro()">
+    			<div class="bubblecontent">
+  				  <h3>This is an early preview of Tufts Dash</br>There will be bugs and incorrect data</br>Please don't rely on this app yet</br>(Tap here to hide this bubble)</h3>
+  				</div>
+  			</div>
+        
+  			<div id="joey" class="bubble a">
+  				<div class="bubbletitle"><h2>JOEY</h2></div>
+  				<div class="bubblecontent">
+    				<table>
+    					<tr>
+    						<td>CAMPUS</td>
+    						<td>DAVIS</td>
+    						<td>OLIN</td>
+    					</tr>
+    					<tr>
+    						<td class="campustime">0:00</td>
+    						<td class="davistime">0:00</td>
+    						<td class="olintime">0:00</td>
+    					</tr>
+    				</table>
+  				</div>
+  			</div>
+  			
+        <div id="joeyfull" class="bubble full">
+          <div class="bubblecontent">
+            <table>
               <tr>
                 <td>CAMPUS</td>
                 <td>DAVIS</td>
                 <td>OLIN</td>
               </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
+              <tr>
+                <td class="campustime">0:00</td>
+                <td class="davistime">0:00</td>
+                <td class="olintime">0:00</td>
+              </tr>
+            </table>
+            <div id='map_canvas'></div>
+            <h3></h3>
+            <table>
+              <thead>
+                <tr>
+                  <td>CAMPUS</td>
+                  <td>DAVIS</td>
+                  <td>OLIN</td>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-
-			<div id="radio" class="bubble animated fadeinleft b">
-				<div class="bubbletitle"><h2>RADIO</h2></div>
-				<div class="bubblecontent">
-  				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
-  				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
-  				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
-          <p><span class="songname"></span> <span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
-        </div>
-			</div>
-
-			<div id="radiofull" class="bubble full animated fadeinright">
-				<div class="bubblecontent">
-  				<div class="radioplayer">
+  
+  			<div id="radio" class="bubble b">
+  				<div class="bubbletitle"><h2>RADIO</h2></div>
+  				<div class="bubblecontent">
     				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
-
-            <img class="albumart radiobutton" src="assets/ico-play-album.png" onclick="radioOn()">
-            <p><span class="songname"></span><br><span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
+    				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
+    				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
+            <p><span class="songname"></span> <span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
           </div>
-          <div class="songhistory">
-            <h4 class="sectionheader">Recently Played</h4>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>The Girl And The Robot</h3>
-                    <p>Royksopp</p>
-                  </div>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>It's Amazing</h3>
-                    <p>Jem</p>
-                  </div>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>Ain't No Mountain High Enough and more words to make this longer</h3>
-                    <p>Marvin Gaye</p>
-                  </div>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>Bad Moon Rising</h3>
-                    <p>Creedence Clearwater Revival</p>
-                  </div>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>Shooting Star</h3>
-                    <p>Bad Company</p>
-                  </div>
-                  <div class="song">
-                    <div class="songbutton">
-                      <ul class="more-menu" class="fltrt icon"></ul>
-                    </div>
-                    <h3>Bitter Sweet Symphony</h3>
-                    <p>The Verve</p>
-                  </div>
-
-          </div>
-        </div>
-			</div>
-			
-			<div id="dining" class="bubble animated fadeinleft c">
-				<div class="bubbletitle"><h2>DINING</h2></div>
-				<div class="bubblecontent">
-  			<table>
-          <tbody>
-            <tr>
-              <td style="width:45%">
-                <table>
-                  <tbody>
-                    <th id="dewick_table" class="dining_hall_name">DEWICK</th>
-                    <tr><td class="dining_loading"><br>Loading...<br></td></tr>
-                    <!-- dewick data loads here via jquery!-->
-                    <td>    
-                  </tbody>  
-                </table>
-              </td>
-              <td style="width:45%">
-                <table>
-                  <tbody>
-                    <th id="carm_table" class="dining_hall_name">CARMICHAEL</th>
-                    <tr><td class="dining_loading"><br>Loading...<br></td></tr>
-                    <!--  data loads here via jquery!-->
-                  </tbody>  
-                </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-			</div>
-
-			<div id="diningfull" class="bubble full animated fadeinright">
-				<div id="food_list" class="bubblecontent">
-          <span style="text-align:center"><span id="bfast_button" class="meal_name selected_meal">BREAKFAST</span> | 
-          <span id="lunch_button" class="meal_name">LUNCH</span> | 
-          <span id="dinner_button" class="meal_name">DINNER</span></span> 
-          <div id="breakfast_list" class="foodlist"></div>
-          <div id="lunch_list" class="foodlist"></div>
-          <div id="dinner_list"class="foodlist"></div>
-				</div>
-			</div>
-
-			<div id="news" class="bubble animated fadeinleft d">
-				<div class="bubbletitle"><h2>NEWS</h2></div>
-				<div class="bubblecontent">
-          <div id="news_list">
-          </div>
-				</div>
-			</div>
-
-      <div id="newsfull" class="bubble full animated fadeinright">
-        <div class="bubblecontent">
-          <div id="news_list_full">
-          </div>
-        </div>
-      </div>
-      
-      <div id="events" class="bubble animated fadeinleft e">
-        <div class="bubbletitle"><h2>EVENTS</h2></div>
-        <div class="bubblecontent">
-          <table>
-            <tbody>
-              <tr><th colspan="2">Small Jazz Concert II</th></tr>
-              <tr><td class="place">Granoff Music Center 210</td><td class="time">5:30PM</td></tr>
-              <tr><th colspan="2">Tufts MAKE Info Session</th></tr>
-              <tr><td class="place">Aidekman Auditorium</td><td class="time">6:00PM</td></tr>
-              <tr><th colspan="2">A Night of Comedy Featuring Keenan Thompson</th></tr>
-              <tr><td class="place">Cohen Auditorium</td><td class="time">9:00PM</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-      <div id="eventsfull" class="bubble animated full fadeinleft">
-        <div class="bubblecontent">
-          <table>
-            <tbody>
-              <tr><th colspan="2">Small Jazz Concert II</th></tr>
-              <tr><td class="place">Granoff Music Center 210</td><td class="time">5:30PM</td></tr>
-              <tr><th colspan="2">Tufts MAKE Info Session</th></tr>
-              <tr><td class="place">Aidekman Auditorium</td><td class="time">6:00PM</td></tr>
-              <tr><th colspan="2">A Night of Comedy Featuring Keenan Thompson</th></tr>
-              <tr><td class="place">Cohen Auditorium</td><td class="time">9:00PM</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-			
-			<div id="sports" class="bubble animated fadeinleft f">
-				<div class="bubbletitle"><h2>SPORTS</h2></div>
-				<div class="bubblecontent">
-  				<table style="text-align: center;">
-  					<tbody>
-  						<tr>
-    						<th style="text-align: center;" colspan="2">M. Squash</th>
-    						<th style="text-align: center;" colspan="2">M. Ice Hockey</th>
-    						<th style="text-align: center;" colspan="2">W. Basketball</th>
-    				  </tr>
-  						<tr>
-    						<td>Tufts</td>
-    						<td>Hamilton</td>
-    						<td>Tufts</td>
-    						<td>Conn Col.</td>
-    						<td>Tufts</td>
-    						<td>Williams</td>
-    				  </tr>
-  						<tr>
-    						<td>0</td>
-    						<td>0</td>
-    						<td>1</td>
-    						<td>4</td>
-    						<td>54</td>
-    						<td>50</td>
-    				  </tr>
-  					</tbody>
-  				</table>
-				</div>
-			</div>
-
-			<div id="laundry" class="bubble animated fadeinleft g">
-				<div class="bubbletitle">
-  				<h2>LAUNDRY</h2>
-  		  </div>
-				<div class="bubblecontent">
-  				<table>
-  					<tbody>
-  						<tr>
-    						<th colspan="2">Washers (4 free)</th>
-    						<th colspan="2">Dryers (3 free)</th>
-    				  </tr>
-  						<tr>
-    						<td>01</td>
-    						<td>55 mins</td>
-    						<td>09</td>
-    						<td>2 mins</td>
-    				  </tr>
-  						<tr>
-    						<td>04</td>
-    						<td>34 mins</td>
-    						<td>12</td>
-    						<td>34 mins</td>
-    				  </tr>
-  						<tr>
-    						<td>07</td>
-    						<td>5 mins</td>
-    						<td>14</td>
-    						<td>25 mins</td>
-    				  </tr>
-  						<tr>
-    						<td>08</td>
-    						<td>17 mins</td>
-    						<td>15</td>
-    						<td>22 mins</td>
-    				  </tr>
-  					</tbody>
-  				</table>
-				</div>
-			</div>
-			
-			<div id="links" class="bubble animated fadeinleft h">
-  		  <div class="bubbletitle"><h2>LINKS</h2></div>
-  			<div class="bubblecontent">
-  				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
-  				<a href="http://isis.tufts.edu/"> <img src="assets/isis.png"> </a>
-  				<a href="http://m.laundryview.com/lvs.php?s=17"> <img src="assets/laundryview.png"> </a>
-  				<a href="http://trunk.tufts.edu"> <img src="assets/trunk.png"> </a>
   			</div>
-			</div>
+  
+  			<div id="radiofull" class="bubble full">
+  				<div class="bubblecontent">
+    				<div class="radioplayer">
+      				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+  
+              <img class="albumart radiobutton" src="assets/ico-play-album.png" onclick="radioOn()">
+              <p><span class="songname"></span><br><span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
+            </div>
+            <div class="songhistory">
+              <h4 class="sectionheader">Recently Played</h4>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>The Girl And The Robot</h3>
+                      <p>Royksopp</p>
+                    </div>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>It's Amazing</h3>
+                      <p>Jem</p>
+                    </div>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>Ain't No Mountain High Enough and more words to make this longer</h3>
+                      <p>Marvin Gaye</p>
+                    </div>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>Bad Moon Rising</h3>
+                      <p>Creedence Clearwater Revival</p>
+                    </div>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>Shooting Star</h3>
+                      <p>Bad Company</p>
+                    </div>
+                    <div class="song">
+                      <div class="songbutton">
+                        <ul class="more-menu" class="fltrt icon"></ul>
+                      </div>
+                      <h3>Bitter Sweet Symphony</h3>
+                      <p>The Verve</p>
+                    </div>
+  
+            </div>
+          </div>
+  			</div>
+  			
+  			<div id="dining" class="bubble c">
+  				<div class="bubbletitle"><h2>DINING</h2></div>
+  				<div class="bubblecontent">
+    			<table>
+            <tbody>
+              <tr>
+                <td style="width:45%">
+                  <table>
+                    <tbody>
+                      <th id="dewick_table" class="dining_hall_name">DEWICK</th>
+                      <tr><td class="dining_loading"><br>Loading...<br></td></tr>
+                      <!-- dewick data loads here via jquery!-->
+                      <td>    
+                    </tbody>  
+                  </table>
+                </td>
+                <td style="width:45%">
+                  <table>
+                    <tbody>
+                      <th id="carm_table" class="dining_hall_name">CARMICHAEL</th>
+                      <tr><td class="dining_loading"><br>Loading...<br></td></tr>
+                      <!--  data loads here via jquery!-->
+                    </tbody>  
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+  			</div>
+  
+  			<div id="diningfull" class="bubble full">
+  				<div id="food_list" class="bubblecontent">
+            <span style="text-align:center"><span id="bfast_button" class="meal_name selected_meal">BREAKFAST</span> | 
+            <span id="lunch_button" class="meal_name">LUNCH</span> | 
+            <span id="dinner_button" class="meal_name">DINNER</span></span> 
+            <div id="breakfast_list" class="foodlist"></div>
+            <div id="lunch_list" class="foodlist"></div>
+            <div id="dinner_list"class="foodlist"></div>
+  				</div>
+  			</div>
+  
+  			<div id="news" class="bubble d">
+  				<div class="bubbletitle"><h2>NEWS</h2></div>
+  				<div class="bubblecontent">
+            <div id="news_list">
+            </div>
+  				</div>
+  			</div>
+  
+        <div id="newsfull" class="bubble full">
+          <div class="bubblecontent">
+            <div id="news_list_full">
+            </div>
+          </div>
+        </div>
+        
+        <div id="events" class="bubble e">
+          <div class="bubbletitle"><h2>EVENTS</h2></div>
+          <div class="bubblecontent">
+            <table>
+              <tbody>
+                <tr><th colspan="2">Small Jazz Concert II</th></tr>
+                <tr><td class="place">Granoff Music Center 210</td><td class="time">5:30PM</td></tr>
+                <tr><th colspan="2">Tufts MAKE Info Session</th></tr>
+                <tr><td class="place">Aidekman Auditorium</td><td class="time">6:00PM</td></tr>
+                <tr><th colspan="2">A Night of Comedy Featuring Keenan Thompson</th></tr>
+                <tr><td class="place">Cohen Auditorium</td><td class="time">9:00PM</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div id="eventsfull" class="bubble full">
+          <div class="bubblecontent">
+            <table>
+              <tbody>
+                <tr><th colspan="2">Small Jazz Concert II</th></tr>
+                <tr><td class="place">Granoff Music Center 210</td><td class="time">5:30PM</td></tr>
+                <tr><th colspan="2">Tufts MAKE Info Session</th></tr>
+                <tr><td class="place">Aidekman Auditorium</td><td class="time">6:00PM</td></tr>
+                <tr><th colspan="2">A Night of Comedy Featuring Keenan Thompson</th></tr>
+                <tr><td class="place">Cohen Auditorium</td><td class="time">9:00PM</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+  			
+  			<div id="sports" class="bubble f">
+  				<div class="bubbletitle"><h2>SPORTS</h2></div>
+  				<div class="bubblecontent">
+    				<table style="text-align: center;">
+    					<tbody>
+    						<tr>
+      						<th style="text-align: center;" colspan="2">M. Squash</th>
+      						<th style="text-align: center;" colspan="2">M. Ice Hockey</th>
+      						<th style="text-align: center;" colspan="2">W. Basketball</th>
+      				  </tr>
+    						<tr>
+      						<td>Tufts</td>
+      						<td>Hamilton</td>
+      						<td>Tufts</td>
+      						<td>Conn Col.</td>
+      						<td>Tufts</td>
+      						<td>Williams</td>
+      				  </tr>
+    						<tr>
+      						<td>0</td>
+      						<td>0</td>
+      						<td>1</td>
+      						<td>4</td>
+      						<td>54</td>
+      						<td>50</td>
+      				  </tr>
+    					</tbody>
+    				</table>
+  				</div>
+  			</div>
+  
+  			<div id="laundry" class="bubble g">
+  				<div class="bubbletitle">
+    				<h2>LAUNDRY</h2>
+    		  </div>
+  				<div class="bubblecontent">
+    				<table>
+    					<tbody>
+    						<tr>
+      						<th colspan="2">Washers (4 free)</th>
+      						<th colspan="2">Dryers (3 free)</th>
+      				  </tr>
+    						<tr>
+      						<td>01</td>
+      						<td>55 mins</td>
+      						<td>09</td>
+      						<td>2 mins</td>
+      				  </tr>
+    						<tr>
+      						<td>04</td>
+      						<td>34 mins</td>
+      						<td>12</td>
+      						<td>34 mins</td>
+      				  </tr>
+    						<tr>
+      						<td>07</td>
+      						<td>5 mins</td>
+      						<td>14</td>
+      						<td>25 mins</td>
+      				  </tr>
+    						<tr>
+      						<td>08</td>
+      						<td>17 mins</td>
+      						<td>15</td>
+      						<td>22 mins</td>
+      				  </tr>
+    					</tbody>
+    				</table>
+  				</div>
+  			</div>
+  			
+  			<div id="links" class="bubble h">
+    		  <div class="bubbletitle"><h2>LINKS</h2></div>
+    			<div class="bubblecontent">
+    				<a href="https://roomscheduling.tufts.edu/VirtualEMS/MobileLogin.aspx"> <img src="assets/reservation.png"> </a>
+    				<a href="http://isis.tufts.edu/"> <img src="assets/isis.png"> </a>
+    				<a href="http://m.laundryview.com/lvs.php?s=17"> <img src="assets/laundryview.png"> </a>
+    				<a href="http://trunk.tufts.edu"> <img src="assets/trunk.png"> </a>
+    			</div>
+  			</div>
+  		</div>
 		</div>
 	</body>
 </html>
