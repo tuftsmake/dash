@@ -9,6 +9,7 @@ jQuery(document).ready(function($) {
 	}
 	refreshArtwork();
 	checkLocation();
+	checkStandalone();
 });
 
 function help(){
@@ -20,29 +21,39 @@ $(function() {
     FastClick.attach(document.body);
 });
 
+function checkStandalone() {
+  if (window.navigator.standalone == true) {
+    console.log("works");
+    $("#header").addClass("standalone");
+    $("#content").addClass("standalone");
+  } else {
+    console.log("noope");
+  }
+}
+
 /* PRELOAD IMAGES
   - prevents white flashes
   http://perishablepress.com/3-ways-preload-images-css-javascript-ajax/
 -------------------------------------------------- */
-	var images = new Array()
-	preload (
-		"assets/bg-academic.jpg",
-		"assets/bg-bray.jpg",
-		"assets/bg-dewick.jpg",
-		"assets/bg-jumbo.jpg",
-		"assets/bg-quad.jpg",
-		"assets/bg-tisch.jpg",
-		"assets/bg-fall.jpg",
-		"assets/bg-water.jpg",
-		"assets/bg-pattern-1-green.png",
-		"assets/bg-pattern-1-blue.png"
-	)
-	function preload() {
-		for (i = 0; i < preload.arguments.length; i++) {
-			images[i] = new Image()
-			images[i].src = preload.arguments[i]
-		}
+var images = new Array()
+preload (
+	"assets/bg-academic.jpg",
+	"assets/bg-bray.jpg",
+	"assets/bg-dewick.jpg",
+	"assets/bg-jumbo.jpg",
+	"assets/bg-quad.jpg",
+	"assets/bg-tisch.jpg",
+	"assets/bg-fall.jpg",
+	"assets/bg-water.jpg",
+	"assets/bg-pattern-1-green.png",
+	"assets/bg-pattern-1-blue.png"
+)
+function preload() {
+	for (i = 0; i < preload.arguments.length; i++) {
+		images[i] = new Image()
+		images[i].src = preload.arguments[i]
 	}
+}
 
 /* BACKGROUND IMAGE SWITCHER
   - with a numbered filenaming scheme we could make this switcher simpler
@@ -88,7 +99,6 @@ function killIntro(){
 /* COLORS
 -------------------------------------------------- */
 
-/* Checks user settings on load and applies them */
 $(document).ready(
 function checkSettings() {
   colorsetting = localStorage.getItem("color");
@@ -167,26 +177,8 @@ function nightmodeoff() {
   localStorage.setItem("night", "day");
 }
 
-
-
-
-
-
-
-
-
 /* PRESERVE NAVIGATION STATE
 -------------------------------------------------- */
-/*
-function checkHash() {
-  setTimeout(function() {
-    if (location.hash.substr(1) !== "") {
-    $('#radio').click();
-    console.log("clicked");
-    }
-  }, 1);
-};
-*/
 
 function checkLocation() { setTimeout(function() {
   if (localStorage.getItem("location") == "joey"){ $('#joey').click();}
@@ -195,14 +187,6 @@ function checkLocation() { setTimeout(function() {
   if (localStorage.getItem("location") == "news"){ $('#news').click();}
 }, 1);
 };
-
-
-
-
-
-
-
-
 
 /* NEWS (TUFTS DAILY) PARSER
 -------------------------------------------------- */
@@ -289,7 +273,20 @@ $(document).ready(function parseRSS(url) {
 
 
 
-
+/* POPOVERS
+-------------------------------------------------- */
+function showSettings() {
+  $('#modal-1').addClass("md-show");
+}
+function hideSettings() {
+  $('#modal-1').removeClass("md-show");
+}
+function showInfo() {
+  $('#modal-2').addClass("md-show");
+}
+function hideInfo() {
+  $('#modal-2').removeClass("md-show");
+}
 
 /* WMFO Radio
 http://stackoverflow.com/questions/14305128/how-to-use-jsonp
@@ -375,9 +372,58 @@ function refreshArtwork(artist, track) {
 
 
 
-
 /* Expand Bubbles
 -------------------------------------------------- */
+/*
+  Close attempt to get animations working, based on this video: https://www.youtube.com/watch?v=CBQGl6zokMs
+  
+$(function() {
+  $('.bubble').not('.full').click(function(elem) {
+    $('.bubble').not('.full').removeClass('animated fadeinleft').addClass('animated fadeoutleft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+      function(){
+        if($(elem.target).is('.button')){
+          return;
+        }
+        var id = $(this).attr('id');
+        var toShow = id+'full';
+        $('.bubble').not('#'+toShow).hide(0);
+        $('#buttonLeft').attr('src', 'assets/ico-arrow.png');
+        $('#buttonLeft').attr('onclick', 'revert('+'\''+id+'\''+')');
+        $('#title').text(toTitleCase(id));
+        $('#'+toShow).show(0,function(toShow){
+          switch($(this).attr('id')) {
+            case 'joeyfull':
+                day = now.getDay();
+                $('#joeyfull h3').html(parseDay(day).toUpperCase()+' SCHEDULE');
+                drawMap();
+                postSchedule(day);
+                break;
+          }
+        });
+        localStorage.setItem("location", id);
+        $('.bubble').not('.full').removeClass('animated fadeoutleft');
+        $('.bubble.full').not('#intro').addClass('animated fadeinright')
+      });
+  });
+});
+
+function revert(id){
+  $('.bubble.full').not('#intro').removeClass('animated fadeinright').addClass('animated fadeoutright').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+  function(){
+    $('.bubble').not('#intro').show();
+    //$('.full').toggleClass('fadeoutright fadeinright');
+    $('.full').hide(0);
+    $("#buttonLeft").attr('src', 'assets/ico-help.png');
+    $("#buttonLeft").attr('onclick', 'help()');
+    $("#title").text('Tufts Dash');
+    //$('.full').toggleClass('fadeoutright fadeinright');
+    localStorage.setItem("location", "home");
+    $('.bubble.full').not('#intro').removeClass('animated fadeoutright')
+    $('.bubble').not('.full').addClass('animated fadeinleft');
+  });
+}
+*/
+
 $(function() {
   $('.bubble').not('.full').click(function(elem) {
       if($(elem.target).is('.button')){
@@ -415,6 +461,7 @@ function revert(id){
   //$('.full').toggleClass('fadeoutright fadeinright');
   localStorage.setItem("location", "home");
 }
+
 
 function toTitleCase(str){
     return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
