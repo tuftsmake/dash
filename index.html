@@ -152,8 +152,12 @@
   			<div id="radio" class="bubble b">
   				<div class="bubbletitle"><h2>RADIO</h2></div>
   				<div class="bubblecontent">
-    				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+    				<!--<div id="tempradio" onclick="TEMPradioon()">TESTING</div>-->
     				<!-- change port to 8002 for 128kbps, 8004 for 64kbps -->
+    				<audio id="player" src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4"></audio>
+    				<audio id="player" autostart="0">
+              <source src="http://130.64.87.48:8000/;stream.mp4" preload="none" type="audio/mp4">
+            </audio>
     				<img class="radiobutton button" src="assets/ico-play.png" onclick="radioOn()"></img>
             <p><span class="songname"></span> <span class="artist"></span><br><span> spun </span><span class="dj"></span></p>
           </div>
