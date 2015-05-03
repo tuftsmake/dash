@@ -367,29 +367,6 @@ function refreshArtwork(artist, track) {
 }
 
 
-
-/* Tried a new approach to getting HTML5 audio working in iOS 8 webapps
-  - http://stackoverflow.com/questions/25972362/why-html5-video-doesnt-play-in-ios-8-webappwebview/26126905#26126905
-  - didn't work
-function TEMPradioload() {
-var body = document.getElementById('tempradio');
-body.innerHTML += '<audio id="audio_sprite"><p>Audio not supported</p></audio>';
-var sprite = document.getElementById('audio_sprite');
-sprite.src = 'http://130.64.87.48:8000/;stream.m4a';
-    sprite.play();
-    sprite.pause();
-}
-
-function TEMPradioon() {
-  document.getElementById('audio_sprite').play();
-  $(".radiobutton").attr('src', 'assets/ico-pause.png');
-  $('.radiobutton').attr('onclick', "radioOff()");
-  $(".albumart").attr('src', 'assets/ico-pause-album.png');
-  $('.albumart').attr('onclick', "radioOff()");
-}
-*/
-
-
 /* Expand Bubbles
 -------------------------------------------------- */
 /*
