@@ -20,6 +20,7 @@ html {
   background-position: center top;
   background-image: url(assets/bg-academic.jpg);
   background-repeat: repeat;
+  background-size: cover;
   transition: background-image 0.3s ease;
   -webkit-transition: background-image 0.3s ease;
   font-family: 'Open Sans';

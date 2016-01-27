@@ -1,6 +1,6 @@
 <?php
 
-$html = file_get_contents('http://menus.tufts.edu/foodpro/shortmenu.asp?sName=TUFTS+DINING&locationNum=11&locationName=Dewick-MacPhie+Dining+Center&naFlag=1&WeeksMenus=This+Week%27s+Menus&myaction=read&dtdate=5%2F4%2F2015');
+$html = file_get_contents('http://menus.tufts.edu/foodpro/shortmenu.asp?sName=TUFTS+DINING&locationNum=11&locationName=Dewick-MacPhie+Dining+Center&naFlag=1&WeeksMenus=This+Week%27s+Menus&myaction=read&dtdate=1%2F24%2F2016');
 $food_doc = new DOMDocument();
 libxml_use_internal_errors(TRUE); //disable libxml errors
 
