@@ -25,7 +25,7 @@ var stops=[["Campus Center Front",42.405804,-71.11956],
 $(document).ready(getBuses);
 
 function getBuses(){
-	$.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
+	$.getJSON('https://whateverorigin.herokuapp.com/get?url=' + encodeURIComponent('https://tufts.doublemap.com/map/v2/buses') + '&callback=?', function(data){
 		// buses = JSON.parse(data.contents);
 		// the JSON has already been parsed http://stackoverflow.com/questions/15617164/parsing-json-giving-unexpected-token-o-error
 		buses = data.contents;
@@ -49,7 +49,7 @@ function drawMap(){
 			for(i=0;i<markers.length;i++){
 				markers[i].setPosition(new google.maps.LatLng(buses[i].lat,buses[i].lon));
 			}
-		},1000);
+		},2000);
 	}
 }
 

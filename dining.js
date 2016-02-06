@@ -46,7 +46,7 @@ var refresh_dining = function()
     //     foods = $.parseJSON(data);
     // });
     $.ajax({
-        url: 'http://tuftsdiningapi.appspot.com/api/', 
+        url: 'https://tuftsdiningapi.appspot.com/api/', 
         success: function(data){
                     build_dining_preview(data);
                     build_dining_full_bubble(data);

@@ -24,7 +24,7 @@ $(function() {
 
 function checkStandalone() {
   if (window.navigator.standalone == true) {
-    console.log("works");
+    //console.log("works");
     $("#header").addClass("standalone");
     $("#content").addClass("standalone");
   } else {
@@ -64,25 +64,25 @@ $(document).ready(function() {
     $("#bgswitch").click(function() {
         var src = $('html').css('background-image');
         console.log($('html').css('background-image'))
-        if(src == 'url(http://tuftsdash.com/dev/assets/bg-pattern-1-green.png)') {
+        if(src == 'url(https://tuftsdash.com/dev/assets/bg-pattern-1-green.png)') {
           $("html").css("background-image","url(assets/bg-pattern-1-blue.png)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-pattern-1-blue.png)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-pattern-1-blue.png)") {
           $("html").css("background-image","url(assets/bg-academic.jpg)");
           $("html").css("background-repeat","none");
           $("html").css("background-size","cover");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-academic.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-academic.jpg)") {
           $("html").css("background-image","url(assets/bg-bray.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-bray.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-bray.jpg)") {
           $("html").css("background-image","url(assets/bg-dewick.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-dewick.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-dewick.jpg)") {
           $("html").css("background-image","url(assets/bg-fall.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-fall.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-fall.jpg)") {
           $("html").css("background-image","url(assets/bg-jumbo.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-jumbo.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-jumbo.jpg)") {
           $("html").css("background-image","url(assets/bg-quad.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-quad.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-quad.jpg)") {
           $("html").css("background-image","url(assets/bg-tisch.jpg)");
-        } else if(src == "url(http://tuftsdash.com/dev/assets/bg-tisch.jpg)") {
+        } else if(src == "url(https://tuftsdash.com/dev/assets/bg-tisch.jpg)") {
           $("html").css("background-image","url(assets/bg-water.jpg)");
         } else {
           $("html").css("background-image","url(assets/bg-pattern-1-green.png)");
@@ -261,7 +261,7 @@ function build_news_full_bubble(data) {
 
 $(document).ready(function parseRSS(url) {
   $.ajax({
-    url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("http://tuftsdaily.com/feed/"),
+    url: 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent("http://tuftsdaily.com/feed/"),
     dataType: 'json',
     success: function(data) {
       console.log(data);
@@ -298,7 +298,7 @@ $(document).ready(function updateRadio(){
   $.ajax({
   async: true,
   dataType: 'jsonp',
-  url: "http://spinitron.com/public/newestsong.php?station=wmfo&callback=whatever",
+  url: "https://spinitron.com/public/newestsong.php?station=wmfo&callback=whatever",
   method: "GET",
   error: function (jqXHR, textStatus, errorThrown) {
       //included so you can see any errors
@@ -346,7 +346,7 @@ function radioOff() {
 function refreshArtwork(artist, track) {
   console.log(radio.artist);
     $.ajax({
-      url: 'http://itunes.apple.com/search',
+      url: 'https://itunes.apple.com/search',
       data: {
         term: radio.artist + ' ' + radio.songname,
         media: 'music'
@@ -464,7 +464,7 @@ function toTitleCase(str){
 
 function parseTime(time){
 	var meridiem = ' AM';
-	console.log(parseInt(time));
+	//console.log(parseInt(time));
   hours=parseInt(time.substring(0,2));     // this is undefined from somewhere around 11:52PM to 
 	if(hours > 12){
 		hours-=12;
